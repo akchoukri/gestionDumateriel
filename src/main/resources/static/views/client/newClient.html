@@ -1,0 +1,85 @@
+ <div class="container" ng-controller="clientNewCtrl">
+ <br>
+    <div class="card-header" style="text-align: center;">
+   <h5> Nouveau Client</h5>
+  </div>
+  <div class="card-body formulaire">
+    <form  name="formNewClient" novalidate>
+        <div class="row">
+            
+            
+                    <label class="col-md-2">Nom   </label>
+                    <input type="text" class="form-control col-md-6" ng-model="client.nomClient" name="nomClient" placeholder="Nom Client"  maxlength="10" required>
+                    <span class="error col-md-4" ng-show="formNewClient.nomClient.$error.required && formNewClient.nomClient.$dirty " >le nom est requis </span>
+                    <span class="good col-md-4" ng-show="formNewClient.nomClient.$valid"> <i class="fa fa-check" aria-hidden="true"></i> </span>
+
+   </div> 
+   <br>
+        <div class="row">
+               
+                    <label class="col-md-2">Prenom  </label>
+                    <input  type="text" class="form-control col-md-6" ng-model="client.prenomClient" name="prenomClient" placeholder="Prenom Client" maxlength="10" required>
+                    <span class="error col-md-4" ng-show="formNewClient.prenomClient.$error.required && formNewClient.prenomClient.$dirty " >le Prenom est requis </span>
+                       <span class="good col-md-4" ng-show="formNewClient.prenomClient.$valid"> <i class="fa fa-check" aria-hidden="true"></i> </span>
+                     
+        </div>
+        <br>
+            <div class="row">
+                
+                    <label class="col-md-2" >Adress Email </label>
+                    <input type="text" class="form-control col-md-6" ng-model="client.emailClient" name="emailClient" placeholder="Email CLient" ng-pattern="eml_add" required>
+                    <span class="error col-md-4"  ng-show="formNewClient.emailClient.$error.required && formNewClient.emailClient.$dirty ">Email est requis </span>
+                 <span class=" error col-md-4" ng-show="formNewClient.emailClient.$error.pattern">Email invalide </span>
+                   <span class="good col-md-4" ng-show="formNewClient.emailClient.$valid"> <i class="fa fa-check" aria-hidden="true"></i> </span>
+                 
+            </div>
+            <br>
+            <div class="row">
+               
+                    <label class="col-md-2" >Tel</label>
+                    <input type="text" class="form-control col-md-6" ng-model="client.telClient" placeholder="Tel Client" name="telClient" ng-pattern="ph_numbr"  maxlength="10" required>
+                    <span class="error col-md-4"  ng-show="formNewClient.telClient.$error.required && formNewClient.telClient.$dirty ">Tel est requis  </span>
+                 <span class=" error col-md-4" ng-show="formNewClient.telClient.$error.pattern">Veuillez entrer un numero a 10 chiffres</span>
+                   <span class="good col-md-4" ng-show="formNewClient.telClient.$valid"> <i class="fa fa-check" aria-hidden="true"></i> </span>
+                 
+            </div>
+            <br>
+            <div class="row">
+                  
+                    <label class="col-md-2" >Date Naissance</label>
+                    <input type="date" class="form-control col-md-6" ng-model="client.dateNaissanceClient"  name="dateNaissanceCleint" placeholder="yyyy-MM-dd" required>
+                    <span class="error col-md-4" ng-show="formNewClient.dateNaissanceClient.$error.required && formNewClient.dateNaissanceClient.$dirty " >Date Naissance est requis </span>
+                    <span class="good col-md-4" ng-show="formNewClient.dateNaissanceClient.$valid"> <i class="fa fa-check" aria-hidden="true"></i></span>
+                
+            </div>
+            <br>
+            <div class="row">
+              
+                    <label class="col-md-2" >Adress</label>
+                     <textarea class="form-control col-md-6" ng-model="client.adressClient" placeholder="Adress Client" name="adressClient" required rows="2" required></textarea>
+                    <span class="error col-md-4" ng-show="formNewClient.adressClient.$error.required && formNewClient.adressClient.$dirty " >Adress est requis </span>
+                  <span class="good col-md-4" ng-show="formNewClient.adressClient.$valid"> <i class="fa fa-check" aria-hidden="true"></i> </span>
+                
+            </div>
+            </div>
+            <div class="card-footer">
+            <div class="row">
+	        <div class="col-md-12" style="text-align: center;">
+
+                    <button type="submit"  class="btn btn-success" ng-disabled="formNewClient.$invalid" type="button"  ng-click="save()">Save</button>
+                   
+                    <button class="btn btn-secondary" ng-click="reset()">Reset</button>
+                    
+                </div>
+        
+        </div>
+        
+        
+        
+        
+        </form>
+       
+ </div>
+
+
+	</div> 
