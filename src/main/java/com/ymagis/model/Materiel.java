@@ -1,4 +1,4 @@
-package com.ymagis.model;
+ package com.ymagis.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,11 +34,12 @@ public class Materiel implements Serializable{
 	private Categorie categorie;
 	
 	
-	@ManyToMany
-	@JoinTable(name="emprunt_materiel",
-	           joinColumns=@JoinColumn(name="idMateriel"),
-	           inverseJoinColumns=@JoinColumn(name="idEmprunt")
-	           )
+	 @ManyToMany(fetch = FetchType.LAZY,
+	            cascade = {
+	                CascadeType.PERSIST,
+	                CascadeType.MERGE
+	            },
+	            mappedBy = "materiels")
 	private List<Emprunt> emprunts;
 
 	public Long getIdMateriel() {

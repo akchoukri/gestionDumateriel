@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ajouter un emprunt</title>
+       <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="../css/css.css"> 
+        <link type="text/css" rel="stylesheet" href="../css/style.css"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> 
+        <script src="../js/jquery.min.js"></script> 
+</head>
+<body>
+<body ng-app="myApp" ng-controller="EmpruntController"  class="w3-light-grey" data-gr-c-s-loaded="true">
+      <div   class="w3-content" style="max-width:1600px">
+        <!-- Header -->
+        <header  class="w3-container w3-center w3-padding-48 w3-white">
+          <h1 class="w3-xxxlarge"><img src="img/Logo.png" alt="Girl Hat" style="width:20%" class="w3-padding-16"></h1>
+          <h6>Bienvenue <span class="w3-tag">Ymagis Application</span></h6>  
+        </header>
+        <div style="background: #c1c2c2f5;"  class="w3-row w3-padding w3-border">
+          <!-- Blog entries -->
+          <div class="w3-col l12 s12">
+            <!-- Blog entry -->
+            <div  class="w3-container w3-white w3-margin w3-padding-large">
+                <h2 style="text-align: center" ;=""> Enregistrement d'un emprunt</h2>
+                <br>
+                <div class="select-boxes">
+        <div  class="container">
+      <div class="col-lg-9">
+                  <br>
+      <br>
+        <form  class="form-horizontal" name="empruntForm">
+          <fieldset>
+           <div class="form-group" >
+            <label class="col-md-4 control-label">Client</label>
+            <div class="col-md-6  inputGroupContainer">
+              <div  class="input-group"> 
+                <span style="background:#3c7cdd ;color:aliceblue;" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <select style="width: 150%;height: 40px;" ng-model="name" 
+                class="form-control selectpicker" placeholder="Nom du Client" ng-options="o as o for o in options" >
+               </select>
+                
+            </div>
+            </div>
+          </div>
+      <div class="form-group" >
+            <label class="col-md-4 control-label">Materiel</label>
+            <div class="col-md-6  inputGroupContainer">
+              <div  class="input-group"> 
+                <span style="background:#3c7cdd ;color:aliceblue;" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <select style="width: 150%;height: 40px;"ng-model="designation" name="materiel" class="form-control selectpicker" ng-options="m as m for m in materiels">
+               </select>
+            </div>
+            </div>
+          </div>
+            <div class="form-group" >
+            <label class="col-md-4 control-label">Prix en DH</label>
+            <div class="col-md-6  inputGroupContainer">
+              <div  class="input-group"> 
+                <span style="background:#3c7cdd ;color:aliceblue;" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input style="width: 150%;height: 40px;" name="prix" placeholder="prix d'emprunt en DH" class="form-control" type="text" ng-model="emprunt.prix" >
+            </div>
+            </div>
+          </div>
+           <div class="form-group" >
+            <label class="col-md-4 control-label">Date d'emprunt</label>
+            <div class="col-sm-6">
+              <div class='input-group date' id='datetimepicker2'>
+               <span style="background:#3c7cdd ;color:aliceblue;" class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input style="width: 150%;height: 40px;" type="date" class="form-control" ng-model="emprunt.dateEmprunt" />
+                </div>
+            </div>
+          </div>
+     <div class="form-group" ">
+            <label class="col-md-4 control-label">Date de Retour</label>
+            <div class="col-sm-6">
+              <div class='input-group date' id='datetimepicker2'>
+               <span style="background:#3c7cdd ;color:aliceblue;" class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input style="width: 150%;height: 40px;" type="date" class="form-control" ng-model="emprunt.dateRetour"/>
+                </div>
+            </div>
+          </div>
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label"></label>
+              <div class="col-md-4">
+                <button type="submit" class="btn btn-primary" ng-click="saveEmprunt()">Savve <span class="glyphicon glyphicon-send"></span></button>
+                <button type="submit" class="btn btn-primary" ng-click="searchMateriel()">AJJ<span class="glyphicon glyphicon-send"></span></button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+          </div>
+            </div>       
+          </div>  
+        </div>   
+      </div>
+       <!-- PrefixFree -->
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+</body>
+</html>
