@@ -6,7 +6,7 @@ var app = angular.module("myApp");
 // service pour gerer CRUD de client
 app.service("clientDataService",function ($http,$location) {
 
-	this.modeUpdate = 0;
+	
   
     // recuperer la liste des clients
     this.getClients = function(motCle,currentPage,size){
@@ -31,9 +31,9 @@ app.service("clientDataService",function ($http,$location) {
     this.newClient = function(client){
 
 
-        $http.post("http://localhost:8080/clients/add",client)
+    	return $http.post("http://localhost:8080/clients/add",client)
             .then(function mySuccess(response) {
-
+            		
             }, function myError(response) {
                
 
