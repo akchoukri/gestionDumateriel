@@ -20,8 +20,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			}
 		
 		})
+
 		.state('onglet1', {
-			parent : 'main',
+			parent : 'contenu',
 			url : '/onglet1',
 			views : {
 				'content@main' : {
@@ -29,7 +30,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 				}
 			}
 	})
-			.state('onglet2', {
+	.state('onglet2', {
 			parent : 'main',
 			url : '/onglet2',
 			views : {
@@ -38,6 +39,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 				}
 			}
 	})
+
 		.state('nouveauEmprunt', {
 			parent : 'main',
 			url : '/addNewEmpunt',
@@ -48,5 +50,35 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 				}
 			}
 	});
+
+	.state('clients', {
+	parent : 'main',
+	url : '/clients',
+	views : {
+		'content@main' : {
+			templateUrl : 'views/client/clients.html',
+			controller : "listClientContl",
+		}
+	}
+})
+//vue pour creer nouveau client
+.state('newClient', {
+	parent : 'clients',
+url : '/add',
+templateUrl : 'views/client/newClient.html',
+controller : "clientNewCtrl"		
+
+})
+// vue pour mise a jour le client
+.state('clients.updateClient', {
+
+url : '/:id',
+
+			
+templateUrl : 'views/client/updateClient.html',
+controller : "clientUpdateCtrl"
+
+})
+
    
 });
