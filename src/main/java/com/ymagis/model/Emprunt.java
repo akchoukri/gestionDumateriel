@@ -27,10 +27,9 @@ public class Emprunt implements Serializable {
 	private Date dateEmprunt;
 	private Date dateRetourPrevu;
 	private Date dateRetour;
-	@ManyToOne
-	@JsonIgnore
-	@JoinColumn(name="id_client")
 	
+	@ManyToOne
+	@JoinColumn(name="id_client")
 	private Client client;
 
 	@ManyToMany(fetch = FetchType.LAZY,

@@ -36,6 +36,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			views : {
 				'content@main' : {
 					templateUrl : 'views/onglet2.html',
+					controller : "empruntclientCtrl",
 				}
 			}
 	})

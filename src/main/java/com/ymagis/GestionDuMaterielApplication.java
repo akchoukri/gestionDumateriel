@@ -3,6 +3,7 @@ package com.ymagis;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -33,8 +34,14 @@ public class GestionDuMaterielApplication {
 		ApplicationContext ctx =SpringApplication.run(GestionDuMaterielApplication.class, args);
 		ClientRepository clientRepository=ctx.getBean(ClientRepository.class);
 		MaterielRepository materielRepository=ctx.getBean(MaterielRepository.class);
+		List<Emprunt> emprunts = new ArrayList<>();
 		DateFormat df=new SimpleDateFormat("dd/MM/yyyy");
-		clientRepository.save( new Client("Rabab","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018")));
+		Emprunt emprunt1 = new Emprunt(df.parse("26/08/2018"), df.parse("30/08/2018"), null);
+		Emprunt emprunt2 = new Emprunt(df.parse("01/09/2018"), df.parse("20/09/2018"), null);
+		emprunts.add(emprunt1);emprunts.add(emprunt2);
+		Client client = new Client("Rabab","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018"));
+		client.setEmprunts(emprunts);
+		clientRepository.save( client);
 		clientRepository.save( new Client("ibtissam","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018")));
 		clientRepository.save( new Client("mouna","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018")));
 		materielRepository.save(new Materiel("xxx", "PC Dell i7" ,df.parse("01/04/2018"), true,"bonne", 3));
