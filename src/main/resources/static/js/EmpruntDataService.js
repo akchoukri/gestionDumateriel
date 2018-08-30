@@ -21,7 +21,7 @@
 		this.getClients=function(){
 	        var promise1=$http({
 	            method: 'GET',
-	            url: "http://localhost:8080/chercherClients"
+	            url: "http://localhost:8080/listClients"
 	            });
 	        var promise2=promise1.then(function(response){
 	        	return response;

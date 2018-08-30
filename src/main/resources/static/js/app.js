@@ -49,8 +49,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 					controller:'EmpruntController'
 				}
 			}
-	});
-
+	})
 	.state('clients', {
 	parent : 'main',
 	url : '/clients',

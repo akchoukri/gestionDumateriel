@@ -1,4 +1,4 @@
-package com.ymagis.controllers;
+package com.ymagis.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -36,28 +36,28 @@ public class EmpruntServices {
 	public List<Emprunt> liste() {
 		return empruntRepository.findAll();
 	}
-	// Ajouter un nouveau emprunt
-	public void idClient(Emprunt emprunt, Client client) {
-		emprunt.setClient(client);
-		empruntRepository.save(emprunt);
-	}
-	//recuperer la liste des clients
-	@GetMapping(value = "/chercherClients")
-	public List<Client> getAllClients() {
-		List<Client> clients = this.clientRepository.findAll();
-		return clients;
-	}
+//	// Ajouter un nouveau emprunt
+//	public void idClient(Emprunt emprunt, Client client) {
+//		emprunt.setClient(client);
+//		empruntRepository.save(emprunt);
+//	}
+//	//recuperer la liste des clients
+//	@GetMapping(value = "/listClients")
+//	public List<Client> getAllClients() {
+//		List<Client> clients = this.clientRepository.findAll();
+//		return clients;
+//	}
 	//recuperer la liste des materiels
 	@GetMapping(value = "/chercherMateriels")
 	public List<Materiel> getAllMateriels() {
 		List<Materiel> materiels = this.materielRepository.findAll();
 		return materiels;
 	}
-	//chercher les clients
-	@RequestMapping(value = "/client", method = RequestMethod.GET)
-	public List<Client> chercher(@RequestParam(name = "mc", defaultValue = "") String mc) {
-		return clientRepository.chercherClient("%" + mc + "%");
-	}
+//	//chercher les clients
+//	@RequestMapping(value = "/client", method = RequestMethod.GET)
+//	public List<Client> chercher(@RequestParam(name = "mc", defaultValue = "") String mc) {
+//		return clientRepository.chercherClient("%" + mc + "%");
+//	}
 	//chercher les materiels
 	@RequestMapping(value = "/materiel", method = RequestMethod.GET)
 	public List<Materiel> findMateriel(@RequestParam(name = "mc", defaultValue = "") String mc) {
