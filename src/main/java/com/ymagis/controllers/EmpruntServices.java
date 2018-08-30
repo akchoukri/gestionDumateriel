@@ -1,5 +1,10 @@
 package com.ymagis.controllers;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -64,11 +69,23 @@ public class EmpruntServices {
 		return materielRepository.chercherMateriel("%" + mc + "%");
 	}
 	// ajouter un nouveau emprunt
-	@PostMapping("/client/{idClient}/emprunts")
-	public Emprunt createEmprunt(@PathVariable(value = "idClient") Long idClient, @RequestBody Emprunt emprunt) {
+	@PostMapping("/client/{idClient}/emprunts/{idMateriel}")
+	public Emprunt createEmprunt(@PathVariable(value = "idClient") Long idClient,@RequestBody Emprunt emprunt,@PathVariable( value = "idMateriel") Long idMateriel){
 		Optional<Client> client = clientRepository.findById(idClient);
 		emprunt.setClient(client.get());
+		Optional<Materiel> materiel = materielRepository.findById(idMateriel);
+		List<Materiel>materiels=new ArrayList<>();
+		materiels.add(materiel.get());
+		emprunt.setMateriels(materiels);
 		return empruntRepository.save(emprunt);
+//		DateFormat df=new SimpleDateFormat("dd/MM/yyyy");
+		
+//		Materiel empruntMateriel=new Materiel("xxx", "Sourie Dell" ,df.parse("01/04/2018"), true,"bonne", 3);
+//		List<Materiel>materiels=new ArrayList<>();
+//		materiels.add(empruntMateriel);
+//		emprunt.setMateriels(materiels);
+//		return empruntRepository.save(emprunt);
+//         return null;
 
 	}
 }

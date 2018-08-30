@@ -76,8 +76,8 @@
 
 
                //ajouter un emprunt
-		   this.newEmprunt=function(id,emprunt){
-			   return $http.post("http://localhost:8080/client/"+id+"/emprunts",emprunt)
+		   this.newEmprunt=function(id,idMateriel,emprunt){
+			   return $http.post("http://localhost:8080/client/"+id+"/emprunts/"+idMateriel,emprunt)
 		       .then(function(response){
 		         console.log(response.data);
 		       });
