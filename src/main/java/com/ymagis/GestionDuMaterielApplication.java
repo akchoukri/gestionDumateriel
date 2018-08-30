@@ -37,9 +37,13 @@ public class GestionDuMaterielApplication {
 		List<Emprunt> emprunts = new ArrayList<>();
 		DateFormat df=new SimpleDateFormat("dd/MM/yyyy");
 		Emprunt emprunt1 = new Emprunt(df.parse("26/08/2018"), df.parse("30/08/2018"), null);
+		
 		Emprunt emprunt2 = new Emprunt(df.parse("01/09/2018"), df.parse("20/09/2018"), null);
+	
 		emprunts.add(emprunt1);emprunts.add(emprunt2);
 		Client client = new Client("Rabab","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018"));
+		emprunt2.setClient(client);
+		emprunt1.setClient(client);
 		client.setEmprunts(emprunts);
 		clientRepository.save( client);
 		clientRepository.save( new Client("ibtissam","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018")));

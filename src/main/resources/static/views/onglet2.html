@@ -9,5 +9,32 @@
       ng-model="client"></select> 
   </form>
   <hr>
-  <tt>Client = {{client.emprunts}}</tt><br/>
+<!--   <tt>Client = {{client.emprunts}}</tt><br/> -->
+  
+  
 </div>
+<div class="container">
+
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>dateEmprunt</th>
+					<th>date Retour Prevu</th>
+					<th>date Retour</th>
+					<th>status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="emprunt in client.emprunts">
+					<td>{{ emprunt.idEmprunt }}</td>
+					<td>{{ emprunt.dateEmprunt }}</td>
+					<td>{{ emprunt.dateRetourPrevu }}</td>
+					<td>{{ emprunt.dateRetour }}</td>
+					<td>
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
