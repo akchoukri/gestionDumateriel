@@ -35,13 +35,13 @@ public class Materiel implements Serializable{
 	@JoinColumn(name = "ID_CAT")
 	private Categorie categorie;
 	
-	@JsonIgnore
+	
 	 @ManyToMany(fetch = FetchType.LAZY,
 	            cascade = {
 	                CascadeType.PERSIST,
 	                CascadeType.MERGE
-	            },
-	            mappedBy = "materiels")
+	            },mappedBy = "materiels")
+	 
 	private List<Emprunt> emprunts;
 
 	public Long getIdMateriel() {

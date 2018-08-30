@@ -37,7 +37,7 @@ public class GestionDuMaterielApplication {
 		clientRepository.save( new Client("Rabab","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018")));
 		clientRepository.save( new Client("ibtissam","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018")));
 		clientRepository.save( new Client("mouna","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018")));
-		materielRepository.save(new Materiel("xxx", "PC Dell i7" ,df.parse("01/04/2018"), true,"bonne", 3));
+		materielRepository.save(new Materiel("xxx", "PC Dell i7" ,df.parse("01/04/2018"), false,"bonne", 3));
 		materielRepository.save(new Materiel("xxx", "Sourie Dell" ,df.parse("01/04/2018"), true,"en panne", 2));
 		materielRepository.save(new Materiel("xxx", "ClavierDell" ,df.parse("01/04/2018"), true,"bonne", 3));
 		materielRepository.save(new Materiel("xxx", "PC Acer i7" ,df.parse("01/04/2018"), true,"bonne", 3));

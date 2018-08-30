@@ -32,16 +32,16 @@ public class Emprunt implements Serializable {
 	@JoinColumn(name="id_client")
 	
 	private Client client;
-
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
                 })
 	@JoinTable(name="emprunt_materiel",
-	           joinColumns=@JoinColumn(name="idEmprunt"),
-	           inverseJoinColumns=@JoinColumn(name="idMateriel")
-	           )
+    joinColumns=@JoinColumn(name="idEmprunt"),
+    inverseJoinColumns=@JoinColumn(name="idMateriel")
+    )
 	private List<Materiel> materiels;
 	
 	

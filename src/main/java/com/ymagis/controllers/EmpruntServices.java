@@ -69,23 +69,22 @@ public class EmpruntServices {
 		return materielRepository.chercherMateriel("%" + mc + "%");
 	}
 	// ajouter un nouveau emprunt
-	@PostMapping("/client/{idClient}/emprunts/{idMateriel}")
-	public Emprunt createEmprunt(@PathVariable(value = "idClient") Long idClient,@RequestBody Emprunt emprunt,@PathVariable( value = "idMateriel") Long idMateriel){
+	@PostMapping("/client/{idClient}/emprunts")
+	public Emprunt createEmprunt(@PathVariable(value = "idClient") Long idClient,@RequestBody Emprunt emprunt) throws ParseException{
 		Optional<Client> client = clientRepository.findById(idClient);
 		emprunt.setClient(client.get());
-		Optional<Materiel> materiel = materielRepository.findById(idMateriel);
-		List<Materiel>materiels=new ArrayList<>();
-		materiels.add(materiel.get());
-		emprunt.setMateriels(materiels);
-		return empruntRepository.save(emprunt);
-//		DateFormat df=new SimpleDateFormat("dd/MM/yyyy");
-		
-//		Materiel empruntMateriel=new Materiel("xxx", "Sourie Dell" ,df.parse("01/04/2018"), true,"bonne", 3);
+//		Optional<Materiel> materiel = materielRepository.findById(idMateriel);
 //		List<Materiel>materiels=new ArrayList<>();
-//		materiels.add(empruntMateriel);
+//		materiels.add(materiel.get());
 //		emprunt.setMateriels(materiels);
 //		return empruntRepository.save(emprunt);
-//         return null;
+//		DateFormat df=new SimpleDateFormat("dd/MM/yyyy");
+//		Materiel empruntMateriel=new Materiel("xxx", "Sourie Dell" ,df.parse("01/04/2018"), true,"bonne", 3);
+		List<Materiel>materiels=new ArrayList<>();
+		materiels.add((Materiel) emprunt.getMateriels());
+		emprunt.setMateriels(materiels);
+		System.out.println(emprunt.getMateriels().get(0));
+		return empruntRepository.save(emprunt);
 
 	}
 }

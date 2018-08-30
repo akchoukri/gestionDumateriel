@@ -4,13 +4,14 @@
 		 $scope.idClient=null;
 		 $scope.emprunt={};
 		 $scope.client={};
-		 $scope.materiel={};
+		 $scope.materiel=[];
+		 $scope.quantite=0;
 		 $scope.name="";
 		 $scope.designation="";
+	
 		 // afficher liste des clients
-       
-        	EmpruntDatasrv.getClients()
-         .then(function(data){
+           EmpruntDatasrv.getClients()
+           .then(function(data){
            $scope.client= data.data;
            $scope.options = [];
              var i;
@@ -19,13 +20,10 @@
                  values.push(data.data[i]['nomClient']);
                  $scope.options = values;
              }
-      
          }); 
-			 // afficher liste des materiels
 		     EmpruntDatasrv.getMateriels()
 	    	 .then(function(data){
 	    	  $scope.materiel= data.data;
-	    	  
 	    	  var etat=$scope.materiel[2].etatMateriel;
 	    	  console.log(etat);
 	    	  $scope.materiels = [];
@@ -34,9 +32,6 @@
 	    				values.push(data.data[i]['designation']);
 		    			$scope.materiels = values;
 	    			}	
-	    			
-
-	    		}
 	    	}); 
 //	      $scope.ajouterEmprunt=function(id){
 //	    	  EmpruntDatasrv.newEmprunt($scope.emprunt)
@@ -48,35 +43,41 @@
 //           });
 //          }
 	      //avoir un client par son nom
-	      $scope.searchClient=function(){
-	    	  EmpruntDatasrv.getClient($scope.name)
-	 			.then(function (data) {
-	 				for(var i=0;i<data.length;i++){
-	 					$scope.client=data[i];
-		    		}
-	 				$scope.emprunt.client=$scope.client;
-	 				var id=$scope.client.idClient;
-	 				console.log("http://localhost:8080/client/"+id+"/emprunts");
-	 				  EmpruntDatasrv.getMateriel($scope.designation)
-	 		 			.then(function (data) {
-	 	               	for(var i=0;i<data.length;i++){
-	 	 					$scope.materiel=data[i];
-	 		    		}
-//	 	               	  $scope.emprunt.materiel=$scope.materiel;
-	 	               	  var idMateriel=$scope.materiel.idMateriel;
-		 		    	  EmpruntDatasrv.newEmprunt(id,idMateriel,$scope.emprunt)
-		 	              .then(function(){
-		 	               console.log("l'emprunt est ajouté");
-		 	           },function(err){
-		 	               console.log(err);
-		 	           });
-	 		 			}, function (err) {
-	 		 				console.log(err);
-	 		 			});
-	 			}, function (err) {
-	 				console.log("erreur");
-	 			});
-          } 
+		      //avoir un client par son nom
+		      $scope.searchClient=function(){
+		    	  //chercher le client par nom
+		    	  EmpruntDatasrv.getClient($scope.name)
+		 			.then(function (data) {
+		 				for(var i=0;i<data.length;i++){
+		 					$scope.client=data[i];
+			    		}
+		 		  //ajouter objet client a l'emprunt		
+		 				$scope.emprunt.client=$scope.client;
+		 		  //avoir idClient pour idientifier le client et ses emprunts		
+		 				var id=$scope.client.idClient;
+		 		  //chercher le materiel par sa designation		
+		 				EmpruntDatasrv.getMateriel($scope.designation)
+		 		 			.then(function (data) {
+		 		 				
+		 	               	for(var i=0;i<data.length;i++){
+		 	 					$scope.materiel=data;
+		 		    		}
+		 	               
+		 	               $scope.emprunt.materiel=$scope.materiel;
+		 	               console.log($scope.emprunt.materiel);
+//			 		    	  EmpruntDatasrv.newEmprunt(id,$scope.emprunt)
+//			 	              .then(function(){
+//			 	               console.log("l'emprunt est ajouté");
+//			 	           },function(err){
+//			 	               console.log(err);
+//			 	           });
+		 		 			}, function (err) {
+		 		 				console.log(err);
+		 		 			});
+		 			}, function (err) {
+		 				console.log("erreur");
+		 			});
+	          }  
 	      //avoir un client par son nom
 	      $scope.searchMateriel=function(){
 	    	  
