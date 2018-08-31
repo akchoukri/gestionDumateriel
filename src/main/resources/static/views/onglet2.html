@@ -15,7 +15,7 @@
 </div>
 <div class="container">
 
-		<table class="table table-hover">
+		<table class="table">
 			<thead>
 				<tr>
 					<th>#</th>
@@ -26,15 +26,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="emprunt in client.emprunts">
+				<tr ng-repeat="emprunt in client.emprunts" class="circle">
 					<td>{{ emprunt.idEmprunt }}</td>
-					<td>{{ emprunt.dateEmprunt }}</td>
-					<td>{{ emprunt.dateRetourPrevu }}</td>
-					<td>{{ emprunt.dateRetour }}</td>
-					<td>
+					<td>{{ emprunt.dateEmprunt | date:'dd/MM/yyyy' }}</td>
+					<td>{{ emprunt.dateRetourPrevu | date:'dd/MM/yyyy' }}</td>
+					<td>{{ emprunt.dateRetour | date:'dd/MM/yyyy' }}</td>
+					<td ng-class="getStatus(emprunt)" >
+					
 					</td>
 				</tr>
 			</tbody>
 
 		</table>
 	</div>
+	

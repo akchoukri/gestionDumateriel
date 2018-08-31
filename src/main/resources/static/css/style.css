@@ -29,3 +29,15 @@
     border-color: #00ff00;
     box-shadow: 0 0 1px #b3f3a2;
 }
+.gris{
+	background-color: gray;
+}
+.bleu{
+	background-color: blue;
+}
+.orange{
+	background-color: orange;
+}
+.rouge{
+	background-color: red;
+}
