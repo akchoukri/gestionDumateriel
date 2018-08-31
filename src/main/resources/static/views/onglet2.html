@@ -1,5 +1,11 @@
 
-<div  class="form-grop">
+
+<div >
+      <md-tabs md-selected="1" md-stretch-tabs="auto" md-align="bottom" md-dynamic-height md-border-bottom md-center-tab md-swipe-content>
+        <md-tab label="les emprunts">
+          <md-tab-body>
+             <div  class="form-grop">
+  <br>
   <form name="myForm">
    <label for="mySelectClient">
  Client
@@ -8,12 +14,10 @@
       ng-options="option.nomClient  + ' ' + option.prenomClient for option in clients track by option.idClient"
       ng-model="client"></select> 
   </form>
-  <hr>
-<!--   <tt>Client = {{client.emprunts}}</tt><br/> -->
-  
-  
+  <br>
+ 
 </div>
-<div class="container">
+<div >
 
 		<table class="table">
 			<thead>
@@ -39,4 +43,36 @@
 
 		</table>
 	</div>
-	
+            <md-tab-body>
+          </md-tab>
+            <md-tab label="les retards">
+          <md-tab-body>
+            <div class="container">
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>dateEmprunt</th>
+					<th>date Retour Prevu</th>
+					<th>date Retour</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="emprunt in empruntsRetard">
+					<td>{{ emprunt.idEmprunt }}</td>
+					<td>{{ emprunt.dateEmprunt | date:'dd/MM/yyyy' }}</td>
+					<td>{{ emprunt.dateRetourPrevu | date:'dd/MM/yyyy' }}</td>
+					<td>{{ emprunt.dateRetour | date:'dd/MM/yyyy' }}</td>
+					
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+            <md-tab-body>
+          </md-tab>
+
+      </md-tabs>
+    </div>

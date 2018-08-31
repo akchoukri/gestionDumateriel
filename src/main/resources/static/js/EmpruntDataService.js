@@ -83,7 +83,20 @@
 		       });
 		      }
       
-   
+			//les emprunts en retard
+			this.getEmpruntRetard=function(){
+		        var promise1=$http({
+		            method: 'GET',
+		            url: "http://localhost:8080/empruntRetard"
+		            });
+		        var promise2=promise1.then(function(response){
+		        	return response;
+		        },function(err){
+		            console.log(err);
+
+		        });
+		     return promise2;
+		    }
     }); 
 		
 		

@@ -1,5 +1,8 @@
 package com.ymagis.controller;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -70,5 +73,30 @@ public class EmpruntServices {
 		emprunt.setClient(client.get());
 		return empruntRepository.save(emprunt);
 
+	}
+	
+	@RequestMapping(value = "/empruntRetard", method = RequestMethod.GET)
+	public List<Emprunt> getEmpruntRetard() {
+		List<Emprunt> emprunts = empruntRepository.findAll();
+		Date date = new Date();
+		List<Emprunt> empR = new ArrayList<>();
+			for(Emprunt emprunt:emprunts) {
+				if((emprunt.getDateRetour()!=null)&&
+						(diffDate(emprunt.getDateRetour(),emprunt.getDateRetourPrevu())))
+						{
+							empR.add(emprunt);
+						}
+				else if((emprunt.getDateRetour()==null)&&
+						(diffDate(date,emprunt.getDateRetourPrevu())))
+				{
+					empR.add(emprunt);
+				}
+			}
+		return empR;
+	}
+	
+	public boolean diffDate(Date date1,Date date2) {
+		if(date1.getTime()>date2.getTime())return true;
+		return  false;
 	}
 }

@@ -4,16 +4,24 @@
 	app.controller("empruntclientCtrl", empruntclientCtrl);
 
 	//controller pour mis a jour client
-	function empruntclientCtrl($scope, clientDataService, $location, $state) {
+	function empruntclientCtrl($scope, clientDataService,EmpruntDatasrv, $location, $state) {
 		$scope.clients = null;
 		$scope.client = null;
-
+		$scope.empruntsRetard = null;
 		// recuperer list client 
 		clientDataService.allClients().then(function(data) {
 			$scope.clients = data;
-			console.log($scope.clients)
+			$scope.client = $scope.clients[0]
+			//console.log($scope.clients)
 		})
 
+		
+		//les emprunts en retard
+		EmpruntDatasrv.getEmpruntRetard().then(function(resp) {
+			$scope.empruntsRetard  = resp.data;
+			//console.log($scope.empruntsRetard )
+		})
+		
 		//pour visualiser etat d'emprunt
 		$scope.getStatus = function(emprunt) {
 
