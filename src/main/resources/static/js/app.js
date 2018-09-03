@@ -21,12 +21,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		
 		})
 
-		.state('onglet1', {
-			parent : 'contenu',
-			url : '/onglet1',
+		.state('onglet3', {
+			parent : 'main',
+			url : '/onglet3',
 			views : {
 				'content@main' : {
-					templateUrl : 'views/onglet1.html',
+					templateUrl : 'views/onglet3.html',
 				}
 			}
 	})
