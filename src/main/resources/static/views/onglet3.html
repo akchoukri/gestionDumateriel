@@ -1,3 +1,79 @@
-<h4>retours de prets</h4>
+<div class="container">
 
+<h4 style="text-align: center;">Enregitrements des retours de prets</h4>
+<div class="container">
+<form name="formNewPret" novalidate>
+<br>
+	<div class="row">
+	<div class="col-md-12" style="text-align: center;">
+		<label for="mySelectClient" style="margin-right: 15px;"> <strong>Client
+				:</strong>
+		</label> 
+		<select name="mySelectClient" id="mySelect"
+			ng-options="option.nomClient  + ' ' + option.prenomClient for option in clients track by option.idClient"
+			ng-model="client" ng-change="hasChanged(client)"></select>
+</div>
+	</div>
+	<br>
+	<div class="row">
+	<label class="col-md-2" style="margin-right: 15px;">Numero emprunt : </label> 
+	<div class="col-md-6" > {{slctEmprunt.idEmprunt}}</div>
+	
+</div>
+<br>
+<div class="row">
+	<label class="col-md-2">Etat :</label> <input type="text"
+		 class="form-control col-md-6" ng-model="slctEmprunt.etatEmprunt"
+		name="etatEmprunt" placeholder="etat emprunt" required>
+		 <span class="error col-md-4" ng-show="formNewPret.etatEmprunt.$error.required && formNewPret.etatEmprunt.$dirty " >l'etat est requis </span>
+         <span class="good col-md-4" ng-show="formNewPret.etatEmprunt.$valid"> <i class="fa fa-check" aria-hidden="true"></i> </span>
+		
+
+</div>
+<br>
+	<div ng-if="ifRetard(slctEmprunt)" class="row">
+		<label class="col-md-2">Cause retard :</label>
+		 <input type="text" class="form-control col-md-6" 
+			ng-model="slctEmprunt.causeRetardEmprunt" name="causeRetard"
+			placeholder="cause retard">
+			
+	</div>
+<div></div>
+<br>
+            <div class="row">
+	        <div class="col-md-12" style="text-align: center;">
+	<button type="submit" class="btn btn-success" type="button"
+		ng-click="addRetourPret()">Save</button>
+ <button class="btn btn-secondary"  ng-click="annulerPret()" >Annuler</button>
+</div></div>
+
+</div>
+<br><br>
+<table class="table">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>dateEmprunt</th>
+			<th>date Retour Prevu</th>
+			<th>date Retour</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="emprunt in empruntsNnRetourne">
+			<td>{{ emprunt.idEmprunt }}</td>
+			<td>{{ emprunt.dateEmprunt | date:'dd/MM/yyyy' }}</td>
+			<td>{{ emprunt.dateRetourPrevu | date:'dd/MM/yyyy' }}</td>
+			<td>{{ emprunt.dateRetour | date:'dd/MM/yyyy' }}</td>
+			<td>
+				<button class="btn" ng-click="empruntSelected(emprunt)">
+					<i class="fa fa-eye"></i>
+				</button>
+
+
+			</td>
+		</tr>
+	</tbody>
+	</form>
+	</div>
 	

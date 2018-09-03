@@ -75,6 +75,32 @@ public class EmpruntServices {
 
 	}
 	
+	  // mettre a jour client
+	  @RequestMapping(value="/client/{id}/emprunts",method=RequestMethod.PUT)
+	  public Emprunt updateClient(@PathVariable Long id,@RequestBody Emprunt emprunt) { 
+			Optional<Client> client = clientRepository.findById(id);
+			emprunt.setClient(client.get());
+		  empruntRepository.save(emprunt);
+		  return emprunt;
+	  }
+	// recuperer les emprunts en retard d'un clients
+	@RequestMapping(value = "/client/{id}/nnretourne", method = RequestMethod.GET)
+	public List<Emprunt> getRetardByClient(@PathVariable Long id ) {
+		Optional<Client> client = clientRepository.findById(id);
+		List<Emprunt> empR = new ArrayList<>();
+		if (client.get().getEmprunts()!=null) {
+			
+			for(Emprunt emprunt:client.get().getEmprunts()) {
+				if(emprunt.getDateRetour()==null)//emprunt nn retourné
+						empR.add(emprunt);
+			}
+		}
+
+
+		return empR;
+
+	}
+	//recuperer les emprunts en retard
 	@RequestMapping(value = "/empruntRetard", method = RequestMethod.GET)
 	public List<Emprunt> getEmpruntRetard() {
 		List<Emprunt> emprunts = empruntRepository.findAll();
@@ -94,7 +120,7 @@ public class EmpruntServices {
 			}
 		return empR;
 	}
-	
+	//
 	public boolean diffDate(Date date1,Date date2) {
 		if(date1.getTime()>date2.getTime())return true;
 		return  false;

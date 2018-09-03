@@ -5,13 +5,13 @@
           <md-tab-body>
              <div  class="form-grop">
   <br>
-  <form name="myForm" style="text-align: center;">
+  <form name="myForm" style="text-align: center;" >
    <label for="mySelectClient" style="margin-left: 15px;">
  <strong>Client :</strong>
 </label>
-<select name="mySelectClient" id="mySelect"
+<select name="mySelectClient" id="mySelect" 
       ng-options="option.nomClient  + ' ' + option.prenomClient for option in clients track by option.idClient"
-      ng-model="client"></select> 
+      ng-model="client" ></select> 
   </form>
   <br>
 
