@@ -8,6 +8,7 @@
 		$scope.clients = null;
 		$scope.client = null;
 		$scope.empruntsRetard = null;
+		
 		// recuperer list client 
 		clientDataService.allClients().then(function(data) {
 			$scope.clients = data;

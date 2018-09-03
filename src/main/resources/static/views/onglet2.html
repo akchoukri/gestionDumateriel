@@ -1,21 +1,20 @@
 
-
 <div >
-      <md-tabs md-selected="1" md-stretch-tabs="auto" md-align="bottom" md-dynamic-height md-border-bottom md-center-tab md-swipe-content>
+      <md-tabs md-selected="0" md-stretch-tabs="auto" md-align="bottom" md-dynamic-height md-border-bottom md-center-tab md-swipe-content>
         <md-tab label="les emprunts">
           <md-tab-body>
              <div  class="form-grop">
   <br>
-  <form name="myForm">
-   <label for="mySelectClient">
- Client
+  <form name="myForm" style="text-align: center;">
+   <label for="mySelectClient" style="margin-left: 15px;">
+ <strong>Client :</strong>
 </label>
 <select name="mySelectClient" id="mySelect"
       ng-options="option.nomClient  + ' ' + option.prenomClient for option in clients track by option.idClient"
       ng-model="client"></select> 
   </form>
   <br>
- 
+
 </div>
 <div >
 
@@ -30,14 +29,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="emprunt in client.emprunts" class="circle">
+				<tr ng-repeat="emprunt in client.emprunts" class="circle" ng-class="getStatus(emprunt)" >
 					<td>{{ emprunt.idEmprunt }}</td>
 					<td>{{ emprunt.dateEmprunt | date:'dd/MM/yyyy' }}</td>
 					<td>{{ emprunt.dateRetourPrevu | date:'dd/MM/yyyy' }}</td>
 					<td>{{ emprunt.dateRetour | date:'dd/MM/yyyy' }}</td>
-					<td ng-class="getStatus(emprunt)" >
-					
-					</td>
 				</tr>
 			</tbody>
 

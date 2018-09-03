@@ -30,15 +30,15 @@
     box-shadow: 0 0 1px #b3f3a2;
 }
 .gris{
-	background-color: gray;
+	background-color: rgba(0, 0, 0, 0.075);
 }
 .bleu{
-	background-color: blue;
+	background-color: #6CC3D5;
 }
 .orange{
-	background-color: orange;
+	background-color: #FFCE67;
 }
 .rouge{
-	background-color: red;
+	background-color: #F3969A;
 }
 
