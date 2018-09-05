@@ -12,6 +12,7 @@
 		$scope.emprunt= null;
 		$scope.slctEmprunt= null;
 		$scope.etaMaterials = ["neuf", "bonne","mauvais","endommage"];
+		
 				// recuperer list client 
 				clientDataService.allClients().then(function(data) {
 					$scope.clients = data;
@@ -20,23 +21,25 @@
 					$scope.getEmp($scope.client.idClient);
 				})
 				
-				//les emprunts en retard	
+				//les emprunts nn retourné
 			 $scope.getEmp = function(id) {
 					
 					EmpruntDatasrv.getEmpruntNnRetourne(id).then(function(resp) {
 						$scope.empruntsNnRetourne  = resp.data;
-						console.log(resp.data )
+						$scope.slctEmprunt = $scope.empruntsNnRetourne[0]
+						//console.log(resp.data )
 					})
          }
 				// on changeant client
-			 $scope.hasChanged = function(client) {
+			 $scope.clientHasChanged = function(client) {
 				 $scope.getEmp(client.idClient);
-				 //console.log(client)
+				// console.log(client)
 		         }
 				//les emprunts en retard
 				EmpruntDatasrv.getEmpruntRetard().then(function(resp) {
 					$scope.empruntsRetard  = resp.data;
-					//console.log($scope.empruntsRetard )
+					
+					//console.log($scope.empruntsRetard[0])
 				})
 				//  visualiser emprunt
 			 $scope.empruntSelected = function(emprunt) {
@@ -57,11 +60,21 @@
 		         }
 				//  add retour prêt 
 			 $scope.addRetourPret = function() {
+				 //la date de retour
 				 $scope.slctEmprunt.dateRetour = new Date();
+				 //mettre a jour emprunt
+				 $scope.slctEmprunt.materiels.forEach(function(material) 
+						 { 
+						    material.disponible = true;
+						 }
+						 );
 				EmpruntDatasrv.updateEmprunt($scope.slctEmprunt,$scope.client)
-					
+				var index = $scope.empruntsNnRetourne.indexOf($scope.slctEmprunt);
+				console.log(index);
+				$scope.empruntsNnRetourne.splice(index, 1);
+				
 				$scope.slctEmprunt=null;
-				$state.reload();
+				//$state.reload();
 		         }
 			 
 				//  anuller ajout de retours prêt  emprunt
@@ -78,15 +91,14 @@
 			 $scope.confirmerEditer = function(material) {
 				 material.modeEdit = false;
 				material.etatMateriel = $scope.selectEtatMateriel;
-				 //update etat et la disponibilte de materiel
-				 
+
 		         }
 				//  annuler l'edit etat de material
 			 $scope.annulerEditer = function(material) {
 				 material.modeEdit = false;
 				 
 		         }
-			 $scope.hasChanged = function(selectEtatMateriel){
+			 $scope.etatHasChanged = function(selectEtatMateriel){
 				 $scope.selectEtatMateriel = selectEtatMateriel;
 				 
 			 }

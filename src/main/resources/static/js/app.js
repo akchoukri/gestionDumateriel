@@ -21,22 +21,22 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		
 		})
 
-		.state('onglet3', {
+		.state('pret', {
 			parent : 'main',
-			url : '/onglet3',
+			url : '/pret',
 			views : {
 				'content@main' : {
-					templateUrl : 'views/onglet3.html',
+					templateUrl : 'views/pret.html',
 					controller : "empruntclientCtrl",
 				}
 			}
 	})
-	.state('onglet2', {
+	.state('emprunt', {
 			parent : 'main',
-			url : '/onglet2',
+			url : '/emprunt',
 			views : {
 				'content@main' : {
-					templateUrl : 'views/onglet2.html',
+					templateUrl : 'views/emprunt.html',
 					controller : "empruntclientCtrl",
 				}
 			}

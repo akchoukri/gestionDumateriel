@@ -125,6 +125,20 @@
 
 		        });
 		    };
+		    
+
+		    // mise a jour materiels
+		    this.updateMateriels = function(materiels){
+
+
+		        $http.put("http://localhost:8080/materiels",materiels)
+		        .then(function mySuccess(response) {
+
+		        }, function myError(response) {
+		           
+
+		        });
+		    };
     }); 
 		
 		

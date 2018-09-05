@@ -42,8 +42,8 @@ public class GestionDuMaterielApplication {
 		
 		Emprunt emprunt2 = new Emprunt(df.parse("01/09/2018"), df.parse("20/09/2018"), null);
 		Emprunt emprunt3 = new Emprunt(df.parse("01/09/2018"), df.parse("20/09/2018"), df.parse("02/10/2018"));
-		Materiel materiel1 =  new Materiel("x1", "PC Dell i7" ,df.parse("01/04/2018"), true,"bonne", 3);
-		Materiel materiel2 =  new Materiel("x2", "Sourie Dell" ,df.parse("01/04/2018"), true,"bonne", 3);
+		Materiel materiel1 =  new Materiel("x1", "PC Dell i7" ,df.parse("01/04/2018"), false,"bonne", 3);
+		Materiel materiel2 =  new Materiel("x2", "Sourie Dell" ,df.parse("01/04/2018"), false,"bonne", 3);
 		materiels.add(materiel1);materiels.add(materiel2);
 		emprunt1.setMateriels(materiels);
 		emprunts.add(emprunt1);emprunts.add(emprunt2);

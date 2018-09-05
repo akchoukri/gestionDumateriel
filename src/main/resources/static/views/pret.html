@@ -1,7 +1,10 @@
-<div class="container">
-
-<h4 style="text-align: center;">Enregitrements des retours de prets</h4>
-<div class="container">
+<div class="container" style="margin-top: 20px;">
+<div class="card " style="box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;">
+ <div class="card-header text-white bg-info" style="text-align: center;">
+   <h3> Enregitrements des retours de prets</h3>
+  </div>
+<div>
+<div class="card-body formulaire" style="padding: 15px;">
 <form name="formNewPret" novalidate>
 <br>
 	<div class="row">
@@ -11,7 +14,7 @@
 		</label> 
 		<select name="mySelectClient" id="mySelect"
 			ng-options="option.nomClient  + ' ' + option.prenomClient for option in clients track by option.idClient"
-			ng-model="client" ng-change="hasChanged(client)"></select>
+			ng-model="client" ng-change="clientHasChanged(client)"></select>
 </div>
 	</div>
 	<br>
@@ -41,8 +44,8 @@
 <div></div>
 <br>
 
-<table id="materiel" class="table table-striped" >
-	<thead>
+<table id="materiel" class="table table-borderless table-striped table-earning" >
+	<thead >
 		<tr>
 			<th>reference</th>
 			<th>designation</th>
@@ -58,7 +61,7 @@
 			<div ng-if="!materiel.modeEdit">{{ materiel.etatMateriel}}</div>
 			<select name="selectEtatMateriel" ng-if="materiel.modeEdit"
 			ng-options="etat for etat in etaMaterials"
-			ng-model="selectEtatMateriel" ng-change="hasChanged(selectEtatMateriel)"></select>
+			ng-model="selectEtatMateriel" ng-change="etatHasChanged(selectEtatMateriel)"></select>
 			</td>
 			<td>
 				<button class="btn" ng-click="editer(materiel)" ng-if="!materiel.modeEdit">
@@ -78,7 +81,7 @@
 		</tr>
 	</tbody>
 	</table>
-	
+	<br>
 	            <div class="row">
 	        <div class="col-md-12" style="text-align: center;">
 	<button type="submit" class="btn btn-success" type="button"
@@ -87,8 +90,10 @@
 </div></div>
 </form>
 </div>
+</div>
+</div>
 <br><br>
-<table id="empruntNnretourne" class="table">
+<table id="empruntNnretourne" class="table table-borderless table-striped table-earning">
 	<thead>
 		<tr>
 			<th>#</th>
@@ -116,4 +121,6 @@
 	</table>
 	
 	</div>
+	
+	
 	

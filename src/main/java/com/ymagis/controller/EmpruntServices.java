@@ -100,6 +100,14 @@ public class EmpruntServices {
 		return empR;
 
 	}
+	
+	  // mettre a jour des  materiel
+	  @RequestMapping(value="/materiels",method=RequestMethod.PUT)
+	  public boolean updateMateriels(@RequestBody List<Materiel> materiel) {  
+		  materielRepository.saveAll(materiel);
+		  return true;
+	  }
+	  
 	//recuperer les emprunts en retard
 	@RequestMapping(value = "/empruntRetard", method = RequestMethod.GET)
 	public List<Emprunt> getEmpruntRetard() {
