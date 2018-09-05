@@ -29,19 +29,20 @@ public class GestionDuMaterielApplication {
 	private static EmpruntRepository empruntRepository;
 
 	public static void main(String[] args) throws ParseException {
-//		SpringApplication.run(GestionDuMaterielApplication.class, args);
-		ApplicationContext ctx =SpringApplication.run(GestionDuMaterielApplication.class, args);
-		ClientRepository clientRepository=ctx.getBean(ClientRepository.class);
-		MaterielRepository materielRepository=ctx.getBean(MaterielRepository.class);
-		DateFormat df=new SimpleDateFormat("dd/MM/yyyy");
-		clientRepository.save( new Client("Rabab","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018")));
-		clientRepository.save( new Client("ibtissam","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018")));
-		clientRepository.save( new Client("mouna","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018")));
-		materielRepository.save(new Materiel("xxx", "PC Dell i7" ,df.parse("01/04/2018"), false,"bonne", 3));
-		materielRepository.save(new Materiel("xxx", "Sourie Dell" ,df.parse("01/04/2018"), true,"en panne", 2));
-		materielRepository.save(new Materiel("xxx", "ClavierDell" ,df.parse("01/04/2018"), true,"bonne", 3));
-		materielRepository.save(new Materiel("xxx", "PC Acer i7" ,df.parse("01/04/2018"), true,"bonne", 3));
+		// SpringApplication.run(GestionDuMaterielApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(GestionDuMaterielApplication.class, args);
+		ClientRepository clientRepository = ctx.getBean(ClientRepository.class);
+		MaterielRepository materielRepository = ctx.getBean(MaterielRepository.class);
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		clientRepository.save(new Client("Rabab", "Tahiri", "Rabat", "rabab@gmail.xom", "321554", df.parse("01/04/2018")));
+		clientRepository.save(new Client("ibtissam", "Tahiri", "Rabat", "rabab@gmail.xom", "321554", df.parse("01/04/2018")));
+		clientRepository.save(new Client("mouna", "Tahiri", "Rabat", "rabab@gmail.xom", "321554", df.parse("01/04/2018")));
+		materielRepository.save(new Materiel("xxx", "PC Dell i7", df.parse("01/04/2018"), true, "bonne", 3));
+		materielRepository.save(new Materiel("yyyy", "Sourie Dell", df.parse("01/04/2018"), true, "bonne", 2));
+		materielRepository.save(new Materiel("ssss", "ClavierDell", df.parse("01/04/2018"), true, "bonne", 3));
+		materielRepository.save(new Materiel("aaaa", "PC Acer i7", df.parse("01/04/2018"), true, "bonne", 3));
+		materielRepository.save(new Materiel("bbbb", "PC Acer i7", df.parse("01/04/2018"), true, "bonne", 3));
+
 	}
 
-	
 }

@@ -33,8 +33,8 @@ public class Client implements Serializable {
 	@Column(name = "DATE_NAISSANCE")
 	private Date dateNaissanceClient;
 
-	@OneToMany(mappedBy = "client", fetch=FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
-			CascadeType.REFRESH })
+	@OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.DETACH, CascadeType.REFRESH })
 	private List<Emprunt> emprunts;
 
 	public Long getIdClient() {
