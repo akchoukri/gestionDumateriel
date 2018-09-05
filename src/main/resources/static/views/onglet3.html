@@ -40,16 +40,55 @@
 	</div>
 <div></div>
 <br>
-            <div class="row">
+
+<table id="materiel" class="table table-striped" >
+	<thead>
+		<tr>
+			<th>reference</th>
+			<th>designation</th>
+			<th>etatMateriel</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="materiel in slctEmprunt.materiels">
+			<td>{{ materiel.reference }}</td>
+			<td>{{ materiel.designation}}</td>
+			<td>
+			<div ng-if="!materiel.modeEdit">{{ materiel.etatMateriel}}</div>
+			<select name="selectEtatMateriel" ng-if="materiel.modeEdit"
+			ng-options="etat for etat in etaMaterials"
+			ng-model="selectEtatMateriel" ng-change="hasChanged(selectEtatMateriel)"></select>
+			</td>
+			<td>
+				<button class="btn" ng-click="editer(materiel)" ng-if="!materiel.modeEdit">
+					<i class="fa fa-pencil" ></i>
+				</button>
+								<button class="btn" ng-click="confirmerEditer(materiel)" ng-if="materiel.modeEdit">
+					<i class="fa fa-check-square-o" aria-hidden="true" style="color: green;"></i>
+				</button>
+								<button class="btn" ng-click="annulerEditer(materiel)" ng-if="materiel.modeEdit">
+					<i class="fa fa-ban" aria-hidden="true" style="color: red;"></i>
+				</button>
+				
+				
+ 
+
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	
+	            <div class="row">
 	        <div class="col-md-12" style="text-align: center;">
 	<button type="submit" class="btn btn-success" type="button"
 		ng-click="addRetourPret()">Save</button>
  <button class="btn btn-secondary"  ng-click="annulerPret()" >Annuler</button>
 </div></div>
-
+</form>
 </div>
 <br><br>
-<table class="table">
+<table id="empruntNnretourne" class="table">
 	<thead>
 		<tr>
 			<th>#</th>
@@ -74,6 +113,7 @@
 			</td>
 		</tr>
 	</tbody>
-	</form>
+	</table>
+	
 	</div>
 	

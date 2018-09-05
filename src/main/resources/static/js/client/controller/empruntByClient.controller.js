@@ -11,6 +11,7 @@
 		$scope.empruntsNnRetourne = null;
 		$scope.emprunt= null;
 		$scope.slctEmprunt= null;
+		$scope.etaMaterials = ["neuf", "bonne","mauvais","endommage"];
 				// recuperer list client 
 				clientDataService.allClients().then(function(data) {
 					$scope.clients = data;
@@ -68,6 +69,27 @@
 				 $scope.slctEmprunt = null;
 		         }
 			 
+				//  editer etat de material
+			 $scope.editer = function(material) {
+				 material.modeEdit = true;
+				 $scope.selectEtatMateriel = material.etatMateriel;
+		         }
+				//  confirmer edit etat de material
+			 $scope.confirmerEditer = function(material) {
+				 material.modeEdit = false;
+				material.etatMateriel = $scope.selectEtatMateriel;
+				 //update etat et la disponibilte de materiel
+				 
+		         }
+				//  annuler l'edit etat de material
+			 $scope.annulerEditer = function(material) {
+				 material.modeEdit = false;
+				 
+		         }
+			 $scope.hasChanged = function(selectEtatMateriel){
+				 $scope.selectEtatMateriel = selectEtatMateriel;
+				 
+			 }
 		//pour visualiser status d'emprunt
 		$scope.getStatus = function(emprunt) {
 

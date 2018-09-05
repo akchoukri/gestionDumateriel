@@ -36,27 +36,33 @@ public class GestionDuMaterielApplication {
 		MaterielRepository materielRepository=ctx.getBean(MaterielRepository.class);
 		List<Emprunt> emprunts = new ArrayList<>();
 		List<Emprunt> empruntsI = new ArrayList<>();
+		List<Materiel> materiels = new ArrayList<>();
 		DateFormat df=new SimpleDateFormat("dd/MM/yyyy");
 		Emprunt emprunt1 = new Emprunt(df.parse("01/08/2018"), df.parse("23/08/2018"), null);
 		
 		Emprunt emprunt2 = new Emprunt(df.parse("01/09/2018"), df.parse("20/09/2018"), null);
 		Emprunt emprunt3 = new Emprunt(df.parse("01/09/2018"), df.parse("20/09/2018"), df.parse("02/10/2018"));
+		Materiel materiel1 =  new Materiel("x1", "PC Dell i7" ,df.parse("01/04/2018"), true,"bonne", 3);
+		Materiel materiel2 =  new Materiel("x2", "Sourie Dell" ,df.parse("01/04/2018"), true,"bonne", 3);
+		materiels.add(materiel1);materiels.add(materiel2);
+		emprunt1.setMateriels(materiels);
 		emprunts.add(emprunt1);emprunts.add(emprunt2);
-		Client client = new Client("Rabab","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018"));
+		Client Rabab = new Client("Rabab","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018"));
 		Client ibtssam = new Client("ibtissam","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018"));
-		emprunt2.setClient(client);
-		emprunt1.setClient(client);
+		emprunt2.setClient(Rabab);
+		emprunt1.setClient(Rabab);
 		emprunt3.setClient(ibtssam);
-		client.setEmprunts(emprunts);
+		Rabab.setEmprunts(emprunts);
 		empruntsI.add(emprunt3);
 		ibtssam.setEmprunts(empruntsI);
-		clientRepository.save( client);
+		clientRepository.save( Rabab);
 		clientRepository.save( ibtssam);
 		clientRepository.save( new Client("mouna","Tahiri","Rabat","rabab@gmail.xom","321554",df.parse("01/04/2018")));
-		materielRepository.save(new Materiel("xxx", "PC Dell i7" ,df.parse("01/04/2018"), true,"bonne", 3));
-		materielRepository.save(new Materiel("xxx", "Sourie Dell" ,df.parse("01/04/2018"), true,"bonne", 3));
-		materielRepository.save(new Materiel("xxx", "ClavierDell" ,df.parse("01/04/2018"), true,"bonne", 3));
-		materielRepository.save(new Materiel("xxx", "PC Acer i7" ,df.parse("01/04/2018"), true,"bonne", 3));
+
+		//materielRepository.save(materiel1);
+		//materielRepository.save(materiel2);
+		materielRepository.save(new Materiel("x3", "ClavierDell" ,df.parse("01/04/2018"), true,"bonne", 3));
+		materielRepository.save(new Materiel("x4", "PC Acer i7" ,df.parse("01/04/2018"), true,"bonne", 3));
 	}
 
 	
