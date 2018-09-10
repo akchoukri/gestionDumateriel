@@ -1,5 +1,8 @@
 package com.ymagis.controller;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -70,5 +73,64 @@ public class EmpruntServices {
 		emprunt.setClient(client.get());
 		return empruntRepository.save(emprunt);
 
+	}
+	
+	  // mettre a jour client
+	  @RequestMapping(value="/client/{id}/emprunts",method=RequestMethod.PUT)
+	  public Emprunt updateClient(@PathVariable Long id,@RequestBody Emprunt emprunt) { 
+			Optional<Client> client = clientRepository.findById(id);
+			emprunt.setClient(client.get());
+		  empruntRepository.save(emprunt);
+		  return emprunt;
+	  }
+	// recuperer les emprunts en retard d'un clients
+	@RequestMapping(value = "/client/{id}/nnretourne", method = RequestMethod.GET)
+	public List<Emprunt> getRetardByClient(@PathVariable Long id ) {
+		Optional<Client> client = clientRepository.findById(id);
+		List<Emprunt> empR = new ArrayList<>();
+		if (client.get().getEmprunts()!=null) {
+			
+			for(Emprunt emprunt:client.get().getEmprunts()) {
+				if(emprunt.getDateRetour()==null)//emprunt nn retourné
+						empR.add(emprunt);
+			}
+		}
+
+
+		return empR;
+
+	}
+	
+	  // mettre a jour des  materiel
+	  @RequestMapping(value="/materiels",method=RequestMethod.PUT)
+	  public boolean updateMateriels(@RequestBody List<Materiel> materiel) {  
+		  materielRepository.saveAll(materiel);
+		  return true;
+	  }
+	  
+	//recuperer les emprunts en retard
+	@RequestMapping(value = "/empruntRetard", method = RequestMethod.GET)
+	public List<Emprunt> getEmpruntRetard() {
+		List<Emprunt> emprunts = empruntRepository.findAll();
+		Date date = new Date();
+		List<Emprunt> empR = new ArrayList<>();
+			for(Emprunt emprunt:emprunts) {
+				if((emprunt.getDateRetour()!=null)&&
+						(diffDate(emprunt.getDateRetour(),emprunt.getDateRetourPrevu())))
+						{
+							empR.add(emprunt);
+						}
+				else if((emprunt.getDateRetour()==null)&&
+						(diffDate(date,emprunt.getDateRetourPrevu())))
+				{
+					empR.add(emprunt);
+				}
+			}
+		return empR;
+	}
+	//
+	public boolean diffDate(Date date1,Date date2) {
+		if(date1.getTime()>date2.getTime())return true;
+		return  false;
 	}
 }

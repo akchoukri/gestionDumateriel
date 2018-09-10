@@ -1,4 +1,4 @@
-var app = angular.module("myApp",["ui.router"]);
+var app = angular.module("myApp",['ui.router','ngMaterial']);
 
 
 
@@ -21,21 +21,23 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		
 		})
 
-		.state('onglet1', {
-			parent : 'contenu',
-			url : '/onglet1',
+		.state('pret', {
+			parent : 'main',
+			url : '/pret',
 			views : {
 				'content@main' : {
-					templateUrl : 'views/onglet1.html',
+					templateUrl : 'views/pret.html',
+					controller : "empruntclientCtrl",
 				}
 			}
 	})
-	.state('onglet2', {
+	.state('emprunt', {
 			parent : 'main',
-			url : '/onglet2',
+			url : '/emprunt',
 			views : {
 				'content@main' : {
-					templateUrl : 'views/onglet2.html',
+					templateUrl : 'views/emprunt.html',
+					controller : "empruntclientCtrl",
 				}
 			}
 	})

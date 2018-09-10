@@ -83,7 +83,62 @@
 		       });
 		      }
       
-   
+			//les emprunts en retard
+			this.getEmpruntRetard=function(){
+		        var promise1=$http({
+		            method: 'GET',
+		            url: "http://localhost:8080/empruntRetard"
+		            });
+		        var promise2=promise1.then(function(response){
+		        	return response;
+		        },function(err){
+		            console.log(err);
+
+		        });
+		     return promise2;
+		    }
+			
+			//les emprunts non  retourné
+			this.getEmpruntNnRetourne=function(id){
+		        var promise1=$http({
+		            method: 'GET',
+		            url: "http://localhost:8080//client/"+id+"/nnretourne"
+		            });
+		        var promise2=promise1.then(function(response){
+		        	return response;
+		        },function(err){
+		            console.log(err);
+
+		        });
+		     return promise2;
+		    }
+			
+		    // mise a jour emprunt
+		    this.updateEmprunt = function(emprunt,client){
+
+
+		        $http.put("http://localhost:8080/client/"+client.idClient+"/emprunts",emprunt)
+		        .then(function mySuccess(response) {
+
+		        }, function myError(response) {
+		           
+
+		        });
+		    };
+		    
+
+		    // mise a jour materiels
+		    this.updateMateriels = function(materiels){
+
+
+		        $http.put("http://localhost:8080/materiels",materiels)
+		        .then(function mySuccess(response) {
+
+		        }, function myError(response) {
+		           
+
+		        });
+		    };
     }); 
 		
 		

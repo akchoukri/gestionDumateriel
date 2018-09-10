@@ -16,6 +16,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="MATERIEL")
 public class Materiel implements Serializable{
@@ -33,7 +35,7 @@ public class Materiel implements Serializable{
 	@JoinColumn(name = "ID_CAT")
 	private Categorie categorie;
 	
-	
+	@JsonIgnore
 	 @ManyToMany(fetch = FetchType.LAZY,
 	            cascade = {
 	                CascadeType.PERSIST,
