@@ -47,6 +47,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 					controller:'EmpruntController'
 				}
 			}
-	});
+	})
+	.state('empruntClient', {
+		parent : 'main',
+		url : '/empruntClient',
+		views : {
+			'content@main' : {
+				templateUrl : 'views/empruntClient.html',
+				controller:'EmpruntClient'
+			}
+		}
+});
    
 });
