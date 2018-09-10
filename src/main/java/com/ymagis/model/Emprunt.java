@@ -29,12 +29,22 @@ public class Emprunt implements Serializable {
 	private Date dateRetourPrevu;
 	private Date dateRetour;
 	private Long prixTotal;
-	@ManyToOne
+	private String etatEmprunt;
+	private String causeRetardEmprunt;
+	@ManyToOne(   cascade = {
+
+	                CascadeType.PERSIST,
+
+	                CascadeType.MERGE
+
+	            })
 	@JsonIgnore
-	@JoinColumn(name = "id_client")
+	@JoinColumn(name="id_client")
 	private Client client;
 	@ManyToMany
 	private List<Materiel> materiels;
+
+
 
 	public Long getIdEmprunt() {
 		return idEmprunt;
@@ -70,6 +80,22 @@ public class Emprunt implements Serializable {
 
 	public Client getClient() {
 		return client;
+	}
+
+	public String getEtatEmprunt() {
+		return etatEmprunt;
+	}
+
+	public void setEtatEmprunt(String etatEmprunt) {
+		this.etatEmprunt = etatEmprunt;
+	}
+
+	public String getCauseRetardEmprunt() {
+		return causeRetardEmprunt;
+	}
+
+	public void setCauseRetardEmprunt(String causeRetardEmprunt) {
+		this.causeRetardEmprunt = causeRetardEmprunt;
 	}
 
 	public void setClient(Client client) {

@@ -1,4 +1,4 @@
-var app = angular.module("myApp",["ui.router"]);
+var app = angular.module("myApp",['ui.router','ngMaterial']);
 
 
 
@@ -20,24 +20,28 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			}
 		
 		})
-		.state('onglet1', {
+
+		.state('pret', {
 			parent : 'main',
-			url : '/onglet1',
+			url : '/pret',
 			views : {
 				'content@main' : {
-					templateUrl : 'views/onglet1.html',
+					templateUrl : 'views/pret.html',
+					controller : "empruntclientCtrl",
 				}
 			}
 	})
-			.state('onglet2', {
+	.state('emprunt', {
 			parent : 'main',
-			url : '/onglet2',
+			url : '/emprunt',
 			views : {
 				'content@main' : {
-					templateUrl : 'views/onglet2.html',
+					templateUrl : 'views/emprunt.html',
+					controller : "empruntclientCtrl",
 				}
 			}
 	})
+
 		.state('nouveauEmprunt', {
 			parent : 'main',
 			url : '/addNewEmpunt',
@@ -57,6 +61,36 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 				controller:'EmpruntClient'
 			}
 		}
-});
+})
+	.state('clients', {
+	parent : 'main',
+	url : '/clients',
+	views : {
+		'content@main' : {
+			templateUrl : 'views/client/clients.html',
+			controller : "listClientContl",
+		}
+	}
+})
+//vue pour creer nouveau client
+.state('newClient', {
+	parent : 'clients',
+url : '/add',
+templateUrl : 'views/client/newClient.html',
+controller : "clientNewCtrl"		
+
+})
+// vue pour mise a jour le client
+.state('clients.updateClient', {
+
+url : '/:id',
+
+			
+templateUrl : 'views/client/updateClient.html',
+controller : "clientUpdateCtrl"
+
+})
+
+
    
 });

@@ -1,0 +1,74 @@
+
+<div class="container">
+
+
+	<ui-view></ui-view>
+
+</div>
+<div class="container" ng-controller="listClientContl" ng-init="init()">
+
+
+	<div class="container">
+
+		<br> <input type="text" ng-model="motCle"
+			ng-keyup="keyUp($event)" placeholder="mot clé"> <i
+			id="filtersubmit" class="fa fa-search"></i>
+		<button class="btn" ui-sref="newClient">New Client</button>
+	</div>
+	<hr class="my-4">
+	<div class="container">
+
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nom</th>
+					<th>Prenom</th>
+					<th>Email</th>
+					<th>date Naissance</th>
+					<th>Tel</th>
+					<th>Adress</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="client in pageClient.content">
+					<td>{{ client.idClient }}</td>
+					<td>{{ client.nomClient }}</td>
+					<td>{{ client.prenomClient }}</td>
+					<td>{{ client.emailClient }}</td>
+					<td>{{ client.dateNaissanceClient | date:'MM/dd/yyyy' }}</td>
+					<td>{{ client.telClient }}</td>
+					<td>{{ client.adressClient }}</td>
+					<td>
+						<!-- <button class="btn"  ><i class="fa fa-eye"></i></button> -->
+						<button class="btn"
+							ui-sref="clients.updateClient({ id: client.idClient })">
+							<i class="fa fa-edit"></i>
+						</button>
+						<button class="btn" ng-click="supprimerClient($index)">
+							<i class="fa fa-trash"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+
+	<div class="container">
+		<ul class="nav nav-pills pagination">
+			<li class="page-item"><a class="page-link"
+				ng-click="gotoprevious()">&laquo;</a></li>
+			<li class="page-item" ng-class="{active:$index==currentPage}"
+				ng-repeat="i in pages track by $index"><a
+				class="clickable page-link" ng-click="gotopage($index)"> {{
+					$index}} </a></li>
+			<li class="page-item" id="linknext"><a class="page-link"
+				ng-click="gotonext()">&raquo;</a></li>
+		</ul>
+	</div>
+
+
+
+</div>
