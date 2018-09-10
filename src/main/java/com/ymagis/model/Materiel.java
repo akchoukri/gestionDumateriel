@@ -1,9 +1,8 @@
- package com.ymagis.model;
+package com.ymagis.model;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,15 +14,15 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="MATERIEL")
-public class Materiel implements Serializable{
-
+@Table(name = "MATERIEL")
+public class Materiel implements Serializable {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idMateriel;
 	private String reference;
 	private String designation;
@@ -34,10 +33,8 @@ public class Materiel implements Serializable{
 	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
 	@JoinColumn(name = "ID_CAT")
 	private Categorie categorie;
-	
+	@ManyToMany(mappedBy = "materiels")
 	@JsonIgnore
-	 @ManyToMany(
-	            mappedBy = "materiels")
 	private List<Emprunt> emprunts;
 
 	public Long getIdMateriel() {
@@ -56,7 +53,6 @@ public class Materiel implements Serializable{
 		this.reference = reference;
 	}
 
-	
 	public String getDesignation() {
 		return designation;
 	}
@@ -73,7 +69,7 @@ public class Materiel implements Serializable{
 		this.dateAjoutMateriel = dateAjoutMateriel;
 	}
 
-	public boolean isDisponible() {
+	public boolean getDisponible() {
 		return disponible;
 	}
 
@@ -140,8 +136,4 @@ public class Materiel implements Serializable{
 				+ ", dateAjoutMateriel=" + dateAjoutMateriel + ", disponible=" + disponible + ", etatMateriel="
 				+ etatMateriel + ", quantite=" + quantite + "]";
 	}
-
-
-	
-	
 }
