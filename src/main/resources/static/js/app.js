@@ -37,6 +37,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 					templateUrl : 'views/onglet2.html',
 				}
 			}
+	})
+		.state('nouveauEmprunt', {
+			parent : 'main',
+			url : '/addNewEmpunt',
+			views : {
+				'content@main' : {
+					templateUrl : 'views/nouveauEmprunt.html',
+					controller:'EmpruntController'
+				}
+			}
 	});
    
 });

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ajouter un emprunt</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="../css/css.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/bootstrap-theme.min.css" rel="stylesheet"
+	type="text/css" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<body ng-app="myApp" ng-controller="EmpruntController"
+	class="w3-light-grey" data-gr-c-s-loaded="true">
+	<div class="w3-content" style="max-width: 1600px">
+		<!-- Header -->
+		<header class="w3-container w3-center w3-padding-48 w3-white">
+			<h1 class="w3-xxxlarge">
+				<img src="img/Logo.png" alt="Girl Hat" style="width: 20%"
+					class="w3-padding-16">
+			</h1>
+			<h6>
+				Bienvenue <span class="w3-tag">Ymagis Application</span>
+			</h6>
+		</header>
+		<div style="background: #c1c2c2f5;"
+			class="w3-row w3-padding w3-border">
+			<!-- Blog entries -->
+			<div class="w3-col l12 s12">
+				<!-- Blog entry -->
+				<div class="w3-container w3-white w3-margin w3-padding-large">
+					<div class="alert alert-success" ng-show="mode==1">
+						<strong>Succès!</strong> Vous avez enregistré l'emprunt avec
+						succès.
+						<button type="button" class="close" ng-click="modeForm()">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<h2 style="text-align: center";="">Enregistrement d'un emprunt</h2>
+					<br>
+					<div class="select-boxes">
+						<div class="container">
+							<div class="col-lg-9">
+								<br> <br>
+								<form data-toggle="validator" class="form-horizontal"
+									name="empruntForm" ng-submit="submitForm(empruntForm.$valid)">
+									<fieldset>
+										<div class="form-group"
+											ng-class="{ 'has-error' : empruntForm.nom_client.$invalid && !empruntForm.nom_client.$pristine }">
+											<label class="col-md-4 control-label">Client</label>
+											<div class="col-md-6  inputGroupContainer">
+												<div class="input-group">
+													<span style="background: #3c7cdd; color: aliceblue;"
+														class="input-group-addon"><i
+														class="glyphicon glyphicon-user"></i></span> <select
+														style="width: 150%; height: 40px;" ng-model="name"
+														name="nom_client" class="form-control selectpicker"
+														ng-options="o as o for o in options" required>
+													</select>
+												</div>
+												<p ng-show="empruntForm.nom_client.$error.minlength"
+													class="help-block">Veuillez choisir le Client.</p>
+
+											</div>
+										</div>
+										<div class="form-group"
+											ng-class="{ 'has-error' : empruntForm.materiel.$invalid && !empruntForm.materiel.$pristine }">
+											<label class="col-md-4 control-label">Materiel</label>
+											<div class="col-md-6  inputGroupContainer">
+												<div class="input-group">
+													<span style="background: #3c7cdd; color: aliceblue;"
+														class="input-group-addon"><i
+														class="glyphicon glyphicon-list-alt"></i></span> <select
+														style="width: 150%; height: 40px;" name="materiel"
+														class="form-control selectpicker" ng-model="designation"
+														ng-change="chercherMateriel(designation)"
+														ng-options="d for d in materielsDesignation" required>
+													</select>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="form-group"
+											ng-class="{ 'has-error' : empruntForm.quantite.$invalid && !empruntForm.quantite.$pristine }">
+											<label class="col-md-4 control-label">Quantité</label>
+											<div class="col-md-6  inputGroupContainer">
+												<div class="input-group">
+													<span style="background: #3c7cdd; color: aliceblue;"
+														class="input-group-addon"><i
+														class="glyphicon glyphicon-paperclip"></i></span> <input
+														style="width: 150%; height: 40px;" min="1"
+														max="{{nbrMax}}" name="quantite"
+														placeholder="nombre souhaité" class="form-control"
+														type="number" ng-model="nbr" ng-pattern="quantiteNbr"
+														ng-minlength="1" required>
+
+												</div>
+												<p
+													ng-show="empruntForm.quantite.$invalid && !empruntForm.quantite.$pristine"
+													class="help-block">Veuillez choisir la quantite.</p>
+											</div>
+										</div>
+										<div class="form-group"
+											ng-class="{ 'has-error' : empruntForm.prix.$invalid && !empruntForm.prix.$pristine }">
+											<label class="col-md-4 control-label">Prix en DH</label>
+											<div class="col-md-6  inputGroupContainer">
+												<div class="input-group">
+													<span style="background: #3c7cdd; color: aliceblue;"
+														class="input-group-addon"><i
+														class="glyphicon glyphicon-usd"></i></span> <input
+														style="width: 150%; height: 40px;" name="prix"
+														placeholder="prix d'emprunt en DH" class="form-control"
+														type="text" ng-model="prix" ng-pattern="prixNbr"
+														ng-minlength="1" required>
+												</div>
+												<p
+													ng-show="empruntForm.prix.$invalid && !empruntForm.prix.$pristine"
+													class="help-block">Veuillez entrer le prix.</p>
+
+											</div>
+										</div>
+										<div class="form-group"
+											ng-class="{ 'has-error' : empruntForm.date_emprunt.$invalid && !empruntForm.date_emprunt.$pristine }">
+											<label class="col-md-4 control-label">Date d'emprunt</label>
+											<div class="col-sm-6">
+												<div class='input-group date' id='datetimepicker2'>
+													<span style="background: #3c7cdd; color: aliceblue;"
+														class="input-group-addon"><i
+														class="glyphicon glyphicon-calendar"></i></span> <input
+														style="width: 150%; height: 40px;" type="date"
+														name="date_emprunt" class="form-control"
+														ng-model="emprunt.dateEmprunt" required />
+												</div>
+											</div>
+										</div>
+										<div class="form-group"
+											ng-class="{ 'has-error' : empruntForm.date_retour.$invalid && !empruntForm.date_retour.$pristine }">
+											<label class="col-md-4 control-label">Date de Retour</label>
+											<div class="col-sm-6">
+												<div class='input-group date' id='datetimepicker2'>
+													<span style="background: #3c7cdd; color: aliceblue;"
+														class="input-group-addon"><i
+														class="glyphicon glyphicon-calendar"></i></span> <input
+														style="width: 150%; height: 40px;" type="date"
+														name="date_retour" class="form-control"
+														ng-model="emprunt.dateRetour" required />
+												</div>
+											</div>
+										</div>
+
+										<!-- Button -->
+										<div class="form-group">
+											<label class="col-md-4 control-label"></label>
+											<div class="col-md-4">
+												<button class="btn btn-outline-primary" type="submit"
+													ng-click="ajouterMateriel()"
+													ng-disabled="empruntForm.$invalid">
+													Ajouter <span class="glyphicon glyphicon-send"></span>
+												</button>
+											</div>
+										</div>
+									</fieldset>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">Emprunt :</div>
+					<div class="panel-body">
+						<div class="container">
+							<div class="row">
+								<div class="card col-sm-4">
+									<div class="card-body">
+										<label style="font-size: 13px;">Nom Client:</label> <label
+											style="color: rgb(75, 116, 230); font-size: 13px;">{{name}}</label></br>
+										<label style="font-size: 13px;">Date d'emprunt:</label> <label
+											style="color: rgb(75, 116, 230); font-size: 13px;">{{emprunt.dateEmprunt}}</label></br>
+										<label style="font-size: 13px;">Date de Retour prevu:</label>
+										<label style="color: rgb(75, 116, 230); font-size: 13px;">{{emprunt.dateRetour}}</label></br>
+										<label style="font-size: 13px;">Prix Total:</label> <label
+											style="color: rgb(75, 116, 230); font-size: 13px;">{{emprunt.prixTotal}}
+											DH</label></br>
+									</div>
+								</div>
+								<div class="col-sm-8">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Designation</th>
+												<th>Date d'Ajout</th>
+												<th>Etat Materiel</th>
+												<th>Reference</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="m in materielsAemprunte">
+												<td>{{m.designation}}</td>
+												<td>{{m.dateAjoutMateriel}}</td>
+												<td>{{m.etatMateriel}}</td>
+												<td>{{m.reference}}</td>
+												<td><p data-placement="top" data-toggle="tooltip"
+														title="Delete">
+														<button class="btn btn-danger btn-xs" data-title="Delete"
+															data-toggle="modal" data-target="#delete"
+															ng-click="removeMateriel($index)">
+															<span class="glyphicon glyphicon-trash"></span>
+														</button>
+													</p></td>
+											</tr>
+										</tbody>
+									</table>
+
+									<button type="submit" class="btn btn-xs btn-primary"
+										ng-click="ajouterEmprunt()">
+										Enregistrer<span class="glyphicon glyphicon-send"></span>
+									</button>
+									<button type="button" class="btn btn-xs btn-danger"
+										ng-click="annuler()">
+										<span class="class=" glyphiconglyphicon-trash"></span>Annuler
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- PrefixFree -->
+	<script
+		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script
+		src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+	<script
+		src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+</body>
+</html>
