@@ -16,6 +16,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "EMPRUNT")
 public class Emprunt implements Serializable {
@@ -27,25 +28,24 @@ public class Emprunt implements Serializable {
 	private Date dateEmprunt;
 	private Date dateRetourPrevu;
 	private Date dateRetour;
+	private Long prixTotal;
 	private String etatEmprunt;
 	private String causeRetardEmprunt;
-	@ManyToOne
+	@ManyToOne(   cascade = {
+
+	                CascadeType.PERSIST,
+
+	                CascadeType.MERGE
+
+	            })
 	@JsonIgnore
 	@JoinColumn(name="id_client")
 	private Client client;
-
-	@ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-                })
-	@JoinTable(name="emprunt_materiel",
-	           joinColumns=@JoinColumn(name="idEmprunt"),
-	           inverseJoinColumns=@JoinColumn(name="idMateriel")
-	           )
+	@ManyToMany
 	private List<Materiel> materiels;
-	
-	
+
+
+
 	public Long getIdEmprunt() {
 		return idEmprunt;
 	}
@@ -77,8 +77,7 @@ public class Emprunt implements Serializable {
 	public void setDateRetour(Date dateRetour) {
 		this.dateRetour = dateRetour;
 	}
-	
-	
+
 	public Client getClient() {
 		return client;
 	}
@@ -103,15 +102,13 @@ public class Emprunt implements Serializable {
 		this.client = client;
 	}
 
-	public Emprunt(Date dateEmprunt, Date dateRetourPrevu, Date dateRetour){
+	public Emprunt(Date dateEmprunt, Date dateRetourPrevu, Date dateRetour) {
 		super();
-		
+
 		this.dateEmprunt = dateEmprunt;
 		this.dateRetourPrevu = dateRetourPrevu;
-		this.dateRetour =dateRetour;
+		this.dateRetour = dateRetour;
 	}
-
-
 
 	public void setMateriels(List<Materiel> materiels) {
 		this.materiels = materiels;
@@ -120,25 +117,33 @@ public class Emprunt implements Serializable {
 	public Emprunt() {
 
 	}
-	public Emprunt(Date dateEmprunt, Date dateRetour)  {
+
+	public Emprunt(Date dateEmprunt, Date dateRetour) {
 		super();
-		
+
 		this.dateEmprunt = dateEmprunt;
-		this.dateRetour =dateRetour;
+		this.dateRetour = dateRetour;
 	}
 
 	@Override
 	public String toString() {
 		return "Emprunt [idEmprunt=" + idEmprunt + ", dateEmprunt=" + dateEmprunt + ", dateRetourPrevu="
-				+ dateRetourPrevu + ", dateRetour=" + dateRetour + ", client=" + client + "]";
+				+ dateRetourPrevu + ", dateRetour=" + dateRetour + ", client=" + client + ", materiels=" + materiels
+				+ "]";
 	}
 
+	// @JsonIgnore
 	public List<Materiel> getMateriels() {
 		// TODO Auto-generated method stub
 		return materiels;
 	}
 
+	public Long getPrixTotal() {
+		return prixTotal;
+	}
 
-	
+	public void setPrixTotal(Long prixTotal) {
+		this.prixTotal = prixTotal;
+	}
 
 }

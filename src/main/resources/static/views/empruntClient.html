@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+	<div class="form-group">
+		<label class="col-md-4 control-label">Nom Client</label>
+		<div class="col-md-6  inputGroupContainer">
+			<div class="input-group">
+				<select style="width: 150%; height: 40px;" name="client"class="form-control selectpicker" ng-model="name"
+					ng-change="chercherClient(name)"
+					ng-options="c for c in clients" required>
+				</select>
+			</div>
+		</div>
+
+	</div>
+	<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Nom Client</th>
+												<th>Téléphone</th>
+												<th>Matériel</th>
+												<th>Date d'emprunt</th>
+												<th>Date de retour prévu</th>
+												<th>Date de retour</th>
+											</tr>
+										</thead>
+										<tbody>
+										
+										</tbody>
+									</table>

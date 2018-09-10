@@ -1,5 +1,6 @@
 package com.ymagis.controller;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -35,45 +36,82 @@ public class EmpruntServices {
 	private ClientRepository clientRepository;
 	@Autowired
 	private MaterielRepository materielRepository;
+	
+	// Ajouter un nouveau emprunt
+	public void idClient(Emprunt emprunt, Client client) {
+		emprunt.setClient(client);
+		empruntRepository.save(emprunt);
+	}
+
+	// recuperer la liste des clients
+	@GetMapping(value = "/chercherClients")
+	public List<Client> getAllClients() {
+		List<Client> clients = this.clientRepository.findAll();
+		return clients;
+	}
+
+	// recuperer la liste des materiels
+	@GetMapping(value = "/chercherMateriels")
+	public List<Materiel> getAllMateriels() {
+		List<Materiel> materiels = this.materielRepository.findAll();
+		List<Materiel> materielsDisponible = new ArrayList<>();
+		for (int i = 0; i < materiels.size(); i++) {
+			if (materiels.get(i).getDisponible() == true && materiels.get(i).getEtatMateriel().equals("bonne")) {
+				materielsDisponible.add(materiels.get(i));
+			}
+		}
+		System.out.println(materielsDisponible);
+		return materielsDisponible;
+	}
+
+	// chercher les clients
+	@RequestMapping(value = "/client", method = RequestMethod.GET)
+	public List<Client> chercher(@RequestParam(name = "mc", defaultValue = "") String mc) {
+		return clientRepository.chercherClient("%" + mc + "%");
+	}
+
+	// chercher les materiels
+	@RequestMapping(value = "/materiel", method = RequestMethod.GET)
+	public List<Materiel> findMateriel(@RequestParam(name = "mc", defaultValue = "") String mc) {
+		List<Materiel> materielsChoisis = this.materielRepository.findByDesignation(mc);
+		List<Materiel> materielsDisponible = new ArrayList<>();
+		for (int i = 0; i < materielsChoisis.size(); i++) {
+			if (materielsChoisis.get(i).getDisponible() == true) {
+				materielsDisponible.add(materielsChoisis.get(i));
+			}
+		}
+		// return materielRepository.chercherMateriel("%" + mc + "%");
+		return materielsDisponible;
+	}
+	
+
+	// ajouter un nouveau emprunt
+	@PostMapping("/client/{idClient}/emprunts")
+	public Emprunt createEmprunt(@PathVariable(value = "idClient") Long idClient, @RequestBody Emprunt emprunt)
+			throws ParseException {
+		Optional<Client> client = clientRepository.findById(idClient);
+		System.out.println("emprunt:" + emprunt);
+		emprunt.setClient(client.get());
+		System.out.println(emprunt.getMateriels());
+		return empruntRepository.save(emprunt);
+		// return emprunt;
+	}
+
+
+	// Mise a jour le materiel apres emprunt
+	@RequestMapping(value = "/materiel/{id}", method = RequestMethod.PUT)
+	public Materiel update(@RequestBody Materiel m, @PathVariable("id") Long id) {
+		m.setIdMateriel(id);
+		return materielRepository.save(m);
+
+	}
+
 	@RequestMapping(value = "/allEmprunts", method = RequestMethod.GET)
 	public List<Emprunt> liste() {
 		return empruntRepository.findAll();
 	}
-//	// Ajouter un nouveau emprunt
-//	public void idClient(Emprunt emprunt, Client client) {
-//		emprunt.setClient(client);
-//		empruntRepository.save(emprunt);
-//	}
-//	//recuperer la liste des clients
-//	@GetMapping(value = "/listClients")
-//	public List<Client> getAllClients() {
-//		List<Client> clients = this.clientRepository.findAll();
-//		return clients;
-//	}
-	//recuperer la liste des materiels
-	@GetMapping(value = "/chercherMateriels")
-	public List<Materiel> getAllMateriels() {
-		List<Materiel> materiels = this.materielRepository.findAll();
-		return materiels;
-	}
-//	//chercher les clients
-//	@RequestMapping(value = "/client", method = RequestMethod.GET)
-//	public List<Client> chercher(@RequestParam(name = "mc", defaultValue = "") String mc) {
-//		return clientRepository.chercherClient("%" + mc + "%");
-//	}
-	//chercher les materiels
-	@RequestMapping(value = "/materiel", method = RequestMethod.GET)
-	public List<Materiel> findMateriel(@RequestParam(name = "mc", defaultValue = "") String mc) {
-		return materielRepository.chercherMateriel("%" + mc + "%");
-	}
-	// ajouter un nouveau emprunt
-	@PostMapping("/client/{idClient}/emprunts")
-	public Emprunt createEmprunt(@PathVariable(value = "idClient") Long idClient, @RequestBody Emprunt emprunt) {
-		Optional<Client> client = clientRepository.findById(idClient);
-		emprunt.setClient(client.get());
-		return empruntRepository.save(emprunt);
 
-	}
+	
 	
 	  // mettre a jour client
 	  @RequestMapping(value="/client/{id}/emprunts",method=RequestMethod.PUT)
