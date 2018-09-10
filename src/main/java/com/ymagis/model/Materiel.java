@@ -36,11 +36,7 @@ public class Materiel implements Serializable{
 	private Categorie categorie;
 	
 	@JsonIgnore
-	 @ManyToMany(fetch = FetchType.LAZY,
-	            cascade = {
-	                CascadeType.PERSIST,
-	                CascadeType.MERGE
-	            },
+	 @ManyToMany(
 	            mappedBy = "materiels")
 	private List<Emprunt> emprunts;
 

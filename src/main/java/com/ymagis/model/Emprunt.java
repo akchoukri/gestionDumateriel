@@ -34,7 +34,7 @@ public class Emprunt implements Serializable {
 	@JoinColumn(name="id_client")
 	private Client client;
 
-	@ManyToMany(fetch = FetchType.LAZY,
+	@ManyToMany(
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
