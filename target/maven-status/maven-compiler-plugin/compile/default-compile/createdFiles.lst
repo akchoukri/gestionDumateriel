@@ -1,0 +1,9 @@
+com\ymagis\model\Categorie.class
+com\ymagis\GestionDuMaterielApplication.class
+com\ymagis\dao\MaterielRepository.class
+com\ymagis\model\Emprunt.class
+com\ymagis\dao\CategorieRepository.class
+com\ymagis\controller\MaterielRestService.class
+com\ymagis\model\Materiel.class
+com\ymagis\model\Client.class
+com\ymagis\pojo\MaterielPojo.class

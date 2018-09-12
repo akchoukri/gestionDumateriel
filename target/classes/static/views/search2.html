@@ -1,0 +1,309 @@
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+
+
+
+
+<div class="global-wrapper" ng-controller="MaterielController">
+
+    <div id="tabs" class="container">
+
+        <!--<div class="tabs">-->
+            <!--<a ng-click="activetab=1" ng-class="[ activetab == 1 ? 'active' : '' ]">home</a>-->
+            <!--<a ng-click="activetab=2" ng-class="[ activetab == 2 ? 'active' : '' ]">add</a>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; nav section &ndash;&gt;
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="nav-header">
+                    <a href="#" class="navbar-brand hidden-xs">Angular Exercise</a>
+                    <ul class="nav navbar-nav">
+                        <li ng-repeat="navLink in nav.navItems"
+                            ng-class="{active : $index === nav.selectedIndex}"><a
+                            class="text-center" ng-click="nav.navClick($index)"
+                            ng-href="#/{{navLink}}">{{navLink}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>-->
+
+
+        <!--<div class="container">-->
+        <!--
+                <div class="row panel panel-primary">
+        -->
+        <!--<div class="content">-->
+            <!--<div ng-if="activetab == 1" class="tabcontent">-->
+
+                <div class="panel panel-primary" id="ta">
+                    <div class="panel-heading">La liste des materiels </div>
+
+                    <div class="panel-body">
+
+                        <div class="col-xs-5 panel-body">
+                            <ul class="list-group">
+                                <li><button ng-click=chercherMateriels()>Charger</button></li>
+                                <li class="list-group-item">
+                                    <h4>Materiels:</h4> <input class="form-control"
+                                                               placeholder="Seach Your materiel" type="text" ng-model="motCle">
+                                    <!--             <contact class="list-group-item" ng-repeat="contact in pagemateriels.data.content | filter: motCle  ">{{contact.designation}}</contact> -->
+                                    <a ng-click="afficher(contact.idMateriel)" class="list-group-item clickable"
+                                       ng-repeat="contact in pagemateriels.data.content | filter: motCle"> {{contact.designation}} </a>
+
+                                </li>
+                            </ul>
+
+                            <div class="container">
+                                <div class="text-center">
+                                    <ul class="nav nav-pills">
+                                        <li ng-class="{active:$index==pageCourante}"
+                                            ng-repeat="p in pages track by $index"
+                                            class="clickable nav-item nav-link active"><a
+                                                data-toggle="pill" ng-click="goToPage($index)">{{$index}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--   ng-view below       -->
+                        <div class="col-xs-7">
+                            <div class="list-group panel-body">
+                                <!--<div ng-view></div>-->
+                                <div ng-if="modee==0">
+                                    <div class="alert alert-success text-center" ng-class="{hidden : !removed}"> {{removed}}</div>
+                                    <div class="list-group-item text-center">Please select a materiel to view</div>
+
+                                </div>
+
+                                <div class="list-group-item" ng-if="modee==1">
+                                    <h3 class="text-center">{{materiell.designation}}</h3>
+                                    <p>
+                                        Reference du materiel: <a>{{materiell.reference}}</a>
+                                    </p>
+                                    <p>Designation: <a>{{materiell.designation}}</a></p>
+                                    <p>
+                                        Disponibilité: <a>{{materiell.disponible}}</a>
+                                    </p>
+                                    <p>Catégorie:
+                                        <a>{{materiell.categorie.nomCategorie}}</a></p>
+
+                                    <p>Etat actuel du materiel:
+                                        <a>{{materiell.etatMateriel}}</a></p>
+
+                                    <a>
+                                        <button class="btn btn-default" ng-click=editAccount()>
+                                            <span class="glyphicon glyphicon-pencil"></span><span> - Edit</span>
+                                        </button>
+                                        <a><button class="btn btn-default"
+                                                   ng-click="supprimer(materiell.idMateriel)">
+                                            <span class="glyphicon glyphicon-remove"></span><span> -
+                                        Remove</span>
+                                        </button></a>
+                                </div>
+                                <div ng-if="modee==2">
+
+                                    <form class="well form-horizontal" name="materielForm"
+                                          ng-submit="submitForm(materielForm.$valid)" id="contact_form">
+                                        <fieldset>
+                                            <legend>Enregistrement d'un nouveau materiel</legend>
+
+
+
+                                            <div class="form-group"
+                                                 ng-class="{ 'has-error' : materielForm.reference.$invalid && !materielForm.reference.$pristine }">
+                                                <label class="col-md-4 control-label">Reference du materiel</label>
+                                                <div class="col-md-4 inputGroupContainer">
+                                                    <div class="input-group">
+							                            <span class="input-group-addon"><i class="glyphicon glyphicon-tag	"></i></span> <input name="reference"
+                                                                                           placeholder="Reference du materiel" class="form-control"
+                                                                                           type="text" ng-model="materiell.reference" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group"
+                                                 ng-class="{ 'has-error' : materielForm.designation.$invalid && !materielForm.designation.$pristine }">
+                                                <label class="col-md-4 control-label">Designation</label>
+                                                <div class="col-md-4 inputGroupContainer">
+                                                    <div class="input-group">
+							                            <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span> <input name="designation"
+                                                                                        placeholder="Designation du materiel" class="form-control"
+                                                                                        type="text" ng-model="materiell.designation" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group"
+                                                 ng-class="{ 'has-error' : materielForm.disponible.$invalid && !materielForm.disponible.$pristine }">
+                                                <label class="col-md-4 control-label">disponible</label>
+                                                <div class="col-md-4 selectContainer">
+                                                    <div class="input-group">
+						                            	<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span> <select name="disponible"
+                                                                                                                                                ng-model="materiell.disponible"  required>
+
+                                                    </select>
+                                                        <select name="ngvalueselect" ng-model="materiell.disponible" >
+                                                            <option ng-repeat="option in tt" ng-value="option">{{option}}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div class="form-group"
+                                                 ng-class="{ 'has-error' : materielForm.etatMateriel.$invalid && !materielForm.etatMateriel.$pristine }">
+                                                <label class="col-md-4 control-label">Etat actuel du
+                                                    materiel</label>
+                                                <div class="col-md-4 selectContainer">
+                                                    <div class="input-group">
+						                            	<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span> <select
+                                                            name="etatMateriel" class="form-control selectpicker"
+                                                            placeholder="Etat actuel du materiel"
+                                                            ng-options="option for option in etatM"
+                                                            ng-model="materiell.etatMateriel"  required>
+
+
+                                                    </select>
+                                                        {{materiell.etatMateriel}}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group"
+                                                 ng-class="{ 'has-error' : materielForm.quantite.$invalid && !materielForm.quantite.$pristine }">
+                                                <label class="col-md-4 control-label">Quantite</label>
+                                                <div class="col-md-4 inputGroupContainer">
+                                                    <div class="input-group">
+							<span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-pencil"></i></span> <input name="quantite"
+                                                                                          placeholder="Quantite" class="form-control" type="text"
+                                                                                          ng-model="materiell.quantite" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group"
+                                                 ng-class="{ 'has-error' : materielForm.categorie.$invalid && !materielForm.categorie.$pristine }">
+                                                <label class="col-md-4 control-label">Categorie</label>
+                                                <div class="col-md-4 selectContainer">
+                                                    <div class="input-group">
+							<span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-list"></i></span> <select name="categorie"
+                                                                                         ng-model="materiell.nomCategorie"
+                                                                                         class="form-control selectpicker" placeholder="categorie"
+                                                                                         ng-options="option for option in options"
+                                                                                         ng-model="materiell.nomCategorie"  required>
+
+                                                    </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <!-- Button -->
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label"></label>
+                                                <div class="col-md-4">
+                                                    <button type="submit" class="btn btn-primary"
+                                                            ng-click="modifierMateriel(materiell)">
+                                                        Save <span class="glyphicon glyphicon-send"></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </fieldset>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--<div class="panel-heading">
+                    <h2 class="panel-title">List des Materiels</h2>
+                </div>-->
+                <!--   </script> -->
+           <!-- </div>
+            <div ng-if="activetab === 2" class="tabcontent">
+                Content for tab two
+            </div>
+            <div ng-if="activetab === 3" class="tabcontent">
+                Content for tab three
+            </div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<!--
+<div class="tab-pane active" id="1a">
+
+	<div class="container spacer">
+
+		Mot cle : <input type="text" ng-model="motCle">
+		<button ng-click=chercherMateriels()>Charger</button>
+	</div>
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Reference du materiel</th>
+					<th>Designation</th>
+					<th>Date d'ajout du materiel</th>
+					<th>disponibilite</th>
+					<th>Etat actuel du materiel</th>
+					<th>Categorie</th>
+					<th>modifier</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="p in pagemateriels.data.content">
+					<td>{{p.reference}}</td>
+					<td>{{p.designation}}</td>
+					<td>{{p.dateAjoutMateriel}}</td>
+					<td>{{p.disponible}}</td>
+					<td>{{p.etatMateriel}}</td>
+					<td>{{p.categorie.nomCategorie}}</td>
+					<td><button ng-click="supprimer(p.idMateriel)">Supprimer</button></td>
+					<td><button ng-click="editAccount(p)">modifier</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="container">
+		<div class="text-center">
+			<ul class="nav nav-pills">
+				<li ng-class="{active:$index==pageCourante}"
+					ng-repeat="p in pages track by $index"
+					class="clickable nav-item nav-link active"><a
+					data-toggle="pill" ng-click="goToPage($index)">{{$index}}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
+
+<script
+        src='http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
+<script
+        src='http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js'></script>
