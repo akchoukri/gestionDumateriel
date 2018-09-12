@@ -67,8 +67,10 @@
 		$scope.supprimerClient = function(c) {
 
 			var item = $scope.pageClient.content[c];
-			console.log(item);
-			clientDataService.deleteClient(item.idClient);
+			item.archive = true;
+
+			clientDataService.updateClient(item);
+
 			$state.reload();
 
 		}

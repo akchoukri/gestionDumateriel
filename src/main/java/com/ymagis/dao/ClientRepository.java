@@ -11,9 +11,12 @@ import com.ymagis.model.Client;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long>{
 	
-	@Query("select c from Client c where c.nomClient like :x ORDER BY c.idClient ASC")
+	@Query("select c from Client c where c.nomClient like :x and c.isArchive = false ORDER BY c.idClient ASC")
 	public Page<Client> getClientByNom(@Param("x")String mc, Pageable pageable);
 	
 	@Query("select c from Client c where c.nomClient like :x")
 	public List<Client> chercherClient(@Param("x") String mc);
+	
+	@Query("select c from Client c where  c.isArchive = false ORDER BY c.idClient ASC")
+	public List<Client> getClients();
 }

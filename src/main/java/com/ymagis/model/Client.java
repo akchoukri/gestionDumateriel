@@ -7,7 +7,6 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,6 +31,8 @@ public class Client implements Serializable {
 	private String telClient;
 	@Column(name = "DATE_NAISSANCE")
 	private Date dateNaissanceClient;
+	@Column(name = "IS_ARCHIVE")
+	private boolean isArchive;
 
 	@OneToMany(mappedBy = "client", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
 			CascadeType.REFRESH })
@@ -119,6 +120,14 @@ public class Client implements Serializable {
 	public Client(String nomClient) {
 		super();
 		this.nomClient = nomClient;
+	}
+
+	public boolean isArchive() {
+		return isArchive;
+	}
+
+	public void setArchive(boolean isArchive) {
+		this.isArchive = isArchive;
 	}
 
 }

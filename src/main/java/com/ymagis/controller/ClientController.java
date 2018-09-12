@@ -63,7 +63,7 @@ public class ClientController {
 		//recuperer  la liste des clients 	
 		@RequestMapping(value="/listClients",method=RequestMethod.GET)
 		public List<Client> getClients(){
-			return clientRepository.findAll();
+			return clientRepository.getClients();
 		}
 		
 		//recuperer   des clients pageable
