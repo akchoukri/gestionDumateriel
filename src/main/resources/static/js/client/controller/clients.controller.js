@@ -4,7 +4,8 @@
 	app.controller("listClientContl", clientCtrl);
 
 	//controller pour client
-	function clientCtrl($scope, clientDataService, $state, $rootScope) {
+	function clientCtrl($scope, clientDataService, $state, $rootScope,
+			$interval) {
 
 		$scope.pageClient = {};
 		$scope.motCle = "";
@@ -12,7 +13,7 @@
 		$scope.size = 3;
 		$scope.totalePages = 0;
 		$scope.pages = [];
-
+		$scope.count = 0;
 		//fonction qui permet rcuperer les client au demarage de la vue 
 		$scope.init = function() {
 
@@ -63,18 +64,64 @@
 			$scope.init();
 		}
 
-		// suppression d'un client
-		$scope.supprimerClient = function(c) {
+		$scope.clientAsupp = function(client) {
 
-			var item = $scope.pageClient.content[c];
+			$scope.clientSupp = client;
+		}
+		// suppression d'un client
+		$scope.supprimerClient = function(item) {
+
+			//var item = $scope.pageClient.content[c];
 			item.archive = true;
 
-			clientDataService.updateClient(item);
+			clientDataService.updateClient(item).then(
+					function(data) {
 
-			$state.reload();
+						$rootScope.msgClient = "le client " + data.nomClient
+								+ " est supprimé avec succès"
+						$scope.clientSupp = null;
+						$state.reload();
+						stop = $interval(function() {
+							$scope.count = $scope.count + 1;
+
+							if ($scope.count == 5)
+								$scope.stopmsg();
+						}, 500);
+
+					});
 
 		}
 
+		$scope.stopmsg = function() {
+			if (angular.isDefined(stop)) {
+				$interval.cancel(stop);
+				stop = undefined;
+				$rootScope.msgClient = null;
+			}
+		};
+
+		$scope.confirmationDialogConfig = {};
+
+		$scope.confirmationDialog = function() {
+			$scope.confirmationDialogConfig = {
+				title : "Caution!!!",
+				message : "Are you sure you want to delete?",
+				buttons : [ {
+					label : "Delete",
+					action : "delete"
+				} ]
+			};
+			$scope.showDialog(true);
+		};
+
+		$scope.showDialog = function(flag) {
+			jQuery("#confirmation-dialog .modal").modal(flag ? 'show' : 'hide');
+		};
+		$scope.executeDialogAction = function(action) {
+			if (typeof $scope[action] === "function") {
+				$scope[action]();
+			}
+		};
 	}
 
 })();

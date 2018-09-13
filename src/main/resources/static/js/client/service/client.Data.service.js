@@ -33,7 +33,7 @@ app.service("clientDataService",function ($http,$location) {
 
     	return $http.post("http://localhost:8080/clients/add",client)
             .then(function mySuccess(response) {
-            		
+            	return response.data;
             }, function myError(response) {
                
 
@@ -44,9 +44,10 @@ app.service("clientDataService",function ($http,$location) {
     this.updateClient = function(client){
 
 
-        $http.put("http://localhost:8080/clients/"+client.idClient,client)
+    	return  $http.put("http://localhost:8080/clients/"+client.idClient,client)
         .then(function mySuccess(response) {
-
+        	
+        	return response.data;
         }, function myError(response) {
            
 

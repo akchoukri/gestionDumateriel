@@ -28,10 +28,10 @@ public class ClientController {
 	
 	// ajouter un client 
 	@RequestMapping(method=RequestMethod.POST, value="/clients/add")
-    public String saveClient(@RequestBody Client client) {
+    public Client saveClient(@RequestBody Client client) {
 		
         clientRepository.save(client);
-        return "le client"+client.getNomClient()+" est ajouté avec succes";
+        return client;
     }
 	
 	// recuperer un client by id
@@ -55,9 +55,9 @@ public class ClientController {
 	  
 	  // mettre a jour client
 	  @RequestMapping(value="/clients/{id}",method=RequestMethod.PUT)
-	  public String updateClient(@PathVariable Long id,@RequestBody Client client) {  
+	  public Client updateClient(@PathVariable Long id,@RequestBody Client client) {  
 		  clientRepository.save(client);
-		  return "le client"+client.getNomClient()+" est modifie avec succes";
+		  return client;
 	  }
 	  
 		//recuperer  la liste des clients 	

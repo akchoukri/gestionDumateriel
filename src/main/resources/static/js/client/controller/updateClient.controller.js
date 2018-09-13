@@ -5,7 +5,7 @@
 
 	//controller pour mis a jour client
 	function updateClientCtrl($scope, clientDataService, $stateParams,
-			$location, $state) {
+			$location, $state, $interval, $rootScope) {
 
 		$scope.client = null;
 
@@ -15,18 +15,39 @@
 					$scope.client = data;
 					$scope.client.dateNaissanceClient = new Date(
 							$scope.client.dateNaissanceClient);
-					//console.log(data)
+
 				})
 
 		//mettre a jour client
 		$scope.updateClient = function() {
-			//console.log($scope.client)
-			clientDataService.updateClient($scope.client);
-			$state.go("clients", {}, {
-				reload : true
-			});
+
+			clientDataService.updateClient($scope.client).then(
+					function(data) {
+
+						$state.go("clients", {}, {
+							reload : true
+						});
+						$rootScope.msgClient = "le client " + data.nomClient
+								+ " est modifié avec succès"
+						stop = $interval(function() {
+
+							$scope.count = $scope.count + 1;
+
+							if ($scope.count == 5)
+								$scope.stopmsg();
+						}, 500);
+
+					});
 		};
 
+		//annuler msg 
+		$scope.stopmsg = function() {
+			if (angular.isDefined(stop)) {
+				$interval.cancel(stop);
+				stop = undefined;
+				$rootScope.msgClient = null;
+			}
+		};
 		//annuler la mise a jour et redirection a la vue clients
 		$scope.annulerUpdate = function() {
 			$location.path("clients");
