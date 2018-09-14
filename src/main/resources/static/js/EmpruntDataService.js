@@ -1,4 +1,4 @@
-(function(){
+ (function(){
 	
 
 	var app = angular.module('myApp');
@@ -85,7 +85,6 @@
 			console.log(materiel);
 			return $http.put("http://localhost:8080/materiel/" + id, materiel)
 					.then(function(response) {
-						console.log(response);
 					});
 		}
       

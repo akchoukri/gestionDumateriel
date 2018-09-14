@@ -39,13 +39,7 @@
 			<div class="w3-col l12 s12">
 				<!-- Blog entry -->
 				<div class="w3-container w3-white w3-margin w3-padding-large">
-					<div class="alert alert-success" ng-show="mode==1">
-						<strong>Succès!</strong> Vous avez enregistré l'emprunt avec
-						succès.
-						<button type="button" class="close" ng-click="modeForm()">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
+					
 
 					<h2 style="text-align: center";="">Enregistrement d'un emprunt</h2>
 					<br>
@@ -65,6 +59,7 @@
 														class="input-group-addon"><i
 														class="glyphicon glyphicon-user"></i></span> <select
 														style="width: 150%; height: 40px;" ng-model="name"
+														ng-change="choisirClient(name)"
 														name="nom_client" class="form-control selectpicker"
 														ng-options="o as o for o in options" required>
 													</select>
@@ -140,6 +135,8 @@
 														class="input-group-addon"><i
 														class="glyphicon glyphicon-calendar"></i></span> <input
 														style="width: 150%; height: 40px;" type="date"
+														min="{{jour}}"
+														ng-change="validerDateEmprunt(emprunt.dateEmprunt)"
 														name="date_emprunt" class="form-control"
 														ng-model="emprunt.dateEmprunt" required />
 												</div>
@@ -154,6 +151,7 @@
 														class="input-group-addon"><i
 														class="glyphicon glyphicon-calendar"></i></span> <input
 														style="width: 150%; height: 40px;" type="date"
+														min="{{endDate}}"
 														name="date_retour" class="form-control"
 														ng-model="emprunt.dateRetourPrevu" required />
 												</div>
@@ -189,7 +187,7 @@
 										<label style="font-size: 13px;">Date d'emprunt:</label> <label
 											style="color: rgb(75, 116, 230); font-size: 13px;">{{emprunt.dateEmprunt}}</label></br>
 										<label style="font-size: 13px;">Date de Retour prevu:</label>
-										<label style="color: rgb(75, 116, 230); font-size: 13px;">{{emprunt.dateRetour}}</label></br>
+										<label style="color: rgb(75, 116, 230); font-size: 13px;">{{emprunt.dateRetourPrevu}}</label></br>
 										<label style="font-size: 13px;">Prix Total:</label> <label
 											style="color: rgb(75, 116, 230); font-size: 13px;">{{emprunt.prixTotal}}
 											DH</label></br>

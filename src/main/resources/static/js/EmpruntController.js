@@ -17,6 +17,12 @@
 						$scope.quantiteNbr = /^\+?\d{1}/;
 						$scope.prixNbr = /^\+?\d{1}/;
 						$scope.materielsDesignation=[];
+						
+						
+						//valider le champs date d'emprunt et date de retour
+						$scope.endDate = new Date();
+						var date = $scope.endDate.getTime()-(60*60*24) * 1000
+						$scope.jour = new Date(date);
 						// afficher liste des clients
 						EmpruntDatasrv.getClients().then(function(data) {
 							$scope.client = data.data;
@@ -24,10 +30,11 @@
 							var values = [];
 							for (var i = 0; i < $scope.client.length; i++) {
 								values.push(data.data[i]['nomClient']);
-								$scope.options = values;
 							}
+							$scope.options = values;
+							console.log($scope.options.sort());
 						}); 
-
+						
 						// afficher la liste des materiels disponible
 						EmpruntDatasrv
 								.getMateriels()
@@ -43,6 +50,7 @@
 															.push($scope.materiels[i].designation);
 												}
 											}
+											console.log($scope.materielsDesignation);
 										});
 						// fonction pour chercher un materiel par sa designation
 						$scope.chercherMateriel = function(designation) {
@@ -61,6 +69,7 @@
 											}, function(err) {
 												console.log(err);
 											});
+							console.log($scope.materielChoisis);
 						}
 						// ajouter un nv materiel
 						$scope.ajouterMateriel = function() {
@@ -75,6 +84,7 @@
 							}
 							$scope.emprunt.prixTotal = $scope.emprunt.prixTotal
 									+ ($scope.prix * $scope.nbr);
+							
 						}
 						// supprimer un materiel dans la liste
 						$scope.removeMateriel = function(index) {
@@ -106,24 +116,30 @@
 												$scope.emprunt.client = $scope.client;
 												// ajoutet la liste des
 												// materiels a l'objet emprunt
-												$scope.emprunt.materiels = $scope.materielsAemprunte;
-												var id = $scope.client.idClient;
-												// post l'objet emprunt
-												EmpruntDatasrv.newEmprunt(id,
-														$scope.emprunt).then(
-														function() {
-															$scope.mode = 1;
-														}, function(err) {
-															console.log(err);
-														});
+												if($scope.materielsAemprunte[0]==null){
+													alert("Veuillez choisir des matériels");
+												}else {
+													$scope.emprunt.materiels = $scope.materielsAemprunte;
+													var id = $scope.client.idClient;
+													// post l'objet emprunt
+													EmpruntDatasrv.newEmprunt(id,
+															$scope.emprunt).then(
+															function() {
+																$scope.mode = 1;
+															}, function(err) {
+																console.log(err);
+															});
+													alert("Succès!Vous avez enregistré l'emprunt avec succès.");
+													
+													$window.location.reload();
+												}
+												
 											}, function(err) {
 												console.log(err);
 											});
+							
 						}
-						// fonction pour restart la page
-						$scope.modeForm = function() {
-							$window.location.reload();
-						}
+						
 						// fonction annuler
 						$scope.annuler = function() {
 							console.log($scope.materielsAemprunte);
@@ -139,5 +155,8 @@
 								$window.location.reload();
 							}
 						}
+
+						
+						
 					});
 })();

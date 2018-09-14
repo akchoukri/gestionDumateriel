@@ -1,15 +1,11 @@
-package com.ymagis.controller;
+ package com.ymagis.controller;
 
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,17 +32,13 @@ public class EmpruntServices {
 	private ClientRepository clientRepository;
 	@Autowired
 	private MaterielRepository materielRepository;
-	
-	// Ajouter un nouveau emprunt
-	public void idClient(Emprunt emprunt, Client client) {
-		emprunt.setClient(client);
-		empruntRepository.save(emprunt);
-	}
+
 
 	// recuperer la liste des clients
 	@GetMapping(value = "/chercherClients")
 	public List<Client> getAllClients() {
 		List<Client> clients = this.clientRepository.findAll();
+		
 		return clients;
 	}
 
@@ -80,21 +72,23 @@ public class EmpruntServices {
 				materielsDisponible.add(materielsChoisis.get(i));
 			}
 		}
-		// return materielRepository.chercherMateriel("%" + mc + "%");
 		return materielsDisponible;
 	}
 	
 
 	// ajouter un nouveau emprunt
 	@PostMapping("/client/{idClient}/emprunts")
-	public Emprunt createEmprunt(@PathVariable(value = "idClient") Long idClient, @RequestBody Emprunt emprunt)
-			throws ParseException {
-		Optional<Client> client = clientRepository.findById(idClient);
-		System.out.println("emprunt:" + emprunt);
-		emprunt.setClient(client.get());
-		System.out.println(emprunt.getMateriels());
-		return empruntRepository.save(emprunt);
-		// return emprunt;
+	public Emprunt createEmprunt(@PathVariable(value = "idClient") Long idClient, @RequestBody Emprunt emprunt)  throws ParseException {
+		if(idClient==null || emprunt.getMateriels()==null ) {
+			return null ;
+		}else{
+			Optional<Client> client = clientRepository.findById(idClient);
+			System.out.println("emprunt:" + emprunt);
+			emprunt.setClient(client.get());
+			System.out.println(emprunt.getMateriels());
+			return empruntRepository.save(emprunt);
+		}
+
 	}
 
 

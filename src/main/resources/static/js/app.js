@@ -31,6 +31,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 				}
 			}
 	})
+	
+
 	.state('emprunt', {
 			parent : 'main',
 			url : '/emprunt',
@@ -90,6 +92,15 @@ templateUrl : 'views/client/updateClient.html',
 controller : "clientUpdateCtrl"
 
 })
+.state('home', {
+	parent : 'main',
+	url : '/home',
+	views : {
+		'content@main' : {
+			templateUrl : 'views/home.html',
+		}
+	}
+});
 
 
    
