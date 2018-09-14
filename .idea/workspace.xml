@@ -2,104 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee329684-43ce-4f03-8e53-3ca32405eaf9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_7_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_7_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_jta_1_1_spec_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_32.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_32.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_32.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_17_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_5_2_3_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_11_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_3_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_15_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_0_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/views/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/views/materielSearch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ymagis/GestionDuMaterielApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/GestionDuMaterielApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Categorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Categorie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Materiel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Materiel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/onglet2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/onglet2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/search2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/search2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ymagis/controller/MaterielRestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ymagis/controller/MaterielRestService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/controller.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -120,7 +29,7 @@
           <entry key="project.closed" value="13" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.18" value="3" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.20" value="1" />
@@ -129,14 +38,14 @@
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="classpath" value="1" />
           <entry key="css" value="3" />
-          <entry key="html" value="27" />
+          <entry key="html" value="28" />
           <entry key="java" value="14" />
           <entry key="js" value="11" />
           <entry key="xml" value="2" />
@@ -147,7 +56,7 @@
         <counts>
           <entry key="CSS" value="3" />
           <entry key="Eclipse" value="1" />
-          <entry key="HTML" value="27" />
+          <entry key="HTML" value="28" />
           <entry key="JAVA" value="14" />
           <entry key="JavaScript" value="11" />
           <entry key="XML" value="3" />
@@ -157,19 +66,22 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="88" />
-          <entry key="HTML" value="619" />
-          <entry key="JavaScript" value="574" />
+          <entry key="HTML" value="696" />
+          <entry key="JAVA" value="66" />
+          <entry key="JavaScript" value="642" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="88" />
-          <entry key="html" value="619" />
-          <entry key="js" value="574" />
+          <entry key="html" value="697" />
+          <entry key="java" value="66" />
+          <entry key="js" value="641" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
       <usages-collector id="statistics.spring.boot.mvc.usages" />
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
@@ -177,17 +89,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/search2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="220" column="82" selection-start-line="220" selection-start-column="82" selection-end-line="220" selection-end-column="82" />
+            <state relative-caret-position="193">
+              <caret line="207" lean-forward="true" selection-start-line="207" selection-end-line="207" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/model/Categorie.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="27" column="31" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="31" />
+            <state relative-caret-position="190">
+              <caret line="163" column="44" lean-forward="true" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -195,35 +107,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="204" column="41" selection-start-line="204" selection-start-column="41" selection-end-line="204" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="86" column="53" lean-forward="true" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/GestionDuMaterielApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
-              <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/pojo/MaterielPojo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="31" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="31" />
+            <state relative-caret-position="153">
+              <caret line="140" column="15" selection-start-line="140" selection-start-column="15" selection-end-line="140" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -258,20 +143,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/search.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="52" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>search2</find>
       <find>script</find>
       <find>hidden</find>
       <find>index.js</find>
@@ -288,7 +163,6 @@
       <find>ng-click</find>
       <find>navClick</find>
       <find>\n \&lt;meta charset\=\&quot;UTF\-8\&quot;\&gt;\n\n \&lt;meta name\=\&quot;viewport\&quot; content\=\&quot;width\=device\-width\, initial\-scale\=1\&quot;\&gt;\n \&lt;link rel\=\&quot;stylesheet\&quot; href\=\&quot;https\:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/meyer\-reset\/2\.0\/reset\.min\.css\&quot;\&gt;\n \&lt;link rel\=\'stylesheet\' href\=\'http\:\/\/maxcdn\.bootstrapcdn\.com\/bootstrap\/3\.2\.0\/css\/bootstrap\.min\.css\'\&gt;\n\n\n\n\n\&lt;div class\=\&quot;global\-wrapper\&quot; ng\-controller\=\&quot;MaterielController\&quot;\&gt;\n\n\	\&lt;div id\=\&quot;tabs\&quot; class\=\&quot;container\&quot;\&gt;\n\n\	\	\&lt;div class\=\&quot;tabs\&quot;\&gt;\n\	\	\	\&lt;a ng\-click\=\&quot;activetab\=1\&quot; ng\-class\=\&quot;\[ activetab \=\= 1 \? \'active\' \: \'\' \]\&quot;\&gt;home\&lt;\/a\&gt;\n\	\	\	\&lt;a ng\-click\=\&quot;activetab\=2\&quot; ng\-class\=\&quot;\[ activetab \=\= 2 \? \'active\' \: \'\' \]\&quot;\&gt;add\&lt;\/a\&gt;\n\	\	\&lt;\/div\&gt;\n\	\&lt;\!\-\-\&amp;lt\;\!\&amp;ndash\; nav section \&amp;ndash\;\&amp;gt\;\n\	\&lt;nav class\=\&quot;navbar navbar\-default\&quot;\&gt;\n\	\	\&lt;div class\=\&quot;container\-fluid\&quot;\&gt;\n\	\	\	\&lt;div class\=\&quot;nav\-header\&quot;\&gt;\n\	\	\	\	\&lt;a href\=\&quot;\#\&quot; class\=\&quot;navbar\-brand hidden\-xs\&quot;\&gt;Angular Exercise\&lt;\/a\&gt;\n\	\	\	\	\&lt;ul class\=\&quot;nav navbar\-nav\&quot;\&gt;\n\	\	\	\	\	\&lt;li ng\-repeat\=\&quot;navLink in nav\.navItems\&quot;\n\	\	\	\	\	\	ng\-class\=\&quot;\{active \: \$index \=\=\= nav\.selectedIndex\}\&quot;\&gt;\&lt;a\n\	\	\	\	\	\	class\=\&quot;text\-center\&quot; ng\-click\=\&quot;nav\.navClick\(\$index\)\&quot;\n\	\	\	\	\	\	ng\-href\=\&quot;\#\/\{\{navLink\}\}\&quot;\&gt;\{\{navLink\}\}\&lt;\/a\&gt;\&lt;\/li\&gt;\n\	\	\	\	\&lt;\/ul\&gt;\n\	\	\	\&lt;\/div\&gt;\n\	\	\&lt;\/div\&gt;\n\	\&lt;\/nav\&gt;\-\-\&gt;\n\n\n\	\&lt;\!\-\-\&lt;div class\=\&quot;container\&quot;\&gt;\-\-\&gt;\n\&lt;\!\-\-\n\	\	\&lt;div class\=\&quot;row panel panel\-primary\&quot;\&gt;\n\-\-\&gt;\n\	\	\&lt;div class\=\&quot;content\&quot;\&gt;\n\	\	\	\&lt;div ng\-if\=\&quot;activetab \=\= 1\&quot; class\=\&quot;tabcontent\&quot;\&gt;\n\n\	\	\	\&lt;div class\=\&quot;panel panel\-primary\&quot;\&gt;\n\	\	\	\	\&lt;div class\=\&quot;panel\-heading\&quot;\&gt;La liste des materiels \&lt;\/div\&gt;\n\n\	\	\	\	\&lt;div class\=\&quot;panel\-body\&quot;\&gt;\n\n\	\	\	\	\	\&lt;div class\=\&quot;col\-xs\-5 panel\-body\&quot;\&gt;\n\	\	\	\	\	\	\&lt;ul class\=\&quot;list\-group\&quot;\&gt;\n\	\	\	\	\	\	\	\&lt;li\&gt;\&lt;button ng\-click\=chercherMateriels\(\)\&gt;Charger\&lt;\/button\&gt;\&lt;\/li\&gt;\n\	\	\	\	\	\	\	\&lt;li class\=\&quot;list\-group\-item\&quot;\&gt;\n\	\	\	\	\	\	\	\	\&lt;h4\&gt;Materiels\:\&lt;\/h4\&gt; \&lt;input class\=\&quot;form\-control\&quot;\n\	\	\	\	\	\	\	\	\	\	\	\	\	\	   placeholder\=\&quot;Seach Your materiel\&quot; type\=\&quot;text\&quot; ng\-model\=\&quot;motCle\&quot;\&gt;\n\	\	\	\	\	\	\	\	\&lt;\!\-\-             \&lt;contact class\=\&quot;list\-group\-item\&quot; ng\-repeat\=\&quot;contact in pagemateriels\.data\.content \| filter\: motCle  \&quot;\&gt;\{\{contact\.designation\}\}\&lt;\/contact\&gt; \-\-\&gt;\n\	\	\	\	\	\	\	\	\&lt;a ng\-click\=\&quot;afficher\(contact\.idMateriel\)\&quot; class\=\&quot;list\-group\-item clickable\&quot;\n\	\	\	\	\	\	\	\	   ng\-repeat\=\&quot;contact in pagemateriels\.data\.content \| filter\: motCle\&quot;\&gt; \{\{contact\.designation\}\} \&lt;\/a\&gt;\n\n\	\	\	\	\	\	\	\&lt;\/li\&gt;\n\	\	\	\	\	\	\&lt;\/ul\&gt;\n\n\	\	\	\	\	\	\&lt;div class\=\&quot;container\&quot;\&gt;\n\	\	\	\	\	\	\	\&lt;div class\=\&quot;text\-center\&quot;\&gt;\n\	\	\	\	\	\	\	\	\&lt;ul class\=\&quot;nav nav\-pills\&quot;\&gt;\n\	\	\	\	\	\	\	\	\	\&lt;li ng\-class\=\&quot;\{active\:\$index\=\=pageCourante\}\&quot;\n\	\	\	\	\	\	\	\	\	\	ng\-repeat\=\&quot;p in pages track by \$index\&quot;\n\	\	\	\	\	\	\	\	\	\	class\=\&quot;clickable nav\-item nav\-link active\&quot;\&gt;\&lt;a\n\	\	\	\	\	\	\	\	\	\	\	data\-toggle\=\&quot;pill\&quot; ng\-click\=\&quot;goToPage\(\$index\)\&quot;\&gt;\{\{\$index\}\}\&lt;\/a\&gt;\&lt;\/li\&gt;\n\	\	\	\	\	\	\	\	\&lt;\/ul\&gt;\n\	\	\	\	\	\	\	\&lt;\/div\&gt;\n\	\	\	\	\	\	\&lt;\/div\&gt;\n\	\	\	\	\	\&lt;\/div\&gt;\n\n\	\	\	\	\	\&lt;\!\-\-   ng\-view below       \-\-\&gt;\n\	\	\	\	\	\&lt;div class\=\&quot;col\-xs\-7\&quot;\&gt;\n\	\	\	\	\	\	\&lt;div class\=\&quot;list\-group panel\-body\&quot;\&gt;\n\	\	\	\	\	\	\	\&lt;\!\-\-\&lt;div ng\-view\&gt;\&lt;\/div\&gt;\-\-\&gt;\n\	\	\	\	\	\	\	\&lt;div ng\-if\=\&quot;modee\=\=0\&quot;\&gt;\n\	\	\	\	\	\	\	\	\&lt;div class\=\&quot;alert alert\-success text\-center\&quot; ng\-class\=\&quot;\{hidden \: \!removed\}\&quot;\&gt; \{\{removed\}\}\&lt;\/div\&gt;\n\	\	\	\	\	\	\	\	\&lt;div class\=\&quot;list\-group\-item text\-center\&quot;\&gt;Please select a materiel to view\&lt;\/div\&gt;\n\n\	\	\	\	\	\	\	\&lt;\/div\&gt;\n\n\	\	\	\	\	\	\	\&lt;div class\=\&quot;list\-group\-item\&quot; ng\-if\=\&quot;modee\=\=1\&quot;\&gt;\n\	\	\	\	\	\	\	\	\&lt;h3 class\=\&quot;text\-center\&quot;\&gt;\{\{materiell\.designation\}\}\&lt;\/h3\&gt;\n\	\	\	\	\	\	\	\	\&lt;p\&gt;\n\	\	\	\	\	\	\	\	\	Reference du materiel\: \&lt;a\&gt;\{\{materiell\.reference\}\}\&lt;\/a\&gt;\n\	\	\	\	\	\	\	\	\&lt;\/p\&gt;\n\	\	\	\	\	\	\	\	\&lt;p\&gt;Designation\: \&lt;a\&gt;\{\{materiell\.designation\}\}\&lt;\/a\&gt;\&lt;\/p\&gt;\n\	\	\	\	\	\	\	\	\&lt;p\&gt;\n\	\	\	\	\	\	\	\	\	Disponibilité\: \&lt;a\&gt;\{\{materiell\.disponible\}\}\&lt;\/a\&gt;\n\	\	\	\	\	\	\	\	\&lt;\/p\&gt;\n\	\	\	\	\	\	\	\	\&lt;p\&gt;Catégorie\:\n\	\	\	\	\	\	\	\	\&lt;a\&gt;\{\{materiell\.categorie\.nomCategorie\}\}\&lt;\/a\&gt;\&lt;\/p\&gt;\n\n\	\	\	\	\	\	\	\	\&lt;p\&gt;Etat actuel du materiel\:\n\	\	\	\	\	\	\	\	\&lt;a\&gt;\{\{materiell\.etatMateriel\}\}\&lt;\/a\&gt;\&lt;\/p\&gt;\n\n\	\	\	\	\	\	\	\	\&lt;a\&gt;\n\	\	\	\	\	\	\	\	\	\&lt;button class\=\&quot;btn btn\-default\&quot;\&gt;\n\	\	\	\	\	\	\	\	\	\	\&lt;span class\=\&quot;glyphicon glyphicon\-pencil\&quot; ng\-click\=\&quot;editAccount\(materiell\)\&quot;\&gt;\&lt;\/span\&gt;\&lt;span\&gt; \- Edit\&lt;\/span\&gt;\n\	\	\	\	\	\	\	\	\	\&lt;\/button\&gt;\n\	\	\	\	\	\	\	\	\&lt;a\&gt;\&lt;button class\=\&quot;btn btn\-default\&quot;\n\	\	\	\	\	\	\	\	\	\	\	\	\	\	  ng\-click\=\&quot;supprimer\(materiell\.idMateriel\)\&quot;\&gt;\n\	\	\	\	\	\	\	\	\&lt;span class\=\&quot;glyphicon glyphicon\-remove\&quot;\&gt;\&lt;\/span\&gt;\&lt;span\&gt; \-\n                                        Remove\&lt;\/span\&gt;\n\	\	\	\	\	\	\	\&lt;\/button\&gt;\&lt;\/a\&gt;\n\	\	\	\	\	\	\	\&lt;\/div\&gt;\n\n\	\	\	\	\	\	\&lt;\/div\&gt;\n\	\	\	\	\	\&lt;\/div\&gt;\n\n\	\	\	\	\&lt;\/div\&gt;\n\	\	\	\&lt;\/div\&gt;\n\n\	\	\	\&lt;\!\-\-\&lt;div class\=\&quot;panel\-heading\&quot;\&gt;\n\	\	\	\	\&lt;h2 class\=\&quot;panel\-title\&quot;\&gt;List des Materiels\&lt;\/h2\&gt;\n\	\	\	\&lt;\/div\&gt;\-\-\&gt;\n\	\	  \&lt;\!\-\-   \&lt;\/script\&gt; \-\-\&gt;\n\&lt;\/div\&gt;\n\	\	\	\&lt;div ng\-if\=\&quot;activetab \=\=\= 2\&quot; class\=\&quot;tabcontent\&quot;\&gt;\n\	\	\	\	Content for tab two\n\	\	\	\&lt;\/div\&gt;\n\	\	\	\&lt;div ng\-if\=\&quot;activetab \=\=\= 3\&quot; class\=\&quot;tabcontent\&quot;\&gt;\n\	\	\	\	Content for tab three\n\	\	\	\&lt;\/div\&gt;\n\&lt;\!\-\-\&lt;\/div\&gt;\-\-\&gt;\n\&lt;\/div\&gt;\n\&lt;\/div\&gt;\n\&lt;\/div\&gt;\n\&lt;\!\-\-\n\&lt;div class\=\&quot;tab\-pane active\&quot; id\=\&quot;1a\&quot;\&gt;\n\n\	\&lt;div class\=\&quot;container spacer\&quot;\&gt;\n\n\	\	Mot cle \: \&lt;input type\=\&quot;text\&quot; ng\-model\=\&quot;motCle\&quot;\&gt;\n\	\	\&lt;button ng\-click\=chercherMateriels\(\)\&gt;Charger\&lt;\/button\&gt;\n\	\&lt;\/div\&gt;\n\	\&lt;div class\=\&quot;container\&quot;\&gt;\n\	\	\&lt;table class\=\&quot;table table\-striped\&quot;\&gt;\n\	\	\	\&lt;thead\&gt;\n\	\	\	\	\&lt;tr\&gt;\n\	\	\	\	\	\&lt;th\&gt;Reference du materiel\&lt;\/th\&gt;\n\	\	\	\	\	\&lt;th\&gt;Designation\&lt;\/th\&gt;\n\	\	\	\	\	\&lt;th\&gt;Date d\'ajout du materiel\&lt;\/th\&gt;\n\	\	\	\	\	\&lt;th\&gt;disponibilite\&lt;\/th\&gt;\n\	\	\	\	\	\&lt;th\&gt;Etat actuel du materiel\&lt;\/th\&gt;\n\	\	\	\	\	\&lt;th\&gt;Categorie\&lt;\/th\&gt;\n\	\	\	\	\	\&lt;th\&gt;modifier\&lt;\/th\&gt;\n\	\	\	\	\&lt;\/tr\&gt;\n\	\	\	\&lt;\/thead\&gt;\n\	\	\	\&lt;tbody\&gt;\n\	\	\	\	\&lt;tr ng\-repeat\=\&quot;p in pagemateriels\.data\.content\&quot;\&gt;\n\	\	\	\	\	\&lt;td\&gt;\{\{p\.reference\}\}\&lt;\/td\&gt;\n\	\	\	\	\	\&lt;td\&gt;\{\{p\.designation\}\}\&lt;\/td\&gt;\n\	\	\	\	\	\&lt;td\&gt;\{\{p\.dateAjoutMateriel\}\}\&lt;\/td\&gt;\n\	\	\	\	\	\&lt;td\&gt;\{\{p\.disponible\}\}\&lt;\/td\&gt;\n\	\	\	\	\	\&lt;td\&gt;\{\{p\.etatMateriel\}\}\&lt;\/td\&gt;\n\	\	\	\	\	\&lt;td\&gt;\{\{p\.categorie\.nomCategorie\}\}\&lt;\/td\&gt;\n\	\	\	\	\	\&lt;td\&gt;\&lt;button ng\-click\=\&quot;supprimer\(p\.idMateriel\)\&quot;\&gt;Supprimer\&lt;\/button\&gt;\&lt;\/td\&gt;\n\	\	\	\	\	\&lt;td\&gt;\&lt;button ng\-click\=\&quot;editAccount\(p\)\&quot;\&gt;modifier\&lt;\/button\&gt;\&lt;\/td\&gt;\n\	\	\	\	\&lt;\/tr\&gt;\n\	\	\	\&lt;\/tbody\&gt;\n\	\	\&lt;\/table\&gt;\n\	\&lt;\/div\&gt;\n\n\	\&lt;div class\=\&quot;container\&quot;\&gt;\n\	\	\&lt;div class\=\&quot;text\-center\&quot;\&gt;\n\	\	\	\&lt;ul class\=\&quot;nav nav\-pills\&quot;\&gt;\n\	\	\	\	\&lt;li ng\-class\=\&quot;\{active\:\$index\=\=pageCourante\}\&quot;\n\	\	\	\	\	ng\-repeat\=\&quot;p in pages track by \$index\&quot;\n\	\	\	\	\	class\=\&quot;clickable nav\-item nav\-link active\&quot;\&gt;\&lt;a\n\	\	\	\	\	data\-toggle\=\&quot;pill\&quot; ng\-click\=\&quot;goToPage\(\$index\)\&quot;\&gt;\{\{\$index\}\}\&lt;\/a\&gt;\&lt;\/li\&gt;\n\	\	\	\&lt;\/ul\&gt;\n\	\	\&lt;\/div\&gt;\n\	\&lt;\/div\&gt;\n\&lt;\/div\&gt;\n\-\-\&gt;\n\n \&lt;script src\=\&quot;https\:\/\/ajax\.googleapis\.com\/ajax\/libs\/jquery\/3\.3\.1\/jquery\.min\.js\&quot;\&gt;\&lt;\/script\&gt;\n \&lt;script src\=\&quot;https\:\/\/maxcdn\.bootstrapcdn\.com\/bootstrap\/3\.3\.7\/js\/bootstrap\.min\.js\&quot;\&gt;\&lt;\/script\&gt;\n\n\&lt;script src\=\'https\:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/vue\/2\.5\.17\/vue\.min\.js\'\&gt;\&lt;\/script\&gt;\n\n\&lt;script\n\	src\=\'http\:\/\/ajax\.googleapis\.com\/ajax\/libs\/angularjs\/1\.2\.18\/angular\.min\.js\'\&gt;\&lt;\/script\&gt;\n\&lt;script\n\	src\=\'http\:\/\/ajax\.googleapis\.com\/ajax\/libs\/angularjs\/1\.2\.1\/angular\-route\.min\.js\'\&gt;\&lt;\/script\&gt;</find>
-      <find>supp</find>
       <find>ng-if=&quot;mode=</find>
       <find>ajou</find>
       <find>Vue</find>
@@ -300,6 +174,9 @@
       <find>materiell</find>
       <find>materiel.</find>
       <find>modee</find>
+      <find>supp</find>
+      <find>nom</find>
+      <find>cate</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -315,10 +192,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/views/search.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/views/materiels.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/views/search2.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/controller.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/views/search2.html" />
       </list>
     </option>
   </component>
@@ -378,6 +256,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -493,15 +374,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536766742682" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536917112205" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -599,18 +477,19 @@
       <workItem from="1536364939236" duration="115000" />
       <workItem from="1536399798004" duration="16277000" />
       <workItem from="1536586355424" duration="1244000" />
-      <workItem from="1536741646924" duration="18291000" />
+      <workItem from="1536741646924" duration="19460000" />
+      <workItem from="1536914527645" duration="2474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73314000" />
+    <option name="totallyTimeSpent" value="76957000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2582996" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26234818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -782,13 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="141" column="22" lean-forward="true" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -803,10 +675,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/search.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/pojo/MaterielPojo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="52" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+        <state relative-caret-position="187">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/model/Materiel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -814,6 +693,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/GestionDuMaterielApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="53" column="45" lean-forward="true" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="65" column="45" lean-forward="true" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/model/Categorie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="40" column="52" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -827,52 +734,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/GestionDuMaterielApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/model/Materiel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/pojo/MaterielPojo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="86" column="53" lean-forward="true" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/model/Categorie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="31" />
+        <state relative-caret-position="190">
+          <caret line="163" column="44" lean-forward="true" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/search2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="220" column="82" selection-start-line="220" selection-start-column="82" selection-end-line="220" selection-end-column="82" />
+        <state relative-caret-position="193">
+          <caret line="207" lean-forward="true" selection-start-line="207" selection-end-line="207" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="204" column="41" selection-start-line="204" selection-start-column="41" selection-end-line="204" selection-end-column="41" />
+        <state relative-caret-position="153">
+          <caret line="140" column="15" selection-start-line="140" selection-start-column="15" selection-end-line="140" selection-end-column="15" />
         </state>
       </provider>
     </entry>

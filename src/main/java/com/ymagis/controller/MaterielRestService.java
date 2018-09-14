@@ -69,8 +69,13 @@ public class MaterielRestService {
 		String nomCategorie = m.getNomCategorie();
 		Categorie categorie = categorieRepository.findByNomCategorie(nomCategorie);
 		materiel.setCategorie(categorie);
+		if(materiel.getDesignation()==null || materiel.getReference()==null ||materiel.getEtatMateriel()==null){
+			return null;
+		}
+		else{
+			return materielRepository.save(materiel);
 
-		return materielRepository.save(materiel);
+		}
 	}
 
 	// modification d un materiel

@@ -144,10 +144,8 @@
                                                 <label class="col-md-4 control-label">disponible</label>
                                                 <div class="col-md-4 selectContainer">
                                                     <div class="input-group">
-						                            	<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span> <select name="disponible"
-                                                                                                                                                ng-model="materiell.disponible"  required>
-
-                                                    </select>
+						                            	<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                                        <!--<select name="disponible" ng-model="materiell.disponible"  required> </select>-->
                                                         <select name="ngvalueselect" ng-model="materiell.disponible" >
                                                             <option ng-repeat="option in tt" ng-value="option">{{option}}</option>
                                                         </select>
@@ -173,14 +171,16 @@
 
 
                                                     </select>
+<!--
                                                         {{materiell.etatMateriel}}
+-->
                                                     </div>
                                                 </div>
                                             </div>
 
 
 
-                                            <div class="form-group"
+                                            <!--<div class="form-group"
                                                  ng-class="{ 'has-error' : materielForm.quantite.$invalid && !materielForm.quantite.$pristine }">
                                                 <label class="col-md-4 control-label">Quantite</label>
                                                 <div class="col-md-4 inputGroupContainer">
@@ -192,7 +192,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+-->
 
                                             <div class="form-group"
                                                  ng-class="{ 'has-error' : materielForm.categorie.$invalid && !materielForm.categorie.$pristine }">

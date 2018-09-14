@@ -131,6 +131,7 @@ console.log(err);
 
 		// supprimer un materiel
 		$scope.supprimer = function(id) {
+			if ( $window.confirm("vous voulez vraiment supprimer ce materiel?")){
             $scope.modee = 0;
 			MaterielDatasrv.deleteM(id).then(function(response) {
 				console.log(id);
@@ -138,6 +139,7 @@ console.log(err);
 			}, function myerror(err) {
 				console.log(err);
 			});
+            }
 		}
 		// fonction restart pour actualiser la page
 		var restart = function() {

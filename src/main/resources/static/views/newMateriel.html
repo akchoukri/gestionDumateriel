@@ -98,7 +98,7 @@
 
 
 
-				<div class="form-group"
+				<!--<div class="form-group"
 					ng-class="{ 'has-error' : materielForm.quantite.$invalid && !materielForm.quantite.$pristine }">
 					<label class="col-md-4 control-label">Quantite</label>
 					<div class="col-md-4 inputGroupContainer">
@@ -109,7 +109,7 @@
 								ng-model="materiel.quantite" required>
 						</div>
 					</div>
-				</div>
+				</div>-->
 
 
 				<div class="form-group"
@@ -150,14 +150,20 @@
 			</div>
 			<div class="panel-body">
 				<div class="form-group">
-					<label>DÃ©signation :</label><label>{{materiel.data.designation}}</label>
+					<label>Référence du matériel :</label><label>{{materiel.data.reference}}</label>
+				</div>
+				<div class="form-group">
+					<label>Désignation :</label><label>{{materiel.data.designation}}</label>
 				</div>
 				<div class="form-group">
 					<label>Disponible :</label><label>{{materiel.data.disponible}}</label>
 				</div>
 				<div class="form-group">
-					<label>Categorie :</label><label>{{materiel.data.categorie}}</label>
+					<label>Etat actuel du materiel :</label><label>{{materiel.data.etatMateriel}}</label>
 				</div>
+				<!--<div class="form-group">
+					<label>Categorie :</label><label>{{materiel.data.categorie}}</label>
+				</div>-->
 			</div>
 		</div>
 	</div>
