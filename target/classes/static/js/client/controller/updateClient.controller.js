@@ -8,7 +8,8 @@
 			$location, $state, $interval, $rootScope) {
 
 		$scope.client = null;
-
+		$scope.ph_numbr = /^\+?\d{10}$/;
+		$scope.eml_add = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 		// faire appel service pour recuperer un client en precisant id
 		clientDataService.getClient($stateParams.id).then(
 				function(data) {

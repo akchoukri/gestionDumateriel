@@ -1,4 +1,4 @@
-var app = angular.module("myApp",['ui.router','ngMaterial']);
+var app = angular.module("myApp",['ui.router','ngMaterial',,"chart.js" ]);
 
 
 
@@ -19,7 +19,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 				}
 			}
 		
-		})
+		})	.state('chart', {
+			parent : 'main',
+			url : '/chart',
+			views : {
+				'content@main' : {
+					templateUrl : 'views/statistique/chart.html',
+					controller : "statiqContl",
+				}
+			}
+	})
 
 		.state('pret', {
 			parent : 'main',
