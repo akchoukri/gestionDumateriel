@@ -31,7 +31,7 @@
 		}
 		// modifier un materiel
 		this.edit = function(materiel,id) {
-			return $http.put("http://localhost:8080/materiel/"+id, materiel);
+			return $http.put("http://localhost:8080/materiels/"+id, materiel);
 		}
 		
 		this.goToRouter = function (state, $state) {

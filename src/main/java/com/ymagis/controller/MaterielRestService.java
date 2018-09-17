@@ -39,7 +39,7 @@ public class MaterielRestService {
 		}
 
 	// consulter la liste des materiels par page
-	@RequestMapping(value = "/materiel", method = RequestMethod.GET)
+	@RequestMapping(value = "/materielss", method = RequestMethod.GET)
 	public Page<Materiel> listMateriel(@RequestParam(name = "page", defaultValue = "0") int page,
 			@RequestParam(name = "size", defaultValue = "10") int size) {
 		PageRequest pageRequest = new PageRequest(page, size);
@@ -79,7 +79,7 @@ public class MaterielRestService {
 	}
 
 	// modification d un materiel
-	@RequestMapping(value = "/materiel/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/materiels/{id}", method = RequestMethod.PUT)
 	public Materiel update(@RequestBody MaterielPojo m, @PathVariable Long id) {
 		Materiel materiel = materielToPojo(m);
 		materiel.setIdMateriel(id);

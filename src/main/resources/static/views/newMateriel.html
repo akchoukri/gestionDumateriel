@@ -20,7 +20,7 @@
 
 <div class="container">
 	<div ng-app="myApp" ng-controller="MaterielController">
-	<div ng-if="mode==0">
+	<div id="ta1" ng-if="mode==0">
 		<form class="well form-horizontal" name="materielForm"
 			ng-submit="submitForm(materielForm.$valid)" id="contact_form">
 			<fieldset>
@@ -62,7 +62,7 @@
 					<div class="col-md-4 selectContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-list"></i></span> <select name="disponible"
+								class="glyphicon glyphicon-list"></i></span> <select name="disponible" class="select1"
 								class="form-control selectpicker" placeholder="disponible"
 								ng-model="materiel.disponible" required>
 								<option value="">disponible</option>
@@ -84,7 +84,7 @@
 					<div class="col-md-4 selectContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-list"></i></span> <select
+								class="glyphicon glyphicon-list"></i></span> <select class="select1"
 								name="etatMateriel" class="form-control selectpicker"
 								placeholder="Etat actuel du materiel"
 								ng-model="materiel.etatMateriel" required>
@@ -118,7 +118,7 @@
 					<div class="col-md-4 selectContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-list"></i></span> <select name="categorie"
+								class="glyphicon glyphicon-list"></i></span> <select class="select1" name="categorie"
 								ng-model="materiel.nomCategorie"
 								class="form-control selectpicker" placeholder="categorie"
 								ng-options="o as o for o in options" required>

@@ -16,7 +16,7 @@ app.controller("MaterielController", function($rootScope, $scope, $http,
 		var i;
 		var values = [];
 	$scope.tt = [true,false];
-	$scope.etatM = ["bonne etat","en panne"]
+	$scope.etatM = ["bonne etat","en panne", "endommagé"]
 		//	
 		$scope.id = {};
     	$scope.activetab=1;

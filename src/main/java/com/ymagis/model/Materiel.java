@@ -2,9 +2,9 @@ package com.ymagis.model;
 
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,9 +12,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Materiel {
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,9 +35,10 @@ public class Materiel {
 	// @OnDelete(action = OnDeleteAction.CASCADE)
 	// @JsonIgnore
 	private Categorie categorie;
-
 	@ManyToMany
 	@JoinTable(name = "emprunt_materiel", joinColumns = @JoinColumn(name = "idMateriel"), inverseJoinColumns = @JoinColumn(name = "idEmprunt"))
+	//@ManyToMany(mappedBy = "materiels")
+	@JsonIgnore
 	private List<Emprunt> emprunts;
 
 	public Materiel() {
@@ -97,7 +101,7 @@ public class Materiel {
 		this.dateAjoutMateriel = dateAjoutMateriel;
 	}
 
-	public boolean isDisponible() {
+	public boolean getDisponible() {
 		return disponible;
 	}
 
@@ -136,5 +140,6 @@ public class Materiel {
 	public void setEmprunts(List<Emprunt> emprunts) {
 		this.emprunts = emprunts;
 	}
+
 
 }

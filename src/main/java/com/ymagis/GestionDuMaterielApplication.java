@@ -7,8 +7,24 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.ymagis.dao.ClientRepository;
+import com.ymagis.dao.EmpruntRepository;
+import com.ymagis.dao.MaterielRepository;
+import com.ymagis.model.Client;
+import com.ymagis.model.Emprunt;
+import com.ymagis.model.Materiel;
 
 import com.ymagis.dao.CategorieRepository;
 import com.ymagis.dao.MaterielRepository;
@@ -91,9 +107,10 @@ public class GestionDuMaterielApplication implements CommandLineRunner{
 		//materielRepository.save(new Materiel("ref2", "des2", new Date(), true, "bonne etat", 1));
 		//materielRepository.save(new Materiel("ref3", "des3", new Date(), true, "bonne etat", 1));
 		
-		
+
 		
 //		List<Materiel> materiels = materielRepository.findAll();
 //		materiels.forEach(m -> System.out.println(m.getReference() + " " + m.getCategorie().getNomCategorie()));
 		}
+
 }

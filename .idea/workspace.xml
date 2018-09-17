@@ -2,13 +2,809 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee329684-43ce-4f03-8e53-3ca32405eaf9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/controller/ClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/controller/EmpruntServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/dao/ClientRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/dao/EmpruntRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/EmpruntClient.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/EmpruntController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/EmpruntDataService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/client/controller/clients.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/client/controller/empruntByClient.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/client/controller/newClient.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/client/controller/updateClient.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/client/service/client.Data.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/angular-material-mocks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/angular-material.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/angular-material.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/angular-material.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/angular-material.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/angular-material.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/layouts/angular-material.layout-attributes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/layouts/angular-material.layout-attributes.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/layouts/angular-material.layout-attributes.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/layouts/angular-material.layouts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/layouts/angular-material.layouts.ie_fixes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/layouts/angular-material.layouts.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/layouts/angular-material.layouts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/autocomplete/autocomplete-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/autocomplete/autocomplete-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/autocomplete/autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/autocomplete/autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/autocomplete/autocomplete.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/autocomplete/autocomplete.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/backdrop/backdrop-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/backdrop/backdrop-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/backdrop/backdrop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/backdrop/backdrop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/backdrop/backdrop.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/backdrop/backdrop.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/bottomSheet/bottomSheet-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/bottomSheet/bottomSheet-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/bottomSheet/bottomSheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/bottomSheet/bottomSheet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/bottomSheet/bottomSheet.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/bottomSheet/bottomSheet.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/button/button-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/button/button-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/button/button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/button/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/button/button.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/button/button.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/card/card-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/card/card-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/card/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/card/card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/card/card.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/card/card.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/checkbox/checkbox-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/checkbox/checkbox-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/checkbox/checkbox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/checkbox/checkbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/checkbox/checkbox.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/checkbox/checkbox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/chips/chips-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/chips/chips-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/chips/chips.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/chips/chips.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/chips/chips.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/chips/chips.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/colors/colors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/colors/colors.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/content/content-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/content/content-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/content/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/content/content.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/content/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/content/content.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/core/core-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/core/core-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/core/core.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/core/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/core/core.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/core/core.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/core/default-theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/datepicker/datepicker-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/datepicker/datepicker-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/datepicker/datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/datepicker/datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/datepicker/datepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/datepicker/datepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/dialog/dialog-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/dialog/dialog-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/dialog/dialog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/dialog/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/dialog/dialog.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/dialog/dialog.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/divider/divider-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/divider/divider-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/divider/divider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/divider/divider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/divider/divider.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/divider/divider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabActions/fabActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabActions/fabActions.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabSpeedDial/fabSpeedDial.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabSpeedDial/fabSpeedDial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabSpeedDial/fabSpeedDial.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabSpeedDial/fabSpeedDial.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabToolbar/fabToolbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabToolbar/fabToolbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabToolbar/fabToolbar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabToolbar/fabToolbar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabTrigger/fabTrigger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/fabTrigger/fabTrigger.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/gridList/gridList-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/gridList/gridList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/gridList/gridList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/gridList/gridList.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/gridList/gridList.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/icon/icon-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/icon/icon-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/icon/icon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/icon/icon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/icon/icon.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/icon/icon.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/input/input-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/input/input-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/input/input.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/input/input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/input/input.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/input/input.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/list/list-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/list/list-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/list/list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/list/list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/list/list.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/list/list.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menu/menu-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menu/menu-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menu/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menu/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menu/menu.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menu/menu.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menuBar/menuBar-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menuBar/menuBar-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menuBar/menuBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menuBar/menuBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menuBar/menuBar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/menuBar/menuBar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/navBar/navBar-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/navBar/navBar-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/navBar/navBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/navBar/navBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/navBar/navBar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/navBar/navBar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/panel/panel-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/panel/panel-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/panel/panel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/panel/panel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/panel/panel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/panel/panel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressCircular/progressCircular-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressCircular/progressCircular-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressCircular/progressCircular.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressCircular/progressCircular.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressCircular/progressCircular.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressCircular/progressCircular.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressLinear/progressLinear-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressLinear/progressLinear-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressLinear/progressLinear.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressLinear/progressLinear.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressLinear/progressLinear.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/progressLinear/progressLinear.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/radioButton/radioButton-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/radioButton/radioButton-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/radioButton/radioButton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/radioButton/radioButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/radioButton/radioButton.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/radioButton/radioButton.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/select/select-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/select/select-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/select/select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/select/select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/select/select.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/select/select.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/showHide/showHide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/showHide/showHide.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/sidenav/sidenav-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/sidenav/sidenav-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/sidenav/sidenav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/sidenav/sidenav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/sidenav/sidenav.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/sidenav/sidenav.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/slider/slider-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/slider/slider-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/slider/slider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/slider/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/slider/slider.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/slider/slider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/sticky/sticky.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/sticky/sticky.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/sticky/sticky.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/sticky/sticky.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/subheader/subheader-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/subheader/subheader-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/subheader/subheader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/subheader/subheader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/subheader/subheader.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/subheader/subheader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/swipe/swipe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/swipe/swipe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/swipe/swipe.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/swipe/swipe.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/switch/switch-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/switch/switch-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/switch/switch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/switch/switch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/switch/switch.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/switch/switch.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tabs/tabs-arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tabs/tabs-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tabs/tabs-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tabs/tabs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tabs/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tabs/tabs.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tabs/tabs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/textField/textField-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/textField/textField.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/textField/textField.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toast/toast-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toast/toast-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toast/toast.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toast/toast.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toast/toast.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toast/toast.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toolbar/toolbar-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toolbar/toolbar-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toolbar/toolbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toolbar/toolbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toolbar/toolbar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/toolbar/toolbar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tooltip/tooltip-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tooltip/tooltip-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tooltip/tooltip.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tooltip/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tooltip/tooltip.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/tooltip/tooltip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/truncate/truncate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/truncate/truncate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/truncate/truncate.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/truncate/truncate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/virtualRepeat/virtualRepeat.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/virtualRepeat/virtualRepeat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/virtualRepeat/virtualRepeat.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/virtualRepeat/virtualRepeat.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/whiteframe/whiteframe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/whiteframe/whiteframe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/whiteframe/whiteframe.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/closure/whiteframe/whiteframe.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/autocomplete/autocomplete-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/autocomplete/autocomplete-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/autocomplete/autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/autocomplete/autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/autocomplete/autocomplete.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/autocomplete/autocomplete.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/autocomplete/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/backdrop/backdrop-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/backdrop/backdrop-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/backdrop/backdrop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/backdrop/backdrop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/backdrop/backdrop.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/backdrop/backdrop.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/backdrop/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/bottomSheet/bottomSheet-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/bottomSheet/bottomSheet-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/bottomSheet/bottomSheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/bottomSheet/bottomSheet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/bottomSheet/bottomSheet.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/bottomSheet/bottomSheet.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/bottomSheet/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/button/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/button/button-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/button/button-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/button/button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/button/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/button/button.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/button/button.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/card/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/card/card-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/card/card-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/card/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/card/card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/card/card.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/card/card.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/checkbox/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/checkbox/checkbox-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/checkbox/checkbox-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/checkbox/checkbox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/checkbox/checkbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/checkbox/checkbox.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/checkbox/checkbox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/chips/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/chips/chips-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/chips/chips-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/chips/chips.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/chips/chips.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/chips/chips.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/chips/chips.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/colors/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/colors/colors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/colors/colors.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/content/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/content/content-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/content/content-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/content/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/content/content.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/content/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/content/content.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/core/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/core/core-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/core/core-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/core/core.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/core/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/core/core.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/core/core.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/core/default-theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/datepicker/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/datepicker/datepicker-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/datepicker/datepicker-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/datepicker/datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/datepicker/datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/datepicker/datepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/datepicker/datepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/dialog/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/dialog/dialog-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/dialog/dialog-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/dialog/dialog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/dialog/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/dialog/dialog.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/dialog/dialog.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/divider/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/divider/divider-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/divider/divider-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/divider/divider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/divider/divider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/divider/divider.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/divider/divider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabActions/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabActions/fabActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabActions/fabActions.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabSpeedDial/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabSpeedDial/fabSpeedDial.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabSpeedDial/fabSpeedDial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabSpeedDial/fabSpeedDial.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabSpeedDial/fabSpeedDial.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabToolbar/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabToolbar/fabToolbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabToolbar/fabToolbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabToolbar/fabToolbar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabToolbar/fabToolbar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabTrigger/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabTrigger/fabTrigger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/fabTrigger/fabTrigger.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/gridList/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/gridList/gridList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/gridList/gridList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/gridList/gridList.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/gridList/gridList.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/icon/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/icon/icon-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/icon/icon-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/icon/icon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/icon/icon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/icon/icon.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/icon/icon.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/input/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/input/input-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/input/input-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/input/input.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/input/input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/input/input.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/input/input.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/list/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/list/list-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/list/list-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/list/list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/list/list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/list/list.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/list/list.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menu/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menu/menu-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menu/menu-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menu/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menu/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menu/menu.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menu/menu.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menuBar/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menuBar/menuBar-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menuBar/menuBar-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menuBar/menuBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menuBar/menuBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menuBar/menuBar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/menuBar/menuBar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/navBar/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/navBar/navBar-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/navBar/navBar-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/navBar/navBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/navBar/navBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/navBar/navBar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/navBar/navBar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/panel/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/panel/panel-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/panel/panel-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/panel/panel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/panel/panel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/panel/panel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/panel/panel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressCircular/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressCircular/progressCircular-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressCircular/progressCircular-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressCircular/progressCircular.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressCircular/progressCircular.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressCircular/progressCircular.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressCircular/progressCircular.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressLinear/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressLinear/progressLinear-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressLinear/progressLinear-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressLinear/progressLinear.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressLinear/progressLinear.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressLinear/progressLinear.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/progressLinear/progressLinear.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/radioButton/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/radioButton/radioButton-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/radioButton/radioButton-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/radioButton/radioButton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/radioButton/radioButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/radioButton/radioButton.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/radioButton/radioButton.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/select/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/select/select-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/select/select-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/select/select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/select/select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/select/select.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/select/select.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/showHide/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/showHide/showHide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/showHide/showHide.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sidenav/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sidenav/sidenav-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sidenav/sidenav-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sidenav/sidenav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sidenav/sidenav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sidenav/sidenav.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sidenav/sidenav.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/slider/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/slider/slider-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/slider/slider-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/slider/slider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/slider/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/slider/slider.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/slider/slider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sticky/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sticky/sticky.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sticky/sticky.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sticky/sticky.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/sticky/sticky.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/subheader/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/subheader/subheader-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/subheader/subheader-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/subheader/subheader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/subheader/subheader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/subheader/subheader.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/subheader/subheader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/swipe/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/swipe/swipe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/swipe/swipe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/swipe/swipe.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/swipe/swipe.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/switch/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/switch/switch-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/switch/switch-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/switch/switch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/switch/switch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/switch/switch.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/switch/switch.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tabs/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tabs/tabs-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tabs/tabs-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tabs/tabs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tabs/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tabs/tabs.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tabs/tabs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/textField/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/textField/textField-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/textField/textField-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/textField/textField.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/textField/textField.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/textField/textField.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/textField/textField.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toast/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toast/toast-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toast/toast-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toast/toast.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toast/toast.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toast/toast.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toast/toast.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toolbar/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toolbar/toolbar-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toolbar/toolbar-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toolbar/toolbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toolbar/toolbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toolbar/toolbar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/toolbar/toolbar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tooltip/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tooltip/tooltip-default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tooltip/tooltip-default-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tooltip/tooltip.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tooltip/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tooltip/tooltip.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/tooltip/tooltip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/truncate/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/truncate/truncate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/truncate/truncate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/truncate/truncate.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/truncate/truncate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/virtualRepeat/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/virtualRepeat/virtualRepeat.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/virtualRepeat/virtualRepeat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/virtualRepeat/virtualRepeat.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/virtualRepeat/virtualRepeat.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/whiteframe/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/whiteframe/whiteframe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/whiteframe/whiteframe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/whiteframe/whiteframe.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/js/whiteframe/whiteframe.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/layouts/angular-material.layout-attributes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/layouts/angular-material.layout-attributes.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/layouts/angular-material.layouts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/layouts/angular-material.layouts.ie_fixes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/layouts/angular-material.layouts.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/scss/angular-material.layout-attributes.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/scss/angular-material.layouts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/modules/scss/angular-material.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-material/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/views/client/clients.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/views/client/newClient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/views/client/updateClient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/views/emprunt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/views/empruntClient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/views/nouveauEmprunt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/views/pret.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ymagis/GestionDuMaterielApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/GestionDuMaterielApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ymagis/dao/MaterielRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/dao/MaterielRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Categorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Categorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Emprunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Emprunt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Materiel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ymagis/model/Materiel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/angular.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/angular.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/angular.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/angular.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/angular.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/angular.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/directives/stateDirectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/directives/stateDirectives.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/directives/stateDirectives.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/directives/stateDirectives.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/injectables.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/injectables.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/interface.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/interface.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/interface.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/interface.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/legacy/resolveService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/legacy/resolveService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/legacy/resolveService.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/legacy/resolveService.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/legacy/stateEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/legacy/stateEvents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/legacy/stateEvents.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/legacy/stateEvents.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/locationServices.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/locationServices.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/locationServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/locationServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/locationServices.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/locationServices.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/services.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/services.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateFilters.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateFilters.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateFilters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateFilters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateFilters.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateFilters.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateProvider.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateProvider.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateProvider.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/stateProvider.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/templateFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/templateFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/templateFactory.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/templateFactory.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/viewScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/viewScroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/viewScroll.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib-esm/viewScroll.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/angular.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/angular.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/angular.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/angular.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/angular.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/angular.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/directives/stateDirectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/directives/stateDirectives.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/directives/stateDirectives.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/directives/stateDirectives.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/directives/viewDirective.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/directives/viewDirective.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/directives/viewDirective.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/directives/viewDirective.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/directives/viewDirective.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/directives/viewDirective.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/injectables.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/injectables.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/interface.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/interface.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/interface.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/interface.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/legacy/resolveService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/legacy/resolveService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/legacy/resolveService.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/legacy/resolveService.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/legacy/stateEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/legacy/stateEvents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/legacy/stateEvents.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/legacy/stateEvents.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/locationServices.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/locationServices.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/locationServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/locationServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/locationServices.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/locationServices.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/services.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/services.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateFilters.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateFilters.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateFilters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateFilters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateFilters.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateFilters.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateProvider.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateProvider.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateProvider.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/stateProvider.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/views.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/views.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/views.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/views.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/views.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/statebuilders/views.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/templateFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/templateFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/templateFactory.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/templateFactory.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/urlRouterProvider.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/urlRouterProvider.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/urlRouterProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/urlRouterProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/urlRouterProvider.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/urlRouterProvider.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/viewScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/viewScroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/viewScroll.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/lib/viewScroll.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/angular-ui-router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/angular-ui-router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/angular-ui-router.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/angular-ui-router.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/angular-ui-router.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/angular-ui-router.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/angular-ui-router.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/angular-ui-router.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/resolveService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/resolveService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/resolveService.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/resolveService.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/resolveService.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/resolveService.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/resolveService.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/resolveService.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/stateEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/stateEvents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/stateEvents.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/stateEvents.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/stateEvents.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/stateEvents.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/stateEvents.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/stateEvents.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/ui-router-angularjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/ui-router-angularjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/ui-router-angularjs.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/ui-router-angularjs.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/ui-router-angularjs.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/ui-router-angularjs.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/ui-router-angularjs.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/release/ui-router-angularjs.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/typedoc.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/typedoc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/node_modules/angular-ui-router/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/nav.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/onglet1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/onglet2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/onglet2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/search2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/search2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ymagis/GestionDuMaterielApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ymagis/GestionDuMaterielApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ymagis/controller/MaterielRestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ymagis/controller/MaterielRestService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ymagis/dao/CategorieRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ymagis/dao/CategorieRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ymagis/dao/MaterielRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ymagis/dao/MaterielRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ymagis/model/Categorie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ymagis/model/Categorie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ymagis/model/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ymagis/model/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ymagis/model/Emprunt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ymagis/model/Emprunt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ymagis/model/Materiel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ymagis/model/Materiel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/angular.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/angular.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/angular.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/angular.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/angular.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/angular.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/directives/stateDirectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/directives/stateDirectives.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/directives/stateDirectives.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/directives/stateDirectives.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/directives/viewDirective.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/injectables.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/injectables.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/interface.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/interface.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/interface.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/interface.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/legacy/resolveService.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/legacy/resolveService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/legacy/resolveService.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/legacy/resolveService.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/legacy/stateEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/legacy/stateEvents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/legacy/stateEvents.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/legacy/stateEvents.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/locationServices.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/locationServices.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/locationServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/locationServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/locationServices.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/locationServices.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/services.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/services.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateFilters.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateFilters.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateFilters.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateFilters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateFilters.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateFilters.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateProvider.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateProvider.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateProvider.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/stateProvider.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/onEnterExitRetain.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/statebuilders/views.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/templateFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/templateFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/templateFactory.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/templateFactory.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/urlRouterProvider.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/viewScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/viewScroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/viewScroll.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib-esm/viewScroll.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/angular.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/angular.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/angular.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/angular.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/angular.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/angular.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/directives/stateDirectives.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/directives/stateDirectives.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/directives/stateDirectives.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/directives/stateDirectives.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/directives/viewDirective.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/directives/viewDirective.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/directives/viewDirective.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/directives/viewDirective.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/directives/viewDirective.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/directives/viewDirective.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/injectables.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/injectables.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/interface.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/interface.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/interface.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/interface.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/legacy/resolveService.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/legacy/resolveService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/legacy/resolveService.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/legacy/resolveService.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/legacy/stateEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/legacy/stateEvents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/legacy/stateEvents.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/legacy/stateEvents.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/locationServices.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/locationServices.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/locationServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/locationServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/locationServices.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/locationServices.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/services.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/services.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateFilters.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateFilters.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateFilters.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateFilters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateFilters.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateFilters.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateProvider.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateProvider.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateProvider.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/stateProvider.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/onEnterExitRetain.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/views.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/views.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/views.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/views.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/views.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/statebuilders/views.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/templateFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/templateFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/templateFactory.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/templateFactory.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/urlRouterProvider.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/urlRouterProvider.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/urlRouterProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/urlRouterProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/urlRouterProvider.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/urlRouterProvider.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/viewScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/viewScroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/viewScroll.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/lib/viewScroll.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/angular-ui-router.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/angular-ui-router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/angular-ui-router.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/angular-ui-router.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/angular-ui-router.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/angular-ui-router.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/angular-ui-router.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/angular-ui-router.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/resolveService.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/resolveService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/resolveService.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/resolveService.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/resolveService.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/resolveService.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/resolveService.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/resolveService.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/stateEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/stateEvents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/stateEvents.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/stateEvents.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/stateEvents.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/stateEvents.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/stateEvents.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/stateEvents.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/ui-router-angularjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/ui-router-angularjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/ui-router-angularjs.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/ui-router-angularjs.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/ui-router-angularjs.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/ui-router-angularjs.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/ui-router-angularjs.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/release/ui-router-angularjs.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/typedoc.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/typedoc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/node_modules/angular-ui-router/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/views/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/views/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/views/onglet1.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,6 +813,20 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="ErrorTreeViewConfiguration">
     <option name="hideWarnings" value="true" />
@@ -44,39 +854,39 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="classpath" value="1" />
-          <entry key="css" value="3" />
-          <entry key="html" value="28" />
-          <entry key="java" value="14" />
-          <entry key="js" value="11" />
+          <entry key="css" value="5" />
+          <entry key="html" value="35" />
+          <entry key="java" value="32" />
+          <entry key="js" value="19" />
           <entry key="xml" value="2" />
           <entry key="xsd" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="3" />
+          <entry key="CSS" value="5" />
           <entry key="Eclipse" value="1" />
-          <entry key="HTML" value="28" />
-          <entry key="JAVA" value="14" />
-          <entry key="JavaScript" value="11" />
+          <entry key="HTML" value="35" />
+          <entry key="JAVA" value="32" />
+          <entry key="JavaScript" value="19" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="88" />
-          <entry key="HTML" value="696" />
-          <entry key="JAVA" value="66" />
-          <entry key="JavaScript" value="642" />
+          <entry key="CSS" value="172" />
+          <entry key="HTML" value="740" />
+          <entry key="JAVA" value="91" />
+          <entry key="JavaScript" value="685" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="88" />
-          <entry key="html" value="697" />
-          <entry key="java" value="66" />
-          <entry key="js" value="641" />
+          <entry key="css" value="172" />
+          <entry key="html" value="741" />
+          <entry key="java" value="91" />
+          <entry key="js" value="684" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -84,13 +894,70 @@
       <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="gestionDumateriel" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/search2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="207" lean-forward="true" selection-start-line="207" selection-end-line="207" />
+            <state relative-caret-position="210">
+              <caret line="202" column="103" selection-start-line="202" selection-start-column="103" selection-end-line="202" selection-end-column="103" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/client/controller/empruntByClient.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="15" column="68" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/EmpruntDataService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="43" column="51" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/services.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="33" column="61" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="129" column="8" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -98,17 +965,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="163" column="44" lean-forward="true" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controller.js">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="140" column="15" selection-start-line="140" selection-start-column="15" selection-end-line="140" selection-end-column="15" />
+              <caret line="120" column="101" selection-start-line="120" selection-start-column="101" selection-end-line="120" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -116,17 +974,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/model/Materiel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="33" column="31" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/dao/CategorieRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            <state relative-caret-position="1564">
+              <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,8 +986,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/dao/MaterielRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            <state relative-caret-position="117">
+              <caret line="21" column="43" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,12 +999,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>script</find>
-      <find>hidden</find>
-      <find>index.js</find>
-      <find>ng-cl</find>
-      <find>sea</find>
-      <find>ng-clas</find>
       <find>removed</find>
       <find>ng-controller</find>
       <find>mode</find>
@@ -177,6 +1023,12 @@
       <find>supp</find>
       <find>nom</find>
       <find>cate</find>
+      <find>get</find>
+      <find>cherc</find>
+      <find>chercherMateriel</find>
+      <find>chercherMateriels</find>
+      <find>tabs</find>
+      <find>ta</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,16 +1039,25 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/static/views/materielSearch.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/views/nav.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/views/content.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/views/search.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/views/materiels.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ymagis/model/Categorie.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ymagis/model/Materiel.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/controller.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/views/nav.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ymagis/GestionDuMaterielApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/EmpruntController.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ymagis/dao/MaterielRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ymagis/controller/EmpruntServices.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/controller.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/client/controller/empruntByClient.controller.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/services.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/views/search2.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
       </list>
     </option>
   </component>
@@ -218,17 +1079,6 @@
           <item name="gestionDuMateriel" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="gestionDuMateriel" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="gestionDuMateriel" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-          <item name="org.springframework.boot:spring-boot-starter-data-jpa:2.0.4.RELEASE" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
-        </path>
       </expand>
       <select />
     </treeState>
@@ -242,7 +1092,7 @@
       <path value="$PROJECT_DIR$/src/main/resources/static/node_modules/bootstrap/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="15" />
     <option name="y" value="30" />
     <option name="width" value="1890" />
@@ -368,6 +1218,27 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestionDumateriel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestionDumateriel" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestionDumateriel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestionDumateriel" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -379,7 +1250,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536917112205" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537174986291" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -478,28 +1349,28 @@
       <workItem from="1536399798004" duration="16277000" />
       <workItem from="1536586355424" duration="1244000" />
       <workItem from="1536741646924" duration="19460000" />
-      <workItem from="1536914527645" duration="2474000" />
+      <workItem from="1536914527645" duration="11508000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76957000" />
+    <option name="totallyTimeSpent" value="85991000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26234818" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4975728" visible="true" weight="0.26234818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="6" sideWeight="0.50242716" side_tool="true" weight="0.26234818" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3285968" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26820603" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -516,14 +1387,14 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.1465587" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32955465" />
+      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.0" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32955465" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2582996" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26234818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -533,7 +1404,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.42628774" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -550,11 +1421,11 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32955465" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.1465587" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32955465" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,9 +1484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/onglet2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -623,22 +1491,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/css.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/content.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -654,38 +1508,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="88" column="56" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/pojo/MaterielPojo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="31" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/model/Materiel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -696,27 +1522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/GestionDuMaterielApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="53" column="45" lean-forward="true" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="65" column="45" lean-forward="true" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/model/Categorie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
@@ -724,10 +1529,121 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/model/Emprunt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/model/Categorie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding>
+            <element signature="e#804#805#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#914#915#0" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="true" />
+            <element signature="e#1049#1050#0" expanded="true" />
+            <element signature="e#1101#1102#0" expanded="true" />
+            <element signature="e#1132#1133#0" expanded="true" />
+            <element signature="e#1184#1185#0" expanded="true" />
+            <element signature="e#1223#1224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/onglet2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/controller/ClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="62" column="44" lean-forward="true" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/GestionDuMaterielApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="100" column="45" lean-forward="true" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/EmpruntController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/controller/EmpruntServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="57" column="107" lean-forward="true" selection-start-line="57" selection-start-column="107" selection-end-line="57" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/dao/MaterielRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        <state relative-caret-position="117">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="33" column="61" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/EmpruntDataService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/model/Materiel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -736,22 +1652,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/newMateriel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="163" column="44" lean-forward="true" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
+        <state relative-caret-position="153">
+          <caret line="120" column="101" selection-start-line="120" selection-start-column="101" selection-end-line="120" selection-end-column="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/search2.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/client/controller/empruntByClient.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="207" lean-forward="true" selection-start-line="207" selection-end-line="207" />
+        <state relative-caret-position="102">
+          <caret line="15" column="68" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="140" column="15" selection-start-line="140" selection-start-column="15" selection-end-line="140" selection-end-column="15" />
+        <state relative-caret-position="102">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ymagis/controller/MaterielRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="43" column="51" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/search2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="202" column="103" selection-start-line="202" selection-start-column="103" selection-end-line="202" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="129" column="8" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="8" />
         </state>
       </provider>
     </entry>

@@ -23,15 +23,15 @@ public class Categorie {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_CAT")
 	private Long idCategorie;
-	
+
 	@Column(name="NOM_CAT")
 	private String nomCategorie;
-	
+
 	@OneToMany(cascade=CascadeType.ALL,
 			fetch=FetchType.LAZY,
 			mappedBy="categorie")
 	private List<Materiel> materiel;
-	
+
 	public Long getIdCategorie() {
 		return idCategorie;
 	}
@@ -59,7 +59,7 @@ public class Categorie {
 		super();
 		this.nomCategorie = nomCategorie;
 	}
-	
-	
-	
+
+
+
 }

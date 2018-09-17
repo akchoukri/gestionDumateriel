@@ -1,4 +1,4 @@
-var app = angular.module("myApp",["ui.router"]);
+var app = angular.module("myApp",['ui.router','ngMaterial']);
 
 
 
@@ -20,21 +20,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			}
 		
 		})
-		.state('onglet1', {
+
+		.state('pret', {
 			parent : 'main',
-			url : '/onglet1',
+			url : '/pret',
 			views : {
 				'content@main' : {
-					templateUrl : 'views/onglet1.html',
+					templateUrl : 'views/pret.html',
+					controller : "empruntclientCtrl",
 				}
 			}
 	})
-			.state('onglet2', {
+	.state('emprunt', {
 			parent : 'main',
-			url : '/onglet2',
+			url : '/emprunt',
 			views : {
 				'content@main' : {
-					templateUrl : 'views/onglet2.html',
+					templateUrl : 'views/emprunt.html',
+					controller : "empruntclientCtrl",
 				}
 			}
 	})
@@ -90,7 +93,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 					}
 				}
-	});
+	})
     //			.state('newProduct',{
 //				parent : 'main',
 //				url:'/ajouterMateriel',
@@ -102,4 +105,56 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 //					}
 //				}
 //	})
+
+		.state('nouveauEmprunt', {
+			parent : 'main',
+			url : '/addNewEmpunt',
+			views : {
+				'content@main' : {
+					templateUrl : 'views/nouveauEmprunt.html',
+					controller:'EmpruntController'
+				}
+			}
+	})
+	.state('empruntClient', {
+		parent : 'main',
+		url : '/empruntClient',
+		views : {
+			'content@main' : {
+				templateUrl : 'views/empruntClient.html',
+				controller:'EmpruntClient'
+			}
+		}
+})
+	.state('clients', {
+	parent : 'main',
+	url : '/clients',
+	views : {
+		'content@main' : {
+			templateUrl : 'views/client/clients.html',
+			controller : "listClientContl",
+		}
+	}
+})
+//vue pour creer nouveau client
+.state('newClient', {
+	parent : 'clients',
+url : '/add',
+templateUrl : 'views/client/newClient.html',
+controller : "clientNewCtrl"		
+
+})
+// vue pour mise a jour le client
+.state('clients.updateClient', {
+
+url : '/:id',
+
+			
+templateUrl : 'views/client/updateClient.html',
+controller : "clientUpdateCtrl"
+
+});
+
+
+
 });

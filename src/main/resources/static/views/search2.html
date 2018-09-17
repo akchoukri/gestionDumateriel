@@ -146,7 +146,7 @@
                                                     <div class="input-group">
 						                            	<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                         <!--<select name="disponible" ng-model="materiell.disponible"  required> </select>-->
-                                                        <select name="ngvalueselect" ng-model="materiell.disponible" >
+                                                        <select class="select2" name="ngvalueselect" class="form-control selectpicker" ng-model="materiell.disponible" required>
                                                             <option ng-repeat="option in tt" ng-value="option">{{option}}</option>
                                                         </select>
                                                     </div>
@@ -163,7 +163,7 @@
                                                     materiel</label>
                                                 <div class="col-md-4 selectContainer">
                                                     <div class="input-group">
-						                            	<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span> <select
+						                            	<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span> <select class="select2"
                                                             name="etatMateriel" class="form-control selectpicker"
                                                             placeholder="Etat actuel du materiel"
                                                             ng-options="option for option in etatM"
@@ -200,7 +200,7 @@
                                                 <div class="col-md-4 selectContainer">
                                                     <div class="input-group">
 							<span class="input-group-addon"><i
-                                    class="glyphicon glyphicon-list"></i></span> <select name="categorie"
+                                    class="glyphicon glyphicon-list"></i></span> <select class="select2" name="categorie"
                                                                                          ng-model="materiell.nomCategorie"
                                                                                          class="form-control selectpicker" placeholder="categorie"
                                                                                          ng-options="option for option in options"
