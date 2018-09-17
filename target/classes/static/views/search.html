@@ -1,0 +1,50 @@
+<!--
+<div class="tab-content clearfix">
+	<div class="tab-pane active" id="1a">
+
+		<div class="container spacer">
+
+			Mot cle : <input type="text" ng-model="motCle">
+			<button ng-click=chercherMateriels()>Charger</button>
+		</div>
+		<div class="container">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Reference du materiel</th>
+						<th>Designation</th>
+						<th>Date d'ajout du materiel</th>
+						<th>disponibilite</th>
+						<th>Etat actuel du materiel</th>
+						<th>Categorie</th>
+						<th>modifier</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="p in pagemateriels.data.content">
+						<td>{{p.reference}}</td>
+						<td>{{p.designation}}</td>
+						<td>{{p.dateAjoutMateriel}}</td>
+						<td>{{p.disponible}}</td>
+						<td>{{p.etatMateriel}}</td>
+						<td>{{p.categorie.nomCategorie}}</td>
+						<td><button ng-click="supprimer(p.idMateriel)">Supprimer</button></td>
+						<td><button ng-click="editAccount(p)">modifier</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="container">
+			<div class="text-center">
+				<ul class="nav nav-pills">
+					<li ng-class="{active:$index==pageCourante}"
+						ng-repeat="p in pages track by $index"
+						class="clickable nav-item nav-link active"><a
+						data-toggle="pill" ng-click="goToPage($index)">{{$index}}</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>-->

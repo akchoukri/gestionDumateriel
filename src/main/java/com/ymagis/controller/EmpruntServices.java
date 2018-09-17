@@ -55,7 +55,7 @@ public class EmpruntServices {
 		List<Materiel> materiels = this.materielRepository.findAll();
 		List<Materiel> materielsDisponible = new ArrayList<>();
 		for (int i = 0; i < materiels.size(); i++) {
-			if (materiels.get(i).getDisponible() == true && materiels.get(i).getEtatMateriel().equals("bonne")) {
+			if (materiels.get(i).getDisponible() == true && materiels.get(i).getEtatMateriel().equals("bonne etat")) {
 				materielsDisponible.add(materiels.get(i));
 			}
 		}

@@ -1,6 +1,5 @@
 package com.ymagis.model;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -16,11 +15,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
-@Table(name = "MATERIEL")
-public class Materiel implements Serializable {
+public class Materiel {
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idMateriel;
@@ -30,12 +28,46 @@ public class Materiel implements Serializable {
 	private boolean disponible;
 	private String etatMateriel;
 	private int quantite;
-	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	// , nullable=false,optional = false
 	@JoinColumn(name = "ID_CAT")
+	// @OnDelete(action = OnDeleteAction.CASCADE)
+	// @JsonIgnore
 	private Categorie categorie;
-	@ManyToMany(mappedBy = "materiels")
+	@ManyToMany
+	@JoinTable(name = "emprunt_materiel", joinColumns = @JoinColumn(name = "idMateriel"), inverseJoinColumns = @JoinColumn(name = "idEmprunt"))
+	//@ManyToMany(mappedBy = "materiels")
 	@JsonIgnore
 	private List<Emprunt> emprunts;
+
+	public Materiel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Materiel(String reference, String designation, Date dateAjoutMateriel, boolean disponible,
+			String etatMateriel, int quantite, Categorie categorie) {
+		super();
+		this.reference = reference;
+		this.designation = designation;
+		this.dateAjoutMateriel = dateAjoutMateriel;
+		this.disponible = disponible;
+		this.etatMateriel = etatMateriel;
+		this.quantite = quantite;
+		this.categorie = categorie;
+	}
+
+//	public Materiel(String reference, String designation, Date dateAjoutMateriel, boolean disponible,
+//			String etatMateriel, int quantite) {
+//		super();
+//		this.reference = reference;
+//		this.designation = designation;
+//		this.dateAjoutMateriel = dateAjoutMateriel;
+//		this.disponible = disponible;
+//		this.etatMateriel = etatMateriel;
+//		this.quantite = quantite;
+//	}
 
 	public Long getIdMateriel() {
 		return idMateriel;
@@ -109,31 +141,5 @@ public class Materiel implements Serializable {
 		this.emprunts = emprunts;
 	}
 
-	public Materiel() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	public Materiel(String reference) {
-		super();
-		this.reference = reference;
-	}
-
-	public Materiel(String reference, String designation, Date dateAjoutMateriel, boolean disponible,
-			String etatMateriel, int quantite) {
-		super();
-		this.reference = reference;
-		this.designation = designation;
-		this.dateAjoutMateriel = dateAjoutMateriel;
-		this.disponible = disponible;
-		this.etatMateriel = etatMateriel;
-		this.quantite = quantite;
-	}
-
-	@Override
-	public String toString() {
-		return "Materiel [idMateriel=" + idMateriel + ", reference=" + reference + ", designation=" + designation
-				+ ", dateAjoutMateriel=" + dateAjoutMateriel + ", disponible=" + disponible + ", etatMateriel="
-				+ etatMateriel + ", quantite=" + quantite + "]";
-	}
 }

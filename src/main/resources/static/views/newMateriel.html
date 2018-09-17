@@ -1,0 +1,184 @@
+
+
+<meta charset="UTF-8">
+<title>Bootstrap 3 Contact form with Validation</title>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+	type="text/javascript"></script>
+
+
+
+<link rel='stylesheet'
+	href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+<link rel='stylesheet'
+	href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
+<link rel='stylesheet'
+	href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
+
+<link rel="stylesheet" href="css/style.css">
+
+
+<div class="container">
+	<div ng-app="myApp" ng-controller="MaterielController">
+	<div id="ta1" ng-if="mode==0">
+		<form class="well form-horizontal" name="materielForm"
+			ng-submit="submitForm(materielForm.$valid)" id="contact_form">
+			<fieldset>
+				<legend>Enregistrement d'un nouveau materiel</legend>
+
+
+
+				<div class="form-group"
+					ng-class="{ 'has-error' : materielForm.reference.$invalid && !materielForm.reference.$pristine }">
+					<label class="col-md-4 control-label">Reference du materiel</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-tag	"></i></span> <input name="reference"
+								placeholder="Reference du materiel" class="form-control"
+								type="text" ng-model="materiel.reference" required>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="form-group"
+					ng-class="{ 'has-error' : materielForm.designation.$invalid && !materielForm.designation.$pristine }">
+					<label class="col-md-4 control-label">Designation</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-book"></i></span> <input name="designation"
+								placeholder="Designation du materiel" class="form-control"
+								type="text" ng-model="materiel.designation" required>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="form-group"
+					ng-class="{ 'has-error' : materielForm.disponible.$invalid && !materielForm.disponible.$pristine }">
+					<label class="col-md-4 control-label">disponible</label>
+					<div class="col-md-4 selectContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-list"></i></span> <select name="disponible" class="select1"
+								class="form-control selectpicker" placeholder="disponible"
+								ng-model="materiel.disponible" required>
+								<option value="">disponible</option>
+								<option>true</option>
+								<option>false</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+				<div class="form-group"
+					ng-class="{ 'has-error' : materielForm.etatMateriel.$invalid && !materielForm.etatMateriel.$pristine }">
+					<label class="col-md-4 control-label">Etat actuel du
+						materiel</label>
+					<div class="col-md-4 selectContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-list"></i></span> <select class="select1"
+								name="etatMateriel" class="form-control selectpicker"
+								placeholder="Etat actuel du materiel"
+								ng-model="materiel.etatMateriel" required>
+								<option value="">Etat actuel du materiel</option>
+								<option>Bonne etat</option>
+								<option>En panne</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+
+
+				<!--<div class="form-group"
+					ng-class="{ 'has-error' : materielForm.quantite.$invalid && !materielForm.quantite.$pristine }">
+					<label class="col-md-4 control-label">Quantite</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-pencil"></i></span> <input name="quantite"
+								placeholder="Quantite" class="form-control" type="text"
+								ng-model="materiel.quantite" required>
+						</div>
+					</div>
+				</div>-->
+
+
+				<div class="form-group"
+					ng-class="{ 'has-error' : materielForm.categorie.$invalid && !materielForm.categorie.$pristine }">
+					<label class="col-md-4 control-label">Categorie</label>
+					<div class="col-md-4 selectContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-list"></i></span> <select class="select1" name="categorie"
+								ng-model="materiel.nomCategorie"
+								class="form-control selectpicker" placeholder="categorie"
+								ng-options="o as o for o in options" required>
+
+							</select>
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label"></label>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-primary"
+							ng-click="ajouterMateriels()">
+							Save <span class="glyphicon glyphicon-send"></span>
+						</button>
+					</div>
+				</div>
+
+			</fieldset>
+		</form>
+		</div>
+		<div class="panel panel-default" ng-if="mode==1">
+			<div class="panel-heading">
+				Confirmation : <a class="clickable" class="glyphicon glyphicon-log-in" ng-click=newAdd()>new</a>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label>Référence du matériel :</label><label>{{materiel.data.reference}}</label>
+				</div>
+				<div class="form-group">
+					<label>Désignation :</label><label>{{materiel.data.designation}}</label>
+				</div>
+				<div class="form-group">
+					<label>Disponible :</label><label>{{materiel.data.disponible}}</label>
+				</div>
+				<div class="form-group">
+					<label>Etat actuel du materiel :</label><label>{{materiel.data.etatMateriel}}</label>
+				</div>
+				<!--<div class="form-group">
+					<label>Categorie :</label><label>{{materiel.data.categorie}}</label>
+				</div>-->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- PrefixFree -->
+ <script
+	src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script
+	src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script
+	src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+
+<!-- <script src="js/index.js"></script>
+ -->
