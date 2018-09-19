@@ -1,4 +1,4 @@
-package com.ymagis.dao;
+ package com.ymagis.dao;
 
 import java.util.List;
 

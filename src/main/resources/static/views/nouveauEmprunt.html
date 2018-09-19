@@ -135,7 +135,7 @@
 														class="input-group-addon"><i
 														class="glyphicon glyphicon-calendar"></i></span> <input
 														style="width: 150%; height: 40px;" type="date"
-														min="{{jour}}"
+														min="{{endDate}}"
 														ng-change="validerDateEmprunt(emprunt.dateEmprunt)"
 														name="date_emprunt" class="form-control"
 														ng-model="emprunt.dateEmprunt" required />
@@ -151,8 +151,9 @@
 														class="input-group-addon"><i
 														class="glyphicon glyphicon-calendar"></i></span> <input
 														style="width: 150%; height: 40px;" type="date"
-														min="{{endDate}}"
+														min="{{emprunt.dateEmprunt}}"
 														name="date_retour" class="form-control"
+														ng-change="dateRetourP(emprunt.dateRetourPrevu)"
 														ng-model="emprunt.dateRetourPrevu" required />
 												</div>
 											</div>
