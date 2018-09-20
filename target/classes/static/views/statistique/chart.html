@@ -1,3 +1,16 @@
 <h1>statistique</h1>
 
-    
+<div class="panel-heading">Etat du materiel en ce mois</div>
+<div class="panel-body">
+<canvas id="doughnut" class="chart chart-doughnut"
+        chart-data="data" chart-labels="labels">
+</canvas>
+</div>
+
+
+<canvas id="line" class="chart chart-line" chart-data="data1"
+        chart-labels="lab" chart-series="series" chart-options="options"
+        chart-dataset-override="datasetOverride" chart-click="onClick">
+</canvas>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>

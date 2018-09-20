@@ -38,6 +38,11 @@ public class GestionDuMaterielApplication implements CommandLineRunner{
 	private MaterielRepository materielRepository;
 	@Autowired
 	private CategorieRepository categorieRepository;
+	@Autowired
+	private ClientRepository clientRepository;
+	@Autowired
+	private EmpruntRepository empruntRepository;
+
 	
 	public static void main(String[] args) {
 		SpringApplication.run(GestionDuMaterielApplication.class, args);
@@ -49,6 +54,7 @@ public class GestionDuMaterielApplication implements CommandLineRunner{
 		
 		materielRepository.deleteAll();
 		categorieRepository.deleteAll();
+		clientRepository.deleteAll();
 		
 		
 		Categorie categorie = new Categorie("cat1");
@@ -76,13 +82,16 @@ public class GestionDuMaterielApplication implements CommandLineRunner{
 
 		
 		Materiel materiel  = new Materiel("ref1", "des1", new Date(), true, "bonne etat", 1,categorie);
-		Materiel materiel2 = new Materiel("ref2", "des2", new Date(), true, "bonne etat", 1,categorie2);
+		Materiel materiel2 = new Materiel("ref2", "des2", new Date(), true, "endommagé", 1,categorie2);
 		Materiel materiel3 = new Materiel("ref3", "des3", new Date(), true, "bonne etat", 1,categorie);
 		Materiel materiel4 = new Materiel("ref4", "des4", new Date(), true, "en panne", 1,categorie4);
-		Materiel materiel5 = new Materiel("ref5", "des5", new Date(), true, "en panne", 1,categorie5);
-		Materiel materiel6 = new Materiel("ref6", "des6", new Date(), true, "bonne etat", 1,categorie6);
-		Materiel materiel7 = new Materiel("ref7", "des7", new Date(), true, "bonne etat", 1,categorie7);
-		
+		Materiel materiel5 = new Materiel("ref5", "des5", new Date(), true, "bonne etat", 1,categorie5);
+		Materiel materiel6 = new Materiel("ref6", "des6", new Date(), true, "endommagé", 1,categorie6);
+		Materiel materiel7 = new Materiel("ref7", "des7", new Date(), true, "en panne", 1,categorie7);
+
+		/*Client client1 = new Client(nomClient:"", prenomClient:"", adressClient:"", emailClient:"", telClient:"",
+				dateNaissanceClient:"");*/
+
 //
 	List<Materiel> listMateriels = new ArrayList();
 	listMateriels.add(materiel);
