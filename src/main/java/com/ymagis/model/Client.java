@@ -33,7 +33,8 @@ public class Client implements Serializable {
 	private Date dateNaissanceClient;
 	@Column(name = "IS_ARCHIVE")
 	private boolean isArchive;
-
+	@Column(name = "DATE_Ajout")
+	private Date dateAjoutClient;
 	@OneToMany(mappedBy = "client", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
 			CascadeType.REFRESH })
 	private List<Emprunt> emprunts;
@@ -128,6 +129,14 @@ public class Client implements Serializable {
 
 	public void setArchive(boolean isArchive) {
 		this.isArchive = isArchive;
+	}
+
+	public Date getDateAjoutClient() {
+		return dateAjoutClient;
+	}
+
+	public void setDateAjoutClient(Date dateAjoutClient) {
+		this.dateAjoutClient = dateAjoutClient;
 	}
 
 }

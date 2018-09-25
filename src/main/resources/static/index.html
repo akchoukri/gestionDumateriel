@@ -10,6 +10,9 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	    <link rel="stylesheet" href="https://cdn.rawgit.com/angular/bower-material/v0.10.0/angular-material.css" />
+	        <link rel="stylesheet" href="https://rawgit.com/jtblin/angular-chart.js/a0b1ce650d5dce9b7ccdd86843d83f27b0d7bc03/dist/angular-chart.css"> 
+<link rel="stylesheet" type="text/css" href="app/css/style.css" />
+
 <base href="/">
 </head>
 
@@ -39,7 +42,11 @@
   <!-- Angular Material Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
    <script src="//unpkg.com/angular-ui-router@0.4.2/release/angular-ui-router.js"></script> 
-   
+   <!-- Angular chart -->
+   <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script> 
+
+
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -63,11 +70,15 @@
 		src="js/client/controller/updateClient.controller.js"></script>
 	<script type="text/javascript"
 		src="js/client/controller/empruntByClient.controller.js"></script>
-
+<!-- chart -->
+	<script type="text/javascript"
+		src="js/statistique/controller/chart.controller.js"></script>
 	<!--               Services            -->
 	      
 	      	<!--  client -->
   <script type="text/javascript" src="js/client/service/client.Data.service.js"></script>
+  <script type="text/javascript"
+		src="js/statistique/service/statistique.Data.service.js"></script>
 
 </body>
 </html>

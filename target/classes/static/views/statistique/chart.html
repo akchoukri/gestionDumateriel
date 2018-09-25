@@ -1,0 +1,29 @@
+
+<div id="reportPage">
+<div class="row">
+
+ <canvas id="line" class="chart chart-line col-md-6" chart-data="dataNvClient"
+chart-labels="labels"  chart-options="opNvClient" >
+</canvas>
+<canvas  class="chart chart-bar col-md-6"
+  chart-data="dataEmpr" chart-labels="labels"  chart-series="seriesEmpru" chart-options="options" >
+</canvas>
+</div>
+<div class="row">
+<canvas id="base" class="chart-horizontal-bar col-md-6"
+  chart-data="dataNbrEmprClient" chart-labels="ClientLabels" chart-options="opNbrEmCl"   >
+</canvas>
+
+<canvas id="nvEmp" class="chart chart-line col-md-6" chart-data="dataNvEmpr"
+chart-labels="labels"  chart-options="opNvEmpr">
+</canvas>
+</div>
+<div class="row">
+ <canvas id="nvMat" class="chart chart-line col-md-6" chart-data="dataNvMat"
+chart-labels="labels"  chart-options="opNvMat" >
+</canvas>
+<canvas id="etatMat" class="chart chart-pie col-md-6"
+  chart-data="dataetatMat" chart-labels="etaMatLabels" chart-options="opEtatMat">
+</canvas> 
+</div>
+</div>

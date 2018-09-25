@@ -90,7 +90,6 @@ public class EmpruntServices {
 		Optional<Client> client = clientRepository.findById(idClient);
 		System.out.println("emprunt:" + emprunt);
 		emprunt.setClient(client.get());
-		System.out.println(emprunt.getMateriels());
 		return empruntRepository.save(emprunt);
 		// return emprunt;
 	}
@@ -113,6 +112,7 @@ public class EmpruntServices {
 	public Emprunt updateClient(@PathVariable Long id, @RequestBody Emprunt emprunt) {
 		Optional<Client> client = clientRepository.findById(id);
 		emprunt.setClient(client.get());
+		materielRepository.saveAll(emprunt.getMateriels());
 		empruntRepository.save(emprunt);
 		return emprunt;
 	}

@@ -80,8 +80,8 @@
 			var index = $scope.empruntsNnRetourne.indexOf($scope.slctEmprunt);
 
 			$scope.empruntsNnRetourne.splice(index, 1);
-
-			$scope.slctEmprunt = null;
+console.log($scope.empruntsNnRetourne[0])
+			$scope.slctEmprunt = $scope.empruntsNnRetourne[0];
 			$rootScope.msgClient = "Enregistrements du retour de prêt pour le client "
 					+ $scope.client.nomClient + " est effectuée  avec succès"
 			stop = $interval(function() {

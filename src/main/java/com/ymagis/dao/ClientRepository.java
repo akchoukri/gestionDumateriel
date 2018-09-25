@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.ymagis.model.Client;
+import com.ymagis.model.Emprunt;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long>{
 	
@@ -19,4 +20,7 @@ public interface ClientRepository extends JpaRepository<Client, Long>{
 	
 	@Query("select c from Client c where  c.isArchive = false ORDER BY c.idClient ASC")
 	public List<Client> getClients();
+	
+	@Query("select c from Client c where   EXTRACT(MONTH FROM  c.dateAjoutClient) = :m AND EXTRACT(YEAR FROM c.dateAjoutClient) = :y ")
+	public List<Client> getNvClientByMonth(@Param("y") int year,@Param("m")int month);
 }
