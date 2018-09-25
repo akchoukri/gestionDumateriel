@@ -16,7 +16,7 @@
 					$scope.client = data;
 					$scope.client.dateNaissanceClient = new Date(
 							$scope.client.dateNaissanceClient);
-
+					
 				})
 
 		//mettre a jour client

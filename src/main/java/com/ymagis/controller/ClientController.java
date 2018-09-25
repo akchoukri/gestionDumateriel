@@ -1,5 +1,6 @@
 package com.ymagis.controller;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ymagis.dao.ClientRepository;
+import com.ymagis.dao.EmpruntRepository;
 import com.ymagis.model.Client;
+import com.ymagis.model.Emprunt;
 
 
 
@@ -25,11 +28,12 @@ public class ClientController {
 
 	@Autowired
 	private ClientRepository clientRepository;
-	
+	@Autowired
+	private EmpruntRepository empruntRepository;
 	// ajouter un client 
 	@RequestMapping(method=RequestMethod.POST, value="/clients/add")
     public Client saveClient(@RequestBody Client client) {
-		
+		client.setDateAjoutClient(new Date());
         clientRepository.save(client);
         return client;
     }
@@ -55,8 +59,13 @@ public class ClientController {
 	  
 	  // mettre a jour client
 	  @RequestMapping(value="/clients/{id}",method=RequestMethod.PUT)
-	  public Client updateClient(@PathVariable Long id,@RequestBody Client client) {  
-		  clientRepository.save(client);
+	  public Client updateClient(@PathVariable Long id,@RequestBody Client client) {
+		  List<Emprunt> emprunts = client.getEmprunts();
+		  for(Emprunt emprunt : emprunts)
+	        emprunt.setClient(client);
+		  client.setEmprunts(emprunts);
+		   clientRepository.save(client);
+		
 		  return client;
 	  }
 	  
