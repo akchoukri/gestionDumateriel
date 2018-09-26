@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +25,7 @@ import com.ymagis.model.Emprunt;
 import com.ymagis.model.Materiel;
 
 @RestController
-@CrossOrigin("*")
+
 public class EmpruntServices {
 	// Injection de depandance
 	@Autowired
@@ -37,12 +36,14 @@ public class EmpruntServices {
 	private MaterielRepository materielRepository;
 
 	// Ajouter un nouveau emprunt
+
 	public void idClient(Emprunt emprunt, Client client) {
 		emprunt.setClient(client);
 		empruntRepository.save(emprunt);
 	}
 
 	// recuperer la liste des clients
+
 	@GetMapping(value = "/chercherClients")
 	public List<Client> getAllClients() {
 		List<Client> clients = this.clientRepository.findAll();
@@ -50,6 +51,7 @@ public class EmpruntServices {
 	}
 
 	// recuperer la liste des materiels
+
 	@GetMapping(value = "/chercherMateriels")
 	public List<Materiel> getAllMateriels() {
 		List<Materiel> materiels = this.materielRepository.findAll();
@@ -64,12 +66,14 @@ public class EmpruntServices {
 	}
 
 	// chercher les clients
+
 	@RequestMapping(value = "/client", method = RequestMethod.GET)
 	public List<Client> chercher(@RequestParam(name = "mc", defaultValue = "") String mc) {
 		return clientRepository.chercherClient("%" + mc + "%");
 	}
 
 	// chercher les materiels
+
 	@RequestMapping(value = "/materiel", method = RequestMethod.GET)
 	public List<Materiel> findMateriel(@RequestParam(name = "mc", defaultValue = "") String mc) {
 		List<Materiel> materielsChoisis = this.materielRepository.findByDesignation(mc);
@@ -82,8 +86,8 @@ public class EmpruntServices {
 		// return materielRepository.chercherMateriel("%" + mc + "%");
 		return materielsDisponible;
 	}
-
 	// ajouter un nouveau emprunt
+
 	@PostMapping("/client/{idClient}/emprunts")
 	public Emprunt createEmprunt(@PathVariable(value = "idClient") Long idClient, @RequestBody Emprunt emprunt)
 			throws ParseException {
@@ -96,6 +100,7 @@ public class EmpruntServices {
 	}
 
 	// Mise a jour le materiel apres emprunt
+
 	@RequestMapping(value = "/materiel/{id}", method = RequestMethod.PUT)
 	public Materiel update(@RequestBody Materiel m, @PathVariable("id") Long id) {
 		m.setIdMateriel(id);
@@ -109,6 +114,7 @@ public class EmpruntServices {
 	}
 
 	// mettre a jour client
+
 	@RequestMapping(value = "/client/{id}/emprunts", method = RequestMethod.PUT)
 	public Emprunt updateClient(@PathVariable Long id, @RequestBody Emprunt emprunt) {
 		Optional<Client> client = clientRepository.findById(id);
@@ -118,6 +124,7 @@ public class EmpruntServices {
 	}
 
 	// recuperer les emprunts en retard d'un clients
+
 	@RequestMapping(value = "/client/{id}/nnretourne", method = RequestMethod.GET)
 	public List<Emprunt> getRetardByClient(@PathVariable Long id) {
 		Optional<Client> client = clientRepository.findById(id);
@@ -135,6 +142,7 @@ public class EmpruntServices {
 	}
 
 	// mettre a jour des materiel
+
 	@RequestMapping(value = "/materiels", method = RequestMethod.PUT)
 	public boolean updateMateriels(@RequestBody List<Materiel> materiel) {
 		materielRepository.saveAll(materiel);
@@ -142,6 +150,7 @@ public class EmpruntServices {
 	}
 
 	// recuperer les emprunts en retard
+
 	@RequestMapping(value = "/empruntRetard", method = RequestMethod.GET)
 	public List<Emprunt> getEmpruntRetard() throws ParseException {
 		List<Emprunt> emprunts = empruntRepository.findAll();

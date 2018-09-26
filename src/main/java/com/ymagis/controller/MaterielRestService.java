@@ -27,18 +27,21 @@ public class MaterielRestService {
 	CategorieRepository categorieRepository;
 
 	// consulter la liste des materiels
+	
 	@RequestMapping(value = "/materiels", method = RequestMethod.GET)
 	public List<Materiel> listMateriel() {
 		return materielRepository.findAll();
 	}
 	
 	// consulter la liste des catégories
+
 		@RequestMapping(value = "/categories", method = RequestMethod.GET)
 		public List<Categorie> listCategorie() {
 			return categorieRepository.findAll();
 		}
 
 	// consulter la liste des materiels par page
+
 	@RequestMapping(value = "/materielss", method = RequestMethod.GET)
 	public Page<Materiel> listMateriel(@RequestParam(name = "page", defaultValue = "0") int page,
 			@RequestParam(name = "size", defaultValue = "10") int size) {
@@ -47,6 +50,7 @@ public class MaterielRestService {
 	}
 
 	// recherche par mot clé
+
 	@RequestMapping(value = "/cherchermateriels", method = RequestMethod.GET)
 	public Page<Materiel> chercher(@RequestParam(name = "mc", defaultValue = "") String mc,
 			@RequestParam(name = "page", defaultValue = "0") int page,
@@ -55,12 +59,14 @@ public class MaterielRestService {
 	}
 
 	// consulter un seul materiel
+	
 	@RequestMapping(value = "/materiel/{id}", method = RequestMethod.GET)
 	public Materiel getMateriel(@PathVariable("id") Long id) {
 		return materielRepository.getMaterielByIdMateriel(id);
 	}
 
 	// Ajouter un materiel
+
 	@RequestMapping(value = "/materiel", method = RequestMethod.POST)
 	public Materiel save(@RequestBody MaterielPojo m) {
 		//m.setDateAjoutMateriel(new Date());
@@ -79,6 +85,7 @@ public class MaterielRestService {
 	}
 
 	// modification d un materiel
+	
 	@RequestMapping(value = "/materiels/{id}", method = RequestMethod.PUT)
 	public Materiel update(@RequestBody MaterielPojo m, @PathVariable Long id) {
 		Materiel materiel = materielToPojo(m);
@@ -103,6 +110,7 @@ public class MaterielRestService {
 
 
 	// suppression d un materiel
+	
 	@RequestMapping(value = "/materiel/{id}", method = RequestMethod.DELETE)
 	public void deleteMateriel(@PathVariable("id") Long id) {
 		materielRepository.deleteById(id);
