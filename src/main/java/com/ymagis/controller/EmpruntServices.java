@@ -112,7 +112,7 @@ public class EmpruntServices {
 	public Emprunt updateClient(@PathVariable Long id, @RequestBody Emprunt emprunt) {
 		Optional<Client> client = clientRepository.findById(id);
 		emprunt.setClient(client.get());
-		materielRepository.saveAll(emprunt.getMateriels());
+		materielRepository.saveAll(emprunt.getMateriels());// update les materiels de l'emprunt
 		empruntRepository.save(emprunt);
 		return emprunt;
 	}
@@ -134,7 +134,7 @@ public class EmpruntServices {
 
 	}
 
-	// mettre a jour des materiel
+	// mettre a jour des materiels
 	@RequestMapping(value = "/materiels", method = RequestMethod.PUT)
 	public boolean updateMateriels(@RequestBody List<Materiel> materiel) {
 		materielRepository.saveAll(materiel);
@@ -163,9 +163,8 @@ public class EmpruntServices {
 		return empR;
 	}
 
-	//
+	// compare deux dates
 	public boolean diffDate(Date date1, Date date2) {
-		System.out.println(date1 + " / " + date2);
 
 		if (date1.getTime() > date2.getTime())
 			return true;
