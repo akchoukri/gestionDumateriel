@@ -1,75 +1,132 @@
 package com.ymagis.pojo;
-
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.ymagis.model.Categorie;
 
-public class MaterielPojo{
-
-	private Long idMateriel;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+		"idMateriel",
+		"reference",
+		"designation",
+		"dateAjoutMateriel",
+		"disponible",
+		"etatMateriel",
+		"quantite"
+})
+public class MaterielPojo {
+	@JsonProperty("idMateriel")
+	private Integer idMateriel;
+	@JsonProperty("categorie")
+	private Categorie categorie;
+	@JsonProperty("reference")
 	private String reference;
+	@JsonProperty("designation")
 	private String designation;
+	@JsonProperty("dateAjoutMateriel")
 	private Date dateAjoutMateriel;
-	private boolean disponible;
+	@JsonProperty("disponible")
+	private Boolean disponible;
+	@JsonProperty("etatMateriel")
 	private String etatMateriel;
-	private int quantite;
-	private String nomCategorie;
-	public Long getIdMateriel() {
+	@JsonProperty("quantite")
+	private Integer quantite;
+	@JsonIgnore
+	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+	@JsonProperty("idMateriel")
+	public Integer getIdMateriel() {
 		return idMateriel;
 	}
-	public void setIdMateriel(Long idMateriel) {
+
+	@JsonProperty("idMateriel")
+	public void setIdMateriel(Integer idMateriel) {
 		this.idMateriel = idMateriel;
 	}
+
+	@JsonProperty("categorie")
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	@JsonProperty("categorie")
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
+	@JsonProperty("reference")
 	public String getReference() {
 		return reference;
 	}
+
+	@JsonProperty("reference")
 	public void setReference(String reference) {
 		this.reference = reference;
 	}
+
+	@JsonProperty("designation")
 	public String getDesignation() {
 		return designation;
 	}
+
+	@JsonProperty("designation")
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
+
+	@JsonProperty("dateAjoutMateriel")
 	public Date getDateAjoutMateriel() {
 		return dateAjoutMateriel;
 	}
+
+	@JsonProperty("dateAjoutMateriel")
 	public void setDateAjoutMateriel(Date dateAjoutMateriel) {
 		this.dateAjoutMateriel = dateAjoutMateriel;
 	}
-	public boolean isDisponible() {
+
+	@JsonProperty("disponible")
+	public Boolean isDisponible() {
 		return disponible;
 	}
-	public void setDisponible(boolean disponible) {
+
+	@JsonProperty("disponible")
+	public void setDisponible(Boolean disponible) {
 		this.disponible = disponible;
 	}
+
+	@JsonProperty("etatMateriel")
 	public String getEtatMateriel() {
 		return etatMateriel;
 	}
+
+	@JsonProperty("etatMateriel")
 	public void setEtatMateriel(String etatMateriel) {
 		this.etatMateriel = etatMateriel;
 	}
-	public int getQuantite() {
+
+	@JsonProperty("quantite")
+	public Integer getQuantite() {
 		return quantite;
 	}
-	public void setQuantite(int quantite) {
+
+	@JsonProperty("quantite")
+	public void setQuantite(Integer quantite) {
 		this.quantite = quantite;
 	}
-	public String getNomCategorie() {
-		return nomCategorie;
+
+	@JsonAnyGetter
+	public Map<String, Object> getAdditionalProperties() {
+		return this.additionalProperties;
 	}
-	public void setNomCategorie(String nomCategorie) {
-		this.nomCategorie = nomCategorie;
+
+	@JsonAnySetter
+	public void setAdditionalProperty(String name, Object value) {
+		this.additionalProperties.put(name, value);
 	}
-	public MaterielPojo(String reference, String designation, Date dateAjoutMateriel,
-			boolean disponible, String etatMateriel, int quantite, String nomCategorie) {
-		super();
-		this.reference = reference;
-		this.designation = designation;
-		this.dateAjoutMateriel = dateAjoutMateriel;
-		this.disponible = disponible;
-		this.etatMateriel = etatMateriel;
-		this.quantite = quantite;
-		this.nomCategorie = nomCategorie;
-	}
-	
 }

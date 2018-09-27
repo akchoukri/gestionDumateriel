@@ -17,16 +17,18 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<div class="card" style="box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;">
+	<div class="card-header text-white bg-info" style="text-align: center;">
 
+		<h3>Nouveau materiel</h3>
+	</div>
+	<div>
+		<div class="card-body formulaire" style="padding: 15px;">
 <div class="container">
 	<div ng-app="myApp" ng-controller="MaterielController">
 	<div id="ta1" ng-if="mode==0">
 		<form class="well form-horizontal" name="materielForm"
 			ng-submit="submitForm(materielForm.$valid)" id="contact_form">
-			<fieldset>
-				<legend>Enregistrement d'un nouveau materiel</legend>
-
-
 
 				<div class="form-group"
 					ng-class="{ 'has-error' : materielForm.reference.$invalid && !materielForm.reference.$pristine }">
@@ -55,80 +57,18 @@
 					</div>
 				</div>
 
-
-				<div class="form-group"
-					ng-class="{ 'has-error' : materielForm.disponible.$invalid && !materielForm.disponible.$pristine }">
-					<label class="col-md-4 control-label">disponible</label>
-					<div class="col-md-4 selectContainer">
-						<div class="input-group">
-							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-list"></i></span> <select name="disponible" class="select1"
-								class="form-control selectpicker" placeholder="disponible"
-								ng-model="materiel.disponible" required>
-								<option value="">disponible</option>
-								<option>true</option>
-								<option>false</option>
-							</select>
-						</div>
-					</div>
-				</div>
-
-
-
-
-
-				<div class="form-group"
-					ng-class="{ 'has-error' : materielForm.etatMateriel.$invalid && !materielForm.etatMateriel.$pristine }">
-					<label class="col-md-4 control-label">Etat actuel du
-						materiel</label>
-					<div class="col-md-4 selectContainer">
-						<div class="input-group">
-							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-list"></i></span> <select class="select1"
-								name="etatMateriel" class="form-control selectpicker"
-								placeholder="Etat actuel du materiel"
-								ng-model="materiel.etatMateriel" required>
-								<option value="">Etat actuel du materiel</option>
-								<option>Bonne etat</option>
-								<option>En panne</option>
-							</select>
-						</div>
-					</div>
-				</div>
-
-
-
-				<!--<div class="form-group"
-					ng-class="{ 'has-error' : materielForm.quantite.$invalid && !materielForm.quantite.$pristine }">
-					<label class="col-md-4 control-label">Quantite</label>
-					<div class="col-md-4 inputGroupContainer">
-						<div class="input-group">
-							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-pencil"></i></span> <input name="quantite"
-								placeholder="Quantite" class="form-control" type="text"
-								ng-model="materiel.quantite" required>
-						</div>
-					</div>
-				</div>-->
-
-
 				<div class="form-group"
 					ng-class="{ 'has-error' : materielForm.categorie.$invalid && !materielForm.categorie.$pristine }">
 					<label class="col-md-4 control-label">Categorie</label>
 					<div class="col-md-4 selectContainer">
 						<div class="input-group">
-							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-list"></i></span> <select class="select1" name="categorie"
-								ng-model="materiel.nomCategorie"
-								class="form-control selectpicker" placeholder="categorie"
-								ng-options="o as o for o in options" required>
-
-							</select>
+					<span class="input-group-addon"><i
+								class="glyphicon glyphicon-list"></i></span> <select name="mySelectClient" id="mySelect"
+								ng-options="option.nomCategorie for option in cat track by option.idCategorie"
+								ng-model="materiel.categorie"></select>
 						</div>
 					</div>
 				</div>
-
-
 
 				<!-- Button -->
 				<div class="form-group">
@@ -167,6 +107,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 
 
