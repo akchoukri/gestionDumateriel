@@ -88,6 +88,9 @@ public class EmpruntServices {
 	public Emprunt createEmprunt(@PathVariable(value = "idClient") Long idClient, @RequestBody Emprunt emprunt)
 			throws ParseException {
 		Optional<Client> client = clientRepository.findById(idClient);
+		if(client.get()==null)throw new  RuntimeException("N'existe pas un client avec ce nom , Veuillez réessayer ");
+		if(emprunt.getMateriels()==null || emprunt.getPrixTotal()==0 || emprunt.getDateEmprunt()==null ||  emprunt.getDateRetourPrevu()==null) 
+			throw new  RuntimeException("Vous devez saisir tous les elements d'emprunt avant  l'enregistrement,Veuillez réessayer");
 		System.out.println("emprunt:" + emprunt);
 		emprunt.setClient(client.get());
 		return empruntRepository.save(emprunt);
