@@ -1,4 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: com.ymagis.GestionDuMaterielApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.076 s - in com.ymagis.GestionDuMaterielApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 15.298 s <<< FAILURE! - in com.ymagis.GestionDuMaterielApplicationTests
+contextLoads(com.ymagis.GestionDuMaterielApplicationTests)  Time elapsed: 0.052 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+Caused by: org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.ObjectDeletedException: deleted instance passed to merge: [com.ymagis.model.Materiel#<null>]; nested exception is java.lang.IllegalArgumentException: org.hibernate.ObjectDeletedException: deleted instance passed to merge: [com.ymagis.model.Materiel#<null>]
+Caused by: java.lang.IllegalArgumentException: org.hibernate.ObjectDeletedException: deleted instance passed to merge: [com.ymagis.model.Materiel#<null>]
+Caused by: org.hibernate.ObjectDeletedException: deleted instance passed to merge: [com.ymagis.model.Materiel#<null>]
+

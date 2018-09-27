@@ -1,5 +1,6 @@
 package com.ymagis.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -29,6 +30,7 @@ public class MaterielRestService {
 	// consulter la liste des materiels
 	@RequestMapping(value = "/materiels", method = RequestMethod.GET)
 	public List<Materiel> listMateriel() {
+
 		return materielRepository.findAll();
 	}
 	
@@ -66,24 +68,22 @@ public class MaterielRestService {
 		//m.setDateAjoutMateriel(new Date());
 
 		Materiel materiel = materielToPojo(m);
-		String nomCategorie = m.getNomCategorie();
-		Categorie categorie = categorieRepository.findByNomCategorie(nomCategorie);
-		materiel.setCategorie(categorie);
-		if(materiel.getDesignation()==null || materiel.getReference()==null ||materiel.getEtatMateriel()==null){
-			return null;
-		}
-		else{
-			return materielRepository.save(materiel);
-
-		}
+		Categorie categorie = m.getCategorie();
+		materiel.setCategorie(m.getCategorie());
+//		List<Materiel> materiels = new ArrayList<>();
+//		materiels.add(materiel);
+//		categorie.setMateriel(materiels);
+//		categorieRepository.save(categorie);
+		materielRepository.save(materiel);
+	return materiel;
 	}
 
 	// modification d un materiel
-	@RequestMapping(value = "/materiels/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/materials/{id}", method = RequestMethod.PUT)
 	public Materiel update(@RequestBody MaterielPojo m, @PathVariable Long id) {
 		Materiel materiel = materielToPojo(m);
 		materiel.setIdMateriel(id);
-		String nomCategorie = m.getNomCategorie();
+		String nomCategorie = m.getCategorie().getNomCategorie();
 		Categorie categorie = categorieRepository.findByNomCategorie(nomCategorie);
 		materiel.setCategorie(categorie);
 		return materielRepository.save(materiel);
@@ -93,11 +93,15 @@ public class MaterielRestService {
 		Materiel materiel = new Materiel();
 		materiel.setReference(m.getReference());
 		materiel.setDesignation(m.getDesignation());
-		materiel.setDateAjoutMateriel(new Date());
-		materiel.setQuantite(m.getQuantite());
-		materiel.setEtatMateriel(m.getEtatMateriel());
-		materiel.setDisponible(m.isDisponible());
-		
+		if(null == m.getIdMateriel()){
+			materiel.setEtatMateriel("bonne etat");
+			materiel.setDisponible(true);
+			materiel.setDateAjoutMateriel(new Date());
+		}else{
+			materiel.setEtatMateriel(m.getEtatMateriel());
+			materiel.setDisponible(m.isDisponible());
+			materiel.setDateAjoutMateriel(m.getDateAjoutMateriel());
+		}
 		return materiel;
 	}
 
