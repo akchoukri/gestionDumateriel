@@ -88,8 +88,10 @@ console.log(err);
 		}
 
     $scope.afficher = function(id){
+
+		alert("id: " + id);
         $scope.modee = 1;
-			$rootScope.materiell = {};
+        $rootScope.materiell = {};
         $scope.id = id;
 		console.log($scope.id);
 
@@ -98,8 +100,9 @@ console.log(err);
             console.log(response.data);
             console.log(response);
             $rootScope.materiell = response.data;
+            alert("idCat: " + materiell.categorie.idCategorie);
             $scope.message = response.data;
-            console.log($rootScope.materiell.reference);
+            console.log($rootScope.materiell);
             console.log("1111111111111111111");
 
 			// for (i = 0; i < $scope.cat.length; i++) {
@@ -161,12 +164,6 @@ console.log(err);
 		// charger les nom des catégorie
 		MaterielDatasrv.searchC().then(function(response) {
 			$scope.cat = response.data;
-			console.log(response.data);
-			for (i = 0; i < $scope.cat.length; i++) {
-				values.push(response.data[i]['nomCategorie']);
-				$scope.options = values;
-				console.log($scope.options)
-			}
 		}, function myerror(err) {
 			console.log(err);
 		});
@@ -189,6 +186,7 @@ console.log(err);
 
 		// ajouter un materiel
     $scope.materiel={};
+    //alert("coco");
 		$scope.ajouterMateriels = function() {
 			MaterielDatasrv.add($scope.materiel).then(function(response) {
                 $scope.materiel = response;
@@ -201,16 +199,12 @@ console.log(err);
 
 		};
 		$scope.modifierMateriel = function(materiell){
-            console.log("*******************************************");
-			console.log(materiell);
-			console.log("E7EME7EM");
-			$scope.materiell = materiell;
+			$rootScope.materiell = materiell;
             MaterielDatasrv.edit($rootScope.materiell,$rootScope.materiell.idMateriel).then(function(response) {
-                console.log("777888");
-                $rootScope.materiell = response;
+                $rootScope.materiell = response.data;
                 console.log($rootScope.materiell);
                 $scope.modee = 1;
-                alert(response);
+                alert(response.data.idMateriel);
             }, function myerror(err) {
                 console.log(err);
             });

@@ -29,11 +29,11 @@ public class Materiel {
 	private String etatMateriel;
 	private int quantite;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	// , nullable=false,optional = false
 	@JoinColumn(name = "ID_CAT")
 	// @OnDelete(action = OnDeleteAction.CASCADE)
-	// @JsonIgnore
+	//@JsonIgnore
 	private Categorie categorie;
 	@ManyToMany
 	@JoinTable(name = "emprunt_materiel", joinColumns = @JoinColumn(name = "idMateriel"), inverseJoinColumns = @JoinColumn(name = "idEmprunt"))

@@ -27,6 +27,7 @@ public class Categorie {
 	@Column(name="NOM_CAT")
 	private String nomCategorie;
 
+	@JsonIgnore
 	@OneToMany(cascade=CascadeType.ALL,
 			fetch=FetchType.LAZY,
 			mappedBy="categorie")

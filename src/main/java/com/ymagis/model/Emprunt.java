@@ -15,6 +15,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -25,10 +27,15 @@ public class Emprunt implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_EMPRUNT")
 	private Long idEmprunt;
+	@NotNull
 	private Date dateEmprunt;
+	@NotNull
 	private Date dateRetourPrevu;
+	@NotNull
 	private Date dateRetour;
+	@NotNull
 	private Long prixTotal;
+	@NotNull
 	private String etatEmprunt;
 	private String causeRetardEmprunt;
 	@ManyToOne(   cascade = {
