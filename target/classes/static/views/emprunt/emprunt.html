@@ -17,9 +17,9 @@
   <br>
 
 </div>
-<div >
 
-		<table class="table headStyle">
+
+		<table  class="table headStyle scroll" style="height: 50px">
 			<thead>
 				<tr style="background-color:#F8F8FF;">
 					<th>#</th>
@@ -28,7 +28,7 @@
 					<th>date Retour</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody >
 				<tr ng-repeat="emprunt in client.emprunts" class="circle" ng-class="getStatus(emprunt)" >
 					<td>{{ emprunt.idEmprunt }}</td>
 					<td>{{ emprunt.dateEmprunt | date:'dd/MM/yyyy' }}</td>
@@ -38,8 +38,12 @@
 			</tbody>
 
 		</table>
-	</div>
+
+
+        
+
          </div>   </md-tab-body>
+
           </md-tab>
             <md-tab label="les retards">
           <md-tab-body>

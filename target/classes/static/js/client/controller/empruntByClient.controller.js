@@ -80,7 +80,6 @@
 			var index = $scope.empruntsNnRetourne.indexOf($scope.slctEmprunt);
 
 			$scope.empruntsNnRetourne.splice(index, 1);
-console.log($scope.empruntsNnRetourne[0])
 			$scope.slctEmprunt = $scope.empruntsNnRetourne[0];
 			$rootScope.msgClient = "Enregistrements du retour de prêt pour le client "
 					+ $scope.client.nomClient + " est effectuée  avec succès"
@@ -97,6 +96,7 @@ console.log($scope.empruntsNnRetourne[0])
 		//  anuller ajout de retours prêt  emprunt
 		$scope.annulerPret = function(emprunt) {
 			$scope.slctEmprunt = null;
+			$scope.getEmp($scope.client.idClient);
 		}
 
 		//  editer etat de material

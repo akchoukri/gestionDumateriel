@@ -35,7 +35,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url : '/pret',
 			views : {
 				'content@main' : {
-					templateUrl : 'views/pret.html',
+					templateUrl : 'views/emprunt/pret.html',
 					controller : "empruntclientCtrl",
 				}
 			}
@@ -45,7 +45,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url : '/emprunt',
 			views : {
 				'content@main' : {
-					templateUrl : 'views/emprunt.html',
+					templateUrl : 'views/emprunt/emprunt.html',
 					controller : "empruntclientCtrl",
 				}
 			}

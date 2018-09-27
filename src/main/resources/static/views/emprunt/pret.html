@@ -43,7 +43,10 @@
 		<label class="col-md-2">Cause retard :</label>
 		 <input type="text" class="form-control col-md-6" 
 			ng-model="slctEmprunt.causeRetardEmprunt" name="causeRetard"
-			placeholder="cause retard">
+			placeholder="cause retard" required>
+			<span class="error col-md-4" ng-show="formNewPret.causeRetard.$error.required && formNewPret.causeRetard.$dirty " >cause est requis </span>
+         <span class="good col-md-4" ng-show="formNewPret.causeRetard.$valid"> <i class="fa fa-check" aria-hidden="true"></i> </span>
+		
 			
 	</div>
 <div></div>
@@ -90,7 +93,7 @@
 	            <div class="row">
 	        <div class="col-md-12" style="text-align: center;">
 	<button type="submit" class="btn btn-success" type="button"
-		ng-click="addRetourPret()">Save</button>
+		ng-click="addRetourPret()" ng-disabled="formNewPret.$invalid">Save</button>
  <button class="btn btn-secondary"  ng-click="annulerPret()" >Annuler</button>
 </div></div>
 </form>
