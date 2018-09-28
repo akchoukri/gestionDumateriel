@@ -135,7 +135,7 @@
 																console.log(err.data.message);
 															}, function(err) {
 																
-																alert(err.data.message);
+																(err.data.message);
 																
 															});
 												}, function(err) {
@@ -146,7 +146,7 @@
 							
 							}
 							alert("L'emprunt pour le client  :"+$scope.client[0].nomClient+" "+"est enregistrée avec succès")
-							$scope.modeForm();
+//							$scope.modeForm();
 						}
 						// fonction pour restart la page
 						$scope.modeForm = function() {
