@@ -17,6 +17,20 @@
 						$scope.quantiteNbr = /^\+?\d{1}/;
 						$scope.prixNbr = /^\+?\d{1}/;
 						$scope.materielsDesignation=[];
+						$scope.emprunt.dateEmprunt=new Date();
+						$scope.date=$scope.emprunt.dateRetourPrevu;
+						$scope.dateRetour=new Date();
+						$scope.msgQuantite="La quantite disponible est :";
+						//valider le champs date d'emprunt et date de retour
+						$scope.endDate = new Date();
+						var date = $scope.endDate.getTime()-(60*60*24) * 1000
+						$scope.jour = new Date(date);
+						
+						
+						
+						
+						$scope.minDateRetour=$scope.emprunt.dateEmprunt;
+						
 						// afficher liste des clients
 						EmpruntDatasrv.getClients().then(function(data) {
 							$scope.client = data.data;
@@ -94,32 +108,45 @@
 
 						// ajouter un nv emprunt
 						$scope.ajouterEmprunt = function() {
-							// chercher le client par son nom
-							EmpruntDatasrv
-									.getClient($scope.name)
-									.then(
-											function(data) {
-												for (var i = 0; i < data.length; i++) {
-													$scope.client = data[i];
-												}
-												// ajouter l'Objet client a
-												// l'emprunt
-												$scope.emprunt.client = $scope.client;
-												// ajoutet la liste des
-												// materiels a l'objet emprunt
-												$scope.emprunt.materiels = $scope.materielsAemprunte;
-												var id = $scope.client.idClient;
-												// post l'objet emprunt
-												EmpruntDatasrv.newEmprunt(id,
-														$scope.emprunt).then(
-														function() {
-															$scope.mode = 1;
-														}, function(err) {
-															console.log(err);
-														});
-											}, function(err) {
-												console.log(err);
-											});
+							console.log($scope.materielsAemprunte);
+							//tester si l'emprunt et vide
+							if($scope.materielsAemprunte[0]==null){
+								alert("Veuillez Remplir les champs pour Enregistrer l'emprunt")
+							}else{
+								// chercher le client par son nom
+								EmpruntDatasrv
+										.getClient($scope.name)
+										.then(
+												function(data) {
+													for (var i = 0; i < data.length; i++) {
+														$scope.client = data[i];
+													}
+													// ajouter l'Objet client a
+													// l'emprunt
+													$scope.emprunt.client = $scope.client;
+													// ajoutet la liste des
+													// materiels a l'objet emprunt
+													$scope.emprunt.materiels = $scope.materielsAemprunte;
+													var id = $scope.client.idClient;
+													// post l'objet emprunt
+													EmpruntDatasrv.newEmprunt(id,
+															$scope.emprunt).then(
+															function() {
+																console.log(err.data.message);
+															}, function(err) {
+																
+																(err.data.message);
+																
+															});
+												}, function(err) {
+													
+													console.log(err.data.message);
+												});
+								
+							
+							}
+							alert("L'emprunt pour le client  :"+$scope.client[0].nomClient+" "+"est enregistrée avec succès")
+//							$scope.modeForm();
 						}
 						// fonction pour restart la page
 						$scope.modeForm = function() {
@@ -140,5 +167,20 @@
 								$window.location.reload();
 							}
 						}
+						
+						//la fonction vider
+						
+						$scope.deselect = function() {
+							$scope.name = "";
+							$scope.designation = "";
+							$scope.nbr=null;
+							$scope.prix=null;
+							$scope.emprunt.dateEmprunt=new Date();
+							$scope.emprunt.dateRetourPrevu="";
+							$scope.nbrMax=null;
+							$scope.msgQuantite="";
+							};
+						
+						
 					});
 })();
