@@ -99,10 +99,14 @@
 														class="glyphicon glyphicon-usd"></i></span> <input
 														style="width: 150%; height: 40px;" name="prix"
 														placeholder="prix d'emprunt en DH" class="form-control"
-														type="text" ng-model="prix" ng-pattern="prixNbr"
+														type="number"  ng-model="prix" ng-pattern="prixNbr"
 														ng-minlength="1" required>
 												</div>
-										
+										<p
+										ng-show="mode==1"
+										class="error">
+										Attention, le ou les numéros des lignes suivantes sont erronés
+									</p>
 											</div>
 										</div>
 
@@ -144,7 +148,23 @@
 					</div>
 
 				</div></div></div></div>
-<table  class="table table-borderless table-striped table-earning" style="margin-bottom: 5px; margin-top:44px" >
+								<div class="panel panel-default">
+					<div class="panel-body">
+								<div class="card col-sm-4">
+									<div class="card-body">
+										<label style="font-size: 13px;">Nom Client:</label> <label
+											style="color: rgb(75, 116, 230); font-size: 13px;">{{name}}</label></br>
+										<label style="font-size: 13px;">Date d'emprunt:</label> <label
+											style="color: rgb(75, 116, 230); font-size: 13px;">{{emprunt.dateEmprunt}}</label></br>
+										<label style="font-size: 13px;">Date de Retour prevu:</label>
+										<label style="color: rgb(75, 116, 230); font-size: 13px;">{{emprunt.dateRetourPrevu}}</label></br>
+										<label style="font-size: 13px;">Prix Total:</label> <label
+											style="color: rgb(75, 116, 230); font-size: 13px;">{{emprunt.prixTotal}}
+											DH</label></br>
+									</div>
+								</div>
+								<div class="col-sm-8">
+<table  class="table table-borderless table-striped table-earning" style="margin-bottom: 5px; margin-top:0px" >
 	<thead>
 		<tr>
 		    <th>#</th>
@@ -184,6 +204,9 @@
     </tr>
   </tfoot>
 </table>
+</div>
+</div>
+
 
 <!-- <div style="margin-top: 20px;">
 	<button type="submit" class="btn  btn-primary"
