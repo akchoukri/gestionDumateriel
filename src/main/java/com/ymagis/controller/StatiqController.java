@@ -64,7 +64,7 @@ public class StatiqController {
 			List<Emprunt> empruntRetard = new ArrayList<>();
 			List<Emprunt> empruntSsRetard = new ArrayList<>();
 			Map<String, Integer> mapEmprunt = new TreeMap<>();
-
+²			//Convert from Date to LocalDate
 			LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			// les emprunts d'un mois
 			List<Emprunt> emprunts = empruntRepository.getEmpruntRetour(localDate.getYear(), localDate.getMonthValue());
@@ -95,10 +95,12 @@ public class StatiqController {
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/yyyy/dd");
 		for (Date date : dates) {
 
-			//
+			//Convert from Date to LocalDate
 			LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			List<Client> list = clientRepository.getNvClientByMonth(localDate.getYear(), localDate.getMonthValue());
+			//changer format de date en MM/yyyy/dd de type string
 			String s = formatter.format(date);
+			//Convert date from String to Date
 			date = formatter.parse(s);
 			nvCLientByMonths.put(date, list.size());
 		}
@@ -120,7 +122,6 @@ public class StatiqController {
 			// les emprunts du client du mois courant
 			listEmpr = empruntRepository.getEmpruntsClientByMonth(localDate.getYear(), localDate.getMonthValue(),
 					client.getIdClient());
-			empruntByClient.put(client.getNomClient()+Constantes.ESPACE+client.getPrenomClient(),listEmpr.size());
 		}
 		return empruntByClient;
 	}
@@ -154,7 +155,7 @@ public class StatiqController {
 	public Map<Date, Integer> getNvMat() throws ParseException {
 		Map<Date, Integer> nvMateriels = new TreeMap<>();
 		List<Date> dates = getLastMonths();
-		SimpleDateFormat formatter = new SimpleDateFormat("MM/yyyy/dd");
+		SimpleDateFormat formatter = new SimpleDateFormat(Constantes.PATTERN_MM_YYYY_DD);
 		for (Date date : dates) {// pour chaque mois
 
 			LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -168,19 +169,21 @@ public class StatiqController {
 		return nvMateriels;
 	}
 
-	// recuperer les nouveaus emprunt par mois
+	// recuperer les nouveaus emprunt de 3 derniers mois
 	@RequestMapping(value = "/nvEmp", method = RequestMethod.GET)
 	public Map<Date, Integer> getNvEmp() throws ParseException {
 		Map<Date, Integer> nvEmprunt = new TreeMap<>();
 		List<Date> dates = getLastMonths();
-		SimpleDateFormat formatter = new SimpleDateFormat("MM/yyyy/dd");
+		SimpleDateFormat formatter = new SimpleDateFormat(Constantes.PATTERN_MM_YYYY_DD);
 		for (Date date : dates) {
 
 			LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			// les nouveaux emprunt ajouter
 			List<Emprunt> list = empruntRepository.getEmpruntsByMonth(localDate.getYear(), localDate.getMonthValue());
 
+			//changer format de date en MM/yyyy/dd de type string
 			String s = formatter.format(date);
+			//Convert date from String to Date
 			date = formatter.parse(s);
 			nvEmprunt.put(date, list.size());
 		}
