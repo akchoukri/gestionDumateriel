@@ -64,7 +64,7 @@ public class StatiqController {
 			List<Emprunt> empruntRetard = new ArrayList<>();
 			List<Emprunt> empruntSsRetard = new ArrayList<>();
 			Map<String, Integer> mapEmprunt = new TreeMap<>();
-²			//Convert from Date to LocalDate
+			//Convert from Date to LocalDate
 			LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			// les emprunts d'un mois
 			List<Emprunt> emprunts = empruntRepository.getEmpruntRetour(localDate.getYear(), localDate.getMonthValue());
