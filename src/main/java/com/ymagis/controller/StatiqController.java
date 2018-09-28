@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import com.ymagis.utils.Constantes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -94,6 +95,7 @@ public class StatiqController {
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/yyyy/dd");
 		for (Date date : dates) {
 
+			//
 			LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			List<Client> list = clientRepository.getNvClientByMonth(localDate.getYear(), localDate.getMonthValue());
 			String s = formatter.format(date);
@@ -110,16 +112,16 @@ public class StatiqController {
 		Date date = new Date();
 		Map<String, Integer> empruntByClient = new TreeMap<>();
 		List<Client> clients = clientRepository.getClients();
+		//Convert from Date to LocalDate
 		LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-		for (Client client : clients) {// pour chaque clients
-			List<Emprunt> list = new ArrayList<>();
+		for (Client client : clients) {
+			// pour chaque clients
+			List<Emprunt> listEmpr = new ArrayList<>();
 			// les emprunts du client du mois courant
-			list = empruntRepository.getEmpruntsClientByMonth(localDate.getYear(), localDate.getMonthValue(),
+			listEmpr = empruntRepository.getEmpruntsClientByMonth(localDate.getYear(), localDate.getMonthValue(),
 					client.getIdClient());
-
-			empruntByClient.put(client.getNomClient() + " " + client.getPrenomClient(), list.size());
+			empruntByClient.put(client.getNomClient()+Constantes.ESPACE+client.getPrenomClient(),listEmpr.size());
 		}
-
 		return empruntByClient;
 	}
 
@@ -131,18 +133,18 @@ public class StatiqController {
 		int i, j, k;
 		i = j = k = 0;
 		for (Materiel materiel : materiels) {
-			if (materiel.getEtatMateriel().equals("bonne etat"))
+			if (materiel.getEtatMateriel().equals(Constantes.BONNE_ETAT))
 				i++;// les nmbrs des materiels qui ont en bonne etat
-			else if (materiel.getEtatMateriel().equals("en panne"))
+			else if (materiel.getEtatMateriel().equals(Constantes.EN_PANNE))
 				j++;// les nmbrs des materiels qui ont en panne
 			else
 				k++;// les nmbrs des materiels qui ont en endommagé
 
 		}
 
-		etatMat.put("bonne etat", i);
-		etatMat.put("en panne", j);
-		etatMat.put("endommagé", k);
+		etatMat.put(Constantes.BONNE_ETAT, i);
+		etatMat.put(Constantes.EN_PANNE, j);
+		etatMat.put(Constantes.ENDOMMAGE, k);
 
 		return etatMat;
 	}
