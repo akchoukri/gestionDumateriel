@@ -1,9 +1,9 @@
 package com.ymagis.controller;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.ymagis.utils.Constantes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.ymagis.dao.CategorieRepository;
 import com.ymagis.dao.MaterielRepository;
 import com.ymagis.model.Categorie;
@@ -27,18 +26,20 @@ public class MaterielRestService {
 	@Autowired
 	CategorieRepository categorieRepository;
 
+
 	// consulter la liste des materiels
 	@RequestMapping(value = "/materiels", method = RequestMethod.GET)
 	public List<Materiel> listMateriel() {
-
 		return materielRepository.findAll();
 	}
-	
+
+
 	// consulter la liste des catégories
-		@RequestMapping(value = "/categories", method = RequestMethod.GET)
-		public List<Categorie> listCategorie() {
+	@RequestMapping(value = "/categories", method = RequestMethod.GET)
+	public List<Categorie> listCategorie() {
 			return categorieRepository.findAll();
 		}
+
 
 	// consulter la liste des materiels par page
 	@RequestMapping(value = "/materielss", method = RequestMethod.GET)
@@ -62,18 +63,13 @@ public class MaterielRestService {
 		return materielRepository.getMaterielByIdMateriel(id);
 	}
 
+
 	// Ajouter un materiel
 	@RequestMapping(value = "/materiel", method = RequestMethod.POST)
 	public Materiel save(@RequestBody MaterielPojo m) {
-		//m.setDateAjoutMateriel(new Date());
-
 		Materiel materiel = materielToPojo(m);
 		Categorie categorie = m.getCategorie();
 		materiel.setCategorie(m.getCategorie());
-//		List<Materiel> materiels = new ArrayList<>();
-//		materiels.add(materiel);
-//		categorie.setMateriel(materiels);
-//		categorieRepository.save(categorie);
 		materielRepository.save(materiel);
 	return materiel;
 	}
@@ -83,21 +79,25 @@ public class MaterielRestService {
 	public Materiel update(@RequestBody MaterielPojo m, @PathVariable Long id) {
 		Materiel materiel = materielToPojo(m);
 		materiel.setIdMateriel(id);
+		//Recuperer l'objet categorie par le nom de la categorie
 		String nomCategorie = m.getCategorie().getNomCategorie();
 		Categorie categorie = categorieRepository.findByNomCategorie(nomCategorie);
 		materiel.setCategorie(categorie);
 		return materielRepository.save(materiel);
 	}
-	
+
+	//Créer un nouveau objet materiel via la classe materielPojo
 	private Materiel materielToPojo(MaterielPojo m) {
 		Materiel materiel = new Materiel();
 		materiel.setReference(m.getReference());
 		materiel.setDesignation(m.getDesignation());
+		//Cas d'un nouveau materiel
 		if(null == m.getIdMateriel()){
-			materiel.setEtatMateriel("bonne etat");
+			materiel.setEtatMateriel(Constantes.BONNE_ETAT);
 			materiel.setDisponible(true);
 			materiel.setDateAjoutMateriel(new Date());
 		}else{
+			//Cas d'un materiel exist deja
 			materiel.setEtatMateriel(m.getEtatMateriel());
 			materiel.setDisponible(m.isDisponible());
 			materiel.setDateAjoutMateriel(m.getDateAjoutMateriel());
