@@ -79,17 +79,23 @@
 						}
 						// ajouter un nv materiel
 						$scope.ajouterMateriel = function() {
-							for (var i = 0; i < $scope.nbr; i++) {
-								$scope.materielsAemprunte
-										.push($scope.materielChoisis[i]);
-								$scope.materielChoisis[i].disponible = false;
-								EmpruntDatasrv.updateMateriel(
-										$scope.materielChoisis[i],
-										$scope.materielChoisis[i].idMateriel);
-								$scope.nbrMax = $scope.nbrMax - $scope.nbr;
+							if(Math.abs($scope.prix) >= 0){
+								for (var i = 0; i < $scope.nbr; i++) {
+									$scope.materielsAemprunte
+											.push($scope.materielChoisis[i]);
+									$scope.materielChoisis[i].disponible = false;
+									EmpruntDatasrv.updateMateriel(
+											$scope.materielChoisis[i],
+											$scope.materielChoisis[i].idMateriel);
+									$scope.nbrMax = $scope.nbrMax - $scope.nbr;
+								}
+								$scope.emprunt.prixTotal = $scope.emprunt.prixTotal
+										+ ($scope.prix * $scope.nbr);
+							}else{
+//								alert("veuillez vérifier le champs prix");
+								$scope.mode=1;
 							}
-							$scope.emprunt.prixTotal = $scope.emprunt.prixTotal
-									+ ($scope.prix * $scope.nbr);
+							
 						}
 						// supprimer un materiel dans la liste
 						$scope.removeMateriel = function(index) {
@@ -135,7 +141,7 @@
 																console.log(err.data.message);
 															}, function(err) {
 																
-																(err.data.message);
+																alert(err.data.message);
 																
 															});
 												}, function(err) {
@@ -145,8 +151,8 @@
 								
 							
 							}
-							alert("L'emprunt pour le client  :"+$scope.client[0].nomClient+" "+"est enregistrée avec succès")
-//							$scope.modeForm();
+//							alert("L'emprunt pour le client  :"+$scope.client[0].nomClient+" "+"est enregistrée avec succès")
+							$scope.modeForm();
 						}
 						// fonction pour restart la page
 						$scope.modeForm = function() {
