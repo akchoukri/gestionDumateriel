@@ -36,13 +36,8 @@ public class EmpruntServices {
 	@Autowired
 	private MaterielRepository materielRepository;
 
-	// Ajouter un nouveau emprunt
-	public void idClient(Emprunt emprunt, Client client) {
-		emprunt.setClient(client);
-		empruntRepository.save(emprunt);
-	}
-
-	// recuperer la liste des clients
+	// recuperer la liste des clients 
+	
 	@GetMapping(value = "/chercherClients")
 	public List<Client> getAllClients() {
 		List<Client> clients = this.clientRepository.findAll();
@@ -59,7 +54,6 @@ public class EmpruntServices {
 				materielsDisponible.add(materiels.get(i));
 			}
 		}
-		System.out.println(materielsDisponible);
 		return materielsDisponible;
 	}
 
@@ -79,7 +73,6 @@ public class EmpruntServices {
 				materielsDisponible.add(materielsChoisis.get(i));
 			}
 		}
-		// return materielRepository.chercherMateriel("%" + mc + "%");
 		return materielsDisponible;
 	}
 
@@ -88,13 +81,18 @@ public class EmpruntServices {
 	public Emprunt createEmprunt(@PathVariable(value = "idClient") Long idClient, @RequestBody Emprunt emprunt)
 			throws ParseException {
 		Optional<Client> client = clientRepository.findById(idClient);
-		if(client.get()==null)throw new  RuntimeException("N'existe pas un client avec ce nom , Veuillez réessayer ");
-		if(emprunt.getMateriels()==null || emprunt.getPrixTotal()==0 || emprunt.getDateEmprunt()==null ||  emprunt.getDateRetourPrevu()==null) 
-			throw new  RuntimeException("Vous devez saisir tous les elements d'emprunt avant  l'enregistrement,Veuillez réessayer");
-		System.out.println("emprunt:" + emprunt);
+		if (client.get() == null) {
+			throw new RuntimeException("N'existe pas un client avec ce nom , Veuillez réessayer ");
+
+		}
+		if (emprunt.getMateriels() == null || emprunt.getDateEmprunt() == null
+				|| emprunt.getDateRetourPrevu() == null) {
+			throw new RuntimeException(
+					"Vous devez saisir tous les elements d'emprunt avant  l'enregistrement,Veuillez réessayer");
+
+		}
 		emprunt.setClient(client.get());
 		return empruntRepository.save(emprunt);
-		// return emprunt;
 	}
 
 	// Mise a jour le materiel apres emprunt
@@ -168,8 +166,6 @@ public class EmpruntServices {
 
 	//
 	public boolean diffDate(Date date1, Date date2) {
-		System.out.println(date1 + " / " + date2);
-
 		if (date1.getTime() > date2.getTime())
 			return true;
 		return false;
