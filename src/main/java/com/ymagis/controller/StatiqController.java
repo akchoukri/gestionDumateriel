@@ -122,6 +122,7 @@ public class StatiqController {
 			// les emprunts du client du mois courant
 			listEmpr = empruntRepository.getEmpruntsClientByMonth(localDate.getYear(), localDate.getMonthValue(),
 					client.getIdClient());
+			empruntByClient.put(client.getNomClient()+Constantes.ESPACE+client.getPrenomClient(),listEmpr.size());
 		}
 		return empruntByClient;
 	}

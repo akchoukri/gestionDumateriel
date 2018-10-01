@@ -89,7 +89,7 @@ console.log(err);
 
     $scope.afficher = function(id){
 
-		alert("id: " + id);
+		//alert("id: " + id);
         $scope.modee = 1;
         $rootScope.materiell = {};
         $scope.id = id;
