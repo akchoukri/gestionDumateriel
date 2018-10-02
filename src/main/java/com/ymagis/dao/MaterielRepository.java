@@ -25,4 +25,8 @@ public interface MaterielRepository extends JpaRepository<Materiel, Long> {
 	@Query("select mat from Materiel mat where   EXTRACT(MONTH FROM  mat.dateAjoutMateriel) = :m AND EXTRACT(YEAR FROM mat.dateAjoutMateriel) = :y ")
 	public List<Materiel> getNvMatByMonth(@Param("y") int year, @Param("m") int month);
 
+	// recuperer les designation
+	@Query("select DISTINCT m.designation from Materiel m ")
+	public List<String> getMatDesignation();
+
 }
