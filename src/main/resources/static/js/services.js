@@ -33,10 +33,11 @@
 		this.edit = function(materiel,id) {
 			return $http.put("http://localhost:8080/materials/"+id,materiel);
 		}
-		
+		// designations 
+		this.getDesignation = function() {
+			return $http.get("http://localhost:8080/designations");
+		}
 		this.goToRouter = function (state, $state) {
-			alert('accès service router');
-			console.log('pppppppppp');
 		    return $state.go(state, {reload: true});
 		}
 	});

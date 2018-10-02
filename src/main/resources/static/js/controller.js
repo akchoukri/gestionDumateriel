@@ -20,12 +20,23 @@ app.controller("MaterielController", function($rootScope, $scope, $http,
 		//	
 		$scope.id = {};
     	$scope.activetab=1;
-
-
+    	$scope.designations = [];
+    	$scope.ModeAjoutdesig = false;
 // $state.go('editProduct', {
 // id : 2
 // //selectedItem and id is defined
 // });
+    	//recuperer les designations 
+    	MaterielDatasrv.getDesignation().then(function(response) {
+			$scope.designations = response.data;
+		}, function myerror(err) {
+			console.log(err);
+		});
+    	$scope.addDign = function () {
+    		$scope.ModeAjoutdesig = false;
+    		$scope.designations.push($scope.materiel.designation);
+    		
+    	}
 		$scope.editAccount = function () {
 			$scope.modee=2;
             /*console.log("AAAAAAAAAAAAAllllllllllllll");

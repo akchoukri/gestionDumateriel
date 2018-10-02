@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ymagis.dao.CategorieRepository;
 import com.ymagis.dao.MaterielRepository;
 import com.ymagis.model.Categorie;
+import com.ymagis.model.Client;
 import com.ymagis.model.Materiel;
 import com.ymagis.pojo.MaterielPojo;
 
@@ -110,5 +111,11 @@ public class MaterielRestService {
 	@RequestMapping(value = "/materiel/{id}", method = RequestMethod.DELETE)
 	public void deleteMateriel(@PathVariable("id") Long id) {
 		materielRepository.deleteById(id);
+	}
+	
+	// recuperer la designations
+	@RequestMapping(value = "/designations", method = RequestMethod.GET)
+	public List<String> getClients() {
+		return materielRepository.getMatDesignation();
 	}
 }
