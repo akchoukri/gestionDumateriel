@@ -29,4 +29,7 @@ public interface MaterielRepository extends JpaRepository<Materiel, Long> {
 	@Query("select DISTINCT m.designation from Materiel m ")
 	public List<String> getMatDesignation();
 
+	// recuperer un materiel par son ref et designation
+	@Query("select  m from Materiel m where m.designation = :m AND m.reference = :y ")
+	public Materiel getMatByDesignAndRef(@Param("m") String desgn, @Param("y") String ref);
 }

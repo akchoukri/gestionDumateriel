@@ -2,6 +2,7 @@ package com.ymagis.controller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import com.ymagis.utils.Constantes;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +72,10 @@ public class MaterielRestService {
 		Materiel materiel = materielToPojo(m);
 		Categorie categorie = m.getCategorie();
 		materiel.setCategorie(m.getCategorie());
+		Materiel matExist = materielRepository.getMatByDesignAndRef(materiel.getDesignation(), materiel.getReference());
+		if(materiel.getReference()==null || materiel.getDesignation() == null || materiel.getCategorie() == null)
+			throw new RuntimeException("vous devez remprlir ts les champs");
+	   if(matExist != null) throw new RuntimeException("ref est deja prise");
 		materielRepository.save(materiel);
 	return materiel;
 	}
@@ -80,10 +85,13 @@ public class MaterielRestService {
 	public Materiel update(@RequestBody MaterielPojo m, @PathVariable Long id) {
 		Materiel materiel = materielToPojo(m);
 		materiel.setIdMateriel(id);
-		//Recuperer l'objet categorie par le nom de la categorie
 		String nomCategorie = m.getCategorie().getNomCategorie();
-		Categorie categorie = categorieRepository.findByNomCategorie(nomCategorie);
-		materiel.setCategorie(categorie);
+		Optional<Categorie> categorie = categorieRepository.findByNomCategorie(nomCategorie);
+		materiel.setCategorie(categorie.get());
+		Materiel matExist = materielRepository.getMatByDesignAndRef(materiel.getDesignation(), materiel.getReference());
+		if(materiel.getReference()==null || materiel.getDesignation() == null || materiel.getCategorie() == null)
+			throw new RuntimeException("vous devez remprlir ts les champs");
+	   if(matExist != null) throw new RuntimeException("ref est deja prise");
 		return materielRepository.save(materiel);
 	}
 
@@ -118,4 +126,15 @@ public class MaterielRestService {
 	public List<String> getClients() {
 		return materielRepository.getMatDesignation();
 	}
+	
+	// Ajouter un categorie
+	@RequestMapping(value = "/categorie", method = RequestMethod.POST)
+	public Categorie saveCat(@RequestBody Categorie categorie) {
+		Optional<Categorie> catExist = categorieRepository.findByNomCategorie(categorie.getNomCategorie());
+		if(catExist.isPresent())throw new RuntimeException("categorie deja existe");
+		if(!categorie.getNomCategorie().equals(""))
+			categorieRepository.save(categorie);
+	return categorie;
+	}
+
 }

@@ -8,7 +8,7 @@
 
 
 
-<div class="global-wrapper" ng-controller="MaterielController">
+<div class="global-wrapper" ng-controller="MaterielController" ng-init="chercherMateriels()">
 
     <div id="tabs" class="container">
         <div class="card" style="box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;">
@@ -17,35 +17,42 @@
                 <h3>Liste des materiels</h3>
             </div>
             <div>
+            			<div class="alert alert-success" ng-show="msg" style="text-align: center;">
+					{{msg}}
+					</div>
                 <div class="card-body formulaire" style="padding: 15px;">
+                	 <input type="text" ng-model="motCle"
+			ng-keyup="keyUp($event)" placeholder="mot clé"> <i
+			id="filtersubmit" class="fa fa-search"></i>
+			<br>
+						<div class="row">
+					
+<table  class="table table-borderless table-striped table-earning col-md-5" >
+			<thead>
+				<tr>
+					<th>reference</th>
+					<th>designation</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="mat in pagemateriels.data.content">
+					<td>{{ mat.reference }}</td>
+					<td>{{ mat.designation }}</td>
+					<td>
+						<button class="btn"  ng-click="afficher(mat.idMateriel)">
+							<i class="fa fa-eye"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
 
-                        <div class="col-xs-5 panel-body">
-                            <ul class="list-group">
-                                <li><button ng-click=chercherMateriels()>Charger</button></li>
-                                <li class="list-group-item">
-                                    <h4>Materiels:</h4> <input class="form-control"
-                                                               placeholder="Seach Your materiel" type="text" ng-model="motCle">
-                                    <!--             <contact class="list-group-item" ng-repeat="contact in pagemateriels.data.content | filter: motCle  ">{{contact.designation}}</contact> -->
-                                    <a ng-click="afficher(contact.idMateriel)" class="list-group-item clickable"
-                                       ng-repeat="contact in pagemateriels.data.content | filter: motCle"> {{contact.designation}} </a>
+		</table>
+		                            
 
-                                </li>
-                            </ul>
 
-                            <div class="container">
-                                <div class="text-center">
-                                    <ul class="nav nav-pills">
-                                        <li ng-class="{active:$index==pageCourante}"
-                                            ng-repeat="p in pages track by $index"
-                                            class="clickable nav-item nav-link active"><a
-                                                data-toggle="pill" ng-click="goToPage($index)">{{$index}}</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--   ng-view below       -->
-                        <div class="col-xs-7">
+                        <!--   consulter materiel      -->
+                        <div class="col-md-6">
                             <div class="list-group panel-body">
                                 <!--<div ng-view></div>-->
                                 <div ng-if="modee==0">
@@ -63,11 +70,13 @@
                                     <p>
                                         Disponibilité: <a>{{materiell.disponible}}</a>
                                     </p>
+                                                                        <p>Etat actuel du materiel:
+                                        <a>{{materiell.etatMateriel}}</a></p>
+                                        
                                     <p>Catégorie:
                                         <a>{{materiell.categorie.nomCategorie}}</a></p>
 
-                                    <p>Etat actuel du materiel:
-                                        <a>{{materiell.etatMateriel}}</a></p>
+
 
                                     <a>
                                         <button class="btn btn-default" ng-click=editAccount()>
@@ -80,12 +89,13 @@
                                         </button></a>
                                     </a>
                                 </div>
+                                <!--   edit materiel      -->
                                 <div ng-if="modee==2">
 
                                     <form class="well form-horizontal" name="materielForm"
                                           ng-submit="submitForm(materielForm.$valid)" id="contact_form">
                                         <fieldset>
-                                            <legend>Enregistrement d'un nouveau materiel</legend>
+                                            <legend>modification du  materiel</legend>
 
                                             <div class="form-group"
                                                  ng-class="{ 'has-error' : materielForm.reference.$invalid && !materielForm.reference.$pristine }">
@@ -98,19 +108,22 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="form-group"
-                                                 ng-class="{ 'has-error' : materielForm.designation.$invalid && !materielForm.designation.$pristine }">
+                                                 ng-class="{ 'has-error' : materielForm.etatMateriel.$invalid && !materielForm.etatMateriel.$pristine }">
                                                 <label class="col-md-4 control-label">Designation</label>
-                                                <div class="col-md-4 inputGroupContainer">
+                                                <div class="col-md-4 selectContainer">
                                                     <div class="input-group">
-							                            <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span> <input name="designation"
-                                                                                        placeholder="Designation du materiel" class="form-control"
-                                                                                        type="text" ng-model="materiell.designation" required>
+						                            	<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span> <select class="select2"
+                                                            name="etatMateriel" class="form-control selectpicker"
+                                                            
+                                                            ng-options="option for option in designations "
+                                                            ng-model="materiell.designation"  required>
+
+
+                                                    </select>
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="form-group"
                                                  ng-class="{ 'has-error' : materielForm.disponible.$invalid && !materielForm.disponible.$pristine }">
                                                 <label class="col-md-4 control-label">disponible</label>
@@ -165,10 +178,9 @@
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label"></label>
                                                 <div class="col-md-4">
-                                                    <button type="submit" class="btn btn-primary"
-                                                            ng-click="modifierMateriel(materiell)">
-                                                        Save <span class="glyphicon glyphicon-send"></span>
-                                                    </button>
+                                                    <button type="submit" class="btn btn-success"
+						ng-disabled="materielForm.$invalid" type="button"
+						ng-click="modifierMateriel(materiell)">Update</button>
                                                 </div>
                                             </div>
 
@@ -179,6 +191,20 @@
                             </div>
                         </div>
 
+
+</div>
+	<div class="container">
+		<ul class="nav nav-pills pagination">
+			<li class="page-item"><a class="page-link"
+				ng-click="gotoprevious()">&laquo;</a></li>
+			<li class="page-item" ng-class="{active:$index==pageCourante}"
+				ng-repeat="i in pages track by $index"><a
+				class="clickable page-link" ng-click="gotopage($index)"> {{
+					$index}} </a></li>
+			<li class="page-item" id="linknext"><a class="page-link"
+				ng-click="gotonext()">&raquo;</a></li>
+		</ul>
+	</div>
                     </div>
                 </div>
         </div>

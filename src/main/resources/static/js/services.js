@@ -40,6 +40,10 @@
 		this.goToRouter = function (state, $state) {
 		    return $state.go(state, {reload: true});
 		}
+		// Ajouter categorie
+		this.addCat = function(categorie) {
+			return $http.post("http://localhost:8080/categorie", categorie);
+		}
 	});
 	
 	
