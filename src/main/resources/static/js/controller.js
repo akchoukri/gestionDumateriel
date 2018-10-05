@@ -1,5 +1,5 @@
 app.controller("MaterielController", function($rootScope, $scope, $http,
-			MaterielDatasrv, $window, $state) {
+			MaterielDatasrv, $window, $state,$timeout, $interval) {
 
 		$scope.pagemateriels = null;
 		$scope.motCle = "";
@@ -12,7 +12,9 @@ app.controller("MaterielController", function($rootScope, $scope, $http,
 		$scope.cat = null;
     	$scope.modee = 0;
 		$scope.mode = 0;
+		$scope.count = 0;
 		$scope.options = [];
+		$scope.motCle = "";
 		var i;
 		var values = [];
 	$scope.tt = [true,false];
@@ -22,6 +24,9 @@ app.controller("MaterielController", function($rootScope, $scope, $http,
     	$scope.activetab=1;
     	$scope.designations = [];
     	$scope.ModeAjoutdesig = false;
+    	$scope.ModeAjoutCat = false;
+    	$scope.categorie = {};
+    	$scope.pageCourante=0;
 // $state.go('editProduct', {
 // id : 2
 // //selectedItem and id is defined
@@ -37,53 +42,43 @@ app.controller("MaterielController", function($rootScope, $scope, $http,
     		$scope.designations.push($scope.materiel.designation);
     		
     	}
+    	$scope.reset = function () {
+    		$scope.materiel = {}
+    		
+    	}
+    	$scope.addCat = function () {
+    		MaterielDatasrv.addCat($scope.materiel.categorie).then(function(response) {
+    			$scope.ModeAjoutdesig = false;
+    			$scope.cat.push(response.data);
+    			$scope.categorie = {};
+    			$scope.msg = "categorie "+categorie.nomCategorie+" ajouter avec succes";
+    			stop = $interval(function() {
+
+					$scope.count = $scope.count + 1;
+					
+					if ($scope.count == 5)
+						$scope.stopmsg();
+				}, 500);
+
+    		}, function myerror(err) {
+    			$scope.msg = err.data.message;
+    			stop = $interval(function() {
+
+					$scope.count = $scope.count + 1;
+					
+					if ($scope.count == 5)
+						$scope.stopmsg();
+				}, 500);
+    		
+    		});
+    		
+    	}
 		$scope.editAccount = function () {
 			$scope.modee=2;
-            /*console.log("AAAAAAAAAAAAAllllllllllllll");
-
-            $rootScope.message='ok ok';
-			console.log(m);
-			$rootScope.materiel = m;
-		    console.log($rootScope.materiel);
-		    $state.go('editProduct',{'idd':$rootScope.materiel.idMateriel});
-		    $rootScope.materiel.etatMateriel = m.etatMateriel;*/
+           
 		}
 		
-// $scope.modifier = function(p) {
-// $scope.materiel = {};
-// // $scope.id = p;
-// // console.log($scope.id);
-// // console.log($scope.mater.reference);
-// // console.log(p.idMateriel);
-// // console.log($scope.mater.idMateriel);
-// var stateVar="editProduct";
-// $scope.message = 'ooooooo';
-//
-// $state.go(stateVar,{id:2});
-// // MaterielDatasrv $scope.message.push($scope.id);
-//			
-// console.log('hada howa p=>'+p);
-/*
-MaterielDatasrv.searchMid($scope.id).then(function(response) {
-console.log(response.data);
-console.log(response);
-$rootScope.materiel = response.data;
-$scope.message = response.data;
-console.log($rootScope.materiel.reference);
-console.log("*****");
 
-// for (i = 0; i < $scope.cat.length; i++) {
-// values.push(response.data[i]['nomCategorie']);
-// $scope.options = values;
-// }
-
-}, function myerror(err) {
-console.log(err);
-});
-*/
-// // console.log($scope.materiel);
-// console.log("bbbaaaaaaaaaaaaaaaaaa*****");
-// }
 
 		// rechercher par mot clé et pagination
 		$scope.chercherMateriels = function() {
@@ -91,8 +86,7 @@ console.log(err);
 					$scope.size).then(function(response) {
 				$scope.pagemateriels = response;
 				$scope.pages = new Array(response.data.totalPages);
-				console.log(response);
-				console.log($scope.pages);
+				
 			}, function myerror(err) {
 				console.log(err);
 			});
@@ -100,26 +94,17 @@ console.log(err);
 
     $scope.afficher = function(id){
 
-		//alert("id: " + id);
         $scope.modee = 1;
         $rootScope.materiell = {};
         $scope.id = id;
-		console.log($scope.id);
 
         MaterielDatasrv.searchMid($scope.id).then(function(response) {
 
-            console.log(response.data);
-            console.log(response);
+            
             $rootScope.materiell = response.data;
-            alert("idCat: " + materiell.categorie.idCategorie);
             $scope.message = response.data;
-            console.log($rootScope.materiell);
-            console.log("1111111111111111111");
+            
 
-			// for (i = 0; i < $scope.cat.length; i++) {
-			// values.push(response.data[i]['nomCategorie']);
-			// $scope.options = values;
-			// }
 
         }, function myerror(err) {
             console.log(err);
@@ -127,14 +112,7 @@ console.log(err);
 
 
 
-        /*MaterielDatasrv.searchM($scope.motCle, $scope.pageCourante, $scope.size).then(function(response) {
-            $scope.pagemateriels = response;
-            $scope.pages = new Array(response.data.totalPages);
-            console.log(response);
-            console.log($scope.pages);
-        }, function myerror(err) {
-            console.log(err);
-        });*/
+
 
     }
 		// changer les pages
@@ -148,7 +126,6 @@ console.log(err);
 			if ( $window.confirm("vous voulez vraiment supprimer ce materiel?")){
             $scope.modee = 0;
 			MaterielDatasrv.deleteM(id).then(function(response) {
-				console.log(id);
 				restart();
 			}, function myerror(err) {
 				console.log(err);
@@ -157,10 +134,9 @@ console.log(err);
 		}
 		// fonction restart pour actualiser la page
 		var restart = function() {
-			console.log("11");
+			
 			MaterielDatasrv.refresh($scope.motCle, $scope.pageCourante,
 					$scope.size).then(function(response) {
-				console.log("22");
 				$scope.pagemateriels = response;
 				$scope.pages = new Array(response.data.totalPages);
 			});
@@ -179,45 +155,68 @@ console.log(err);
 			console.log(err);
 		});
 
-/*    $scope.ajouterMateriels = function() {
-        console.log("aaaazzzz");
-            MaterielDatasrv.add($scope.materiel).then(function(response) {
-            	console.log("aaaa");
 
-                console.log(response);
-                $scope.materiel = response;
-                console.log($scope.materiel);
-                $scope.mode = 1;
-                alert(response);
-            }, function myerror(err) {
-                console.log(err);
-            });
-
-    };*/
 
 		// ajouter un materiel
     $scope.materiel={};
-    //alert("coco");
 		$scope.ajouterMateriels = function() {
 			MaterielDatasrv.add($scope.materiel).then(function(response) {
-                $scope.materiel = response;
+                $scope.materiel = response.data;
 				console.log($scope.materiel);
-                $scope.mode = 1;
-				alert(response);
+				$scope.msg = "materiel  "+$scope.materiel.designation+" ajouter avec succes";
+    			stop = $interval(function() {
+
+					$scope.count = $scope.count + 1;
+					
+					if ($scope.count == 5)
+						$scope.stopmsg();
+				}, 500);
+    			$scope.materiel = {};
 			}, function myerror(err) {
-				console.log(err);
+				$scope.msg = err.data.message;
+    			stop = $interval(function() {
+
+					$scope.count = $scope.count + 1;
+					
+					if ($scope.count == 5)
+						$scope.stopmsg();
+				}, 500);
 			});
 
 		};
+		
+		// edit materiel
 		$scope.modifierMateriel = function(materiell){
 			$rootScope.materiell = materiell;
             MaterielDatasrv.edit($rootScope.materiell,$rootScope.materiell.idMateriel).then(function(response) {
                 $rootScope.materiell = response.data;
-                console.log($rootScope.materiell);
-                $scope.modee = 1;
-                alert(response.data.idMateriel);
+                $scope.modee = 1; 
+                $scope.msg = "materiel  "+$rootScope.materiell.designation+" modifier avec succes";
+    			stop = $interval(function() {
+
+					$scope.count = $scope.count + 1;
+					
+					if ($scope.count == 5)
+						$scope.stopmsg();
+				}, 500);
+			}, function myerror(err) {
+				$scope.msg = err.data.message;
+    			stop = $interval(function() {
+
+					$scope.count = $scope.count + 1;
+					
+					if ($scope.count == 5)
+						$scope.stopmsg();
+				}, 500);
             }, function myerror(err) {
-                console.log(err);
+            	$scope.msg = err.data.message;
+    			stop = $interval(function() {
+
+					$scope.count = $scope.count + 1;
+					
+					if ($scope.count == 5)
+						$scope.stopmsg();
+				}, 500);
             });
 		};
 
@@ -292,6 +291,47 @@ console.log(err);
     //     el: '#tabs',
     //     data: { activetab: 1 },
     // });
+		$scope.keyUp = function(event) {
+
+			$scope.motcle = event.target.value;
+			$scope.chercherMateriels();
+		}
+		//fonction permet d'incrementer les numero de la page
+		$scope.gotonext = function() {
+
+			if ($scope.currentPage == $scope.totalePages - 1) {
+
+				var d = document.getElementById("linknext");
+				d.className = "disabled";
+
+			} else
+				$scope.pageCourante = $scope.pageCourante + 1;
+			$scope.chercherMateriels();
+		}
+
+		//désincrémenter  les numero de la page
+		$scope.gotoprevious = function() {
+
+			if ($scope.pageCourante != 0)
+				$scope.pageCourante = $scope.pageCourante - 1;
+
+			$scope.chercherMateriels();
+		}
+
+		//acceder a une page
+		$scope.gotopage = function(p) {
+
+			$scope.pageCourante = p;
+			$scope.chercherMateriels();
+		}
+		$scope.stopmsg = function() {
+			if (angular.isDefined(stop)) {
+				$interval.cancel(stop);
+				stop = undefined;
+				$scope.msg = null;
+				$scope.count = 0;
+			}
+		};
 	});
 
 

@@ -68,7 +68,7 @@ public class GestionDuMaterielApplication implements CommandLineRunner{
 //		Categorie categorie4 = new Categorie("cat4");
 //		Categorie categorie5 = new Categorie("cat5");
 //		Categorie categorie6 = new Categorie("cat6");
-//		Categorie categorie7 = new Categorie("cat7");
+	//Categorie categorie7 = new Categorie("cat8");
 
 
 		//	List<Categorie> listUsers = new ArrayList();
@@ -82,7 +82,7 @@ public class GestionDuMaterielApplication implements CommandLineRunner{
 //		categorieRepository.save(categorie4);
 //		categorieRepository.save(categorie5);
 //		categorieRepository.save(categorie6);
-//		categorieRepository.save(categorie7);
+	//categorieRepository.save(categorie7);
 
 
 
