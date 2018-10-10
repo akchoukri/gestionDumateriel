@@ -1,6 +1,36 @@
 var app = angular.module("myApp",['ui.router','ngMaterial',,"chart.js" ]);
 
+app.run(function(LoginService, $rootScope, $state) {
+	$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+		if (!LoginService.token) {
+		
+			if (toState.name != 'login') {
+				event.preventDefault();
+				$state.go('login');
+			}
+		} 
+		else {
+			
+			
+			if (toState.data && toState.data.role) {
+				console.log(toState.data.role);
+				var hasAccess = false;
+				for (var i = 0; i < LoginService.user.roles.length; i++) {
+					var role = LoginService.user.roles[i].authority;
+					if (toState.data.role == role) {
+						hasAccess = true;
+						break;
+					}
+				}
+				if (!hasAccess) {
+					event.preventDefault();
+					$state.go('access-denied');
+				}
 
+			}
+		}
+	});
+});
 
 // la configuration des des route (les chemin des vues)
 app.config(function ($stateProvider, $urlRouterProvider) {
@@ -16,10 +46,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 				},
 				'nav@main' : {
 					templateUrl : 'views/nav.html',
+					controller:'NavController'
 				}
 			}
 		
-		})	.state('chart', {
+		})	.state('login', {
+		    parent: 'main',
+		    url: '/login',
+		    views: {
+		        'content@main': {
+		            templateUrl: 'views/login.html',
+		            controller: 'LoginController'
+		        }
+		    }
+		})
+		.state('chart', {
 			parent : 'main',
 			url : '/chart',
 			views : {

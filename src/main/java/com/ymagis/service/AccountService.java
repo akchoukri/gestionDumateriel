@@ -1,5 +1,6 @@
 package com.ymagis.service;
 
+
 import com.ymagis.model.AppRole;
 import com.ymagis.model.AppUser;
 

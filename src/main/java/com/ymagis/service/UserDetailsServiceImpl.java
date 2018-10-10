@@ -1,7 +1,8 @@
 package com.ymagis.service;
-import java.util.ArrayList;
-import java.util.Collection;
 
+import java.util.ArrayList;
+
+import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,14 +14,13 @@ import org.springframework.stereotype.Service;
 
 import com.ymagis.model.AppUser;
 
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
 	@Autowired
 	private AccountService accountService ;
-
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
 		AppUser user=accountService.findUserByUsername(username);
 		if(user==null) throw new UsernameNotFoundException(username);
 		Collection<GrantedAuthority> authorities=new ArrayList<>();
@@ -28,6 +28,10 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 			authorities.add(new SimpleGrantedAuthority(r.getRoleName()));
 		});
 		return new User(user.getUsername(),user.getPassword(),authorities);
+
 	}
 
+
+
 }
+

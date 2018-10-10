@@ -22,7 +22,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.ymagis.dao.ClientRepository;
 import com.ymagis.dao.EmpruntRepository;
@@ -30,10 +32,13 @@ import com.ymagis.dao.MaterielRepository;
 import com.ymagis.model.Client;
 import com.ymagis.model.Emprunt;
 import com.ymagis.model.Materiel;
+import com.ymagis.service.AccountService;
 import com.ymagis.service.EmailService;
 import com.ymagis.service.geneChart;
 import com.ymagis.dao.CategorieRepository;
 import com.ymagis.dao.MaterielRepository;
+import com.ymagis.model.AppRole;
+import com.ymagis.model.AppUser;
 import com.ymagis.model.Categorie;
 import com.ymagis.model.Materiel;
 
@@ -50,13 +55,31 @@ public class GestionDuMaterielApplication implements CommandLineRunner{
 	@Autowired
 	private EmailService emailService;
 	
+	@Autowired
+	private AccountService accountService;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(GestionDuMaterielApplication.class, args);
 	}
-
+	@Bean
+public BCryptPasswordEncoder getBCPE() {
+	return new BCryptPasswordEncoder();
+}
 	@Override
 	public void run(String... args) throws Exception {
-		
+		accountService.saveUser(new AppUser("admin", "123"));
+
+		accountService.saveUser(new AppUser("user", "123"));
+
+		accountService.saveRole(new AppRole("ADMIN"));
+
+		accountService.saveRole(new AppRole("USER"));
+
+		accountService.addRoleToUse("admin","ADMIN" );
+
+		accountService.addRoleToUse("admin","USER" );
+
+		accountService.addRoleToUse("user","USER" );
 
 
 //		materielRepository.deleteAll();
