@@ -1,4 +1,5 @@
 package com.ymagis.controller;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ymagis.dao.UserRepository;
 import com.ymagis.model.AppUser;
+import com.ymagis.model.Client;
 import com.ymagis.model.RegisterForm;
 import com.ymagis.service.AccountService;
 
@@ -30,7 +32,7 @@ public class AccountRestController {
 		appUser.setUsername(userForm.getUsername());
 		appUser.setPassword(userForm.getPassword());
 		accountService.saveUser(appUser);
-		accountService.addRoleToUse(userForm.getUsername(), "ADMIN");
+		accountService.addRoleToUse(userForm.getUsername(), "USER");
 		return appUser;
 	}
 //chercher utilisteur par son nom d'utilisateur

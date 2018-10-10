@@ -1,49 +1,76 @@
 package com.ymagis.config;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.context.annotation.Configuration;
+
 import org.springframework.http.HttpMethod;
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
 import org.springframework.security.config.http.SessionCreationPolicy;
+
 import org.springframework.security.core.userdetails.UserDetailsService;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
 @Configuration
+
 @EnableWebSecurity
+
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
+
 	
+
 	@Autowired
+
 	private UserDetailsService userDetailsService;
+
 	@Autowired
+
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
+
 	
+
 	
+
 	
+
 	
+
 	@Override
+
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
        auth.userDetailsService(userDetailsService)
+
        .passwordEncoder(bCryptPasswordEncoder);
 
+
+
 	}
+
 	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		//remplacer le system d'authentification par reference par le system d'authentification par valeur
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 //           http.formLogin();
-        http.authorizeRequests().antMatchers("/","/index.html","/js/**","/views/**", "/registerUser", "/login", "/favicon.ico","/css/**","/node_modules/**","/user","/chart","/fonts/**","/vendor/**","/img/**").permitAll();
-        //front 
-//        http.authorizeRequests().antMatchers("/clients/**").hasAuthority("ADMIN");
-//        http.authorizeRequests().antMatchers("/gestionDuMateriel/**").hasAuthority("ADMIN");
-//        http.authorizeRequests().antMatchers("/addNewEmpunt/**").hasAuthority("ADMIN");
-//        http.authorizeRequests().antMatchers("/emprunt/**").hasAuthority("ADMIN");
-//        http.authorizeRequests().antMatchers("/pret/**").hasAuthority("ADMIN");
+        http.authorizeRequests().antMatchers("/","/index.html","/js/**","/views/**", "/registerUser", "/login", "/favicon.ico","/css/**","/node_modules/**","/mois/**","/nbrEmprun/**","/nvClient","/emp","/nvEmp","/nvMat","/etatMat","/img/**").permitAll();
         //gerer les client
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/clients/**").hasAuthority("ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/clients/**").hasAuthority("ADMIN");
@@ -59,9 +86,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         http.authorizeRequests().antMatchers(HttpMethod.PUT,"/materiels/**").hasAuthority("ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.PUT,"/client/**").hasAuthority("ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/client/**").hasAuthority("ADMIN");
-       
-
-
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/empruntRetard/**").hasAuthority("ADMIN");
    //gerer les materiels
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/materiels/**").hasAuthority("ADMIN");
@@ -77,6 +101,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
            
 		
 	}
+
 
 }
 

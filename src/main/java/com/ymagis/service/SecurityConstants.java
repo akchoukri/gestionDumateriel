@@ -1,4 +1,5 @@
 package com.ymagis.service;
+
 public class SecurityConstants {
 	public static final String SECRET="ibtissam@tahiri.net";
 	public static final long EXPIRATION_TIME=864_000_000;//10 days 
