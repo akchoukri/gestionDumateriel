@@ -19,7 +19,10 @@
     margin-top:-6px;
 }
 
-
+.logout {
+	cursor: pointer;
+	margin-left: 5px;
+}
 
 /* rotate caret on hover */
 .dropdown-menu > li > a:hover:after {
