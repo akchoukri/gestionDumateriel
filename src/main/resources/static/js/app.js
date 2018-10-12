@@ -4,7 +4,7 @@ app.run(function(LoginService, $rootScope, $state) {
 	$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 		if (!LoginService.token) {
 		
-			if (toState.name != 'login') {
+			if (toState.name != 'login' && toState.name!='register') {
 				event.preventDefault();
 				$state.go('login');
 			}
@@ -60,6 +60,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		            controller: 'LoginController'
 		        }
 		    }
+		}).state('register', {
+			url : '/register',
+			views : {
+				'main' : {
+					templateUrl : 'views/register.html',
+					controller : 'RegisterController'
+				}
+			}
 		})
 		.state('chart', {
 			parent : 'main',

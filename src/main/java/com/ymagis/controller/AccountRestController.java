@@ -23,7 +23,7 @@ public class AccountRestController {
 	@Autowired
 	private UserRepository userRepository;
 	
-	@PostMapping("/registerUser")
+	@PostMapping("/register")
 	public AppUser registerUser(@RequestBody RegisterForm userForm) {
 		if(!userForm.getPassword().equals(userForm.getRepassword())) throw new  RuntimeException("Vous devez confirmer votre mot de pass");
 		AppUser user=accountService.findUserByUsername(userForm.getUsername());

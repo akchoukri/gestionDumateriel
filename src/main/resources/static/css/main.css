@@ -176,10 +176,10 @@ container-login100
 .wrap-login100 {
   width: 390px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 1px;
   overflow: hidden;
-  padding: 77px 55px 33px 55px;
-  background-color:#ffffff60; 
+  padding: 20px 55px 33px 55px;
+  background-color:#080808a9; 
 
   box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
@@ -370,11 +370,11 @@ container-login100
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
-  background: -o-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
-  background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
-  background: linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+  background: #dbf44b;
+  background: -webkit-linear-gradient(right, #21d4fd, #fbff21, #21d4fd, #b7dd4f);
+  background: -o-linear-gradient(right, #21d4fd, #f0ff21, #21d4fd, #b7dd4f);
+  background: -moz-linear-gradient(right, #21d4fd, #bae423, #21d4fd, #b7dd4f);
+  background: linear-gradient(right, #21d4fd, #b1f11b, #21d4fd, #b7dd4f);
   top: 0;
   left: -100%;
 
@@ -411,12 +411,6 @@ container-login100
 /*------------------------------------------------------------------
 [ Responsive ]*/
 
-@media (max-width: 576px) {
-  .wrap-login100 {
-    padding: 77px 15px 33px 15px;
- 
-  }
-}
 
 
 

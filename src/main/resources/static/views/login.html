@@ -13,50 +13,46 @@
 
 
 		<div class="container-login100">
-		
-			<div class="wrap-login100">
-			
-				<form class="login100-form validate-form" ng-submit="login()">
-				<span class="login100-form-title p-b-26">
-						Bienvenue
-					</span> 
-					
-					<br>
-					<br>
 
-					<div class="wrap-input100 validate-input">
-						
-						<input class="input100" type="text" ng-model="username" id="username" placeholder="Nom d'utilisateur" >
-					    
-						
-					</div>
+		<div class="wrap-login100">
+			<h1 class="w3-xxxlarge" style="text-align: center">
+				<img src="../img/ymagis.png" alt="Girl Hat" style="width: 70%;"
+					class="w3-padding-16">
 
-					<div class="wrap-input100">
-						
-						<input class="input100" type="password" id="pwd" ng-model="password" placeholder="Mot de Passe">
-					</div>
+			</h1>
+			<br>
+			<br>
+			<form class="login100-form validate-form" ng-submit="login()">
 
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button type="submit" class="login100-form-btn">
-								Se Connecter
-							</button>
-						</div>
-					</div>
-					<br>
-                    <div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div>
-					<div class="text-center p-t-115">
-						<span class="txt1">
-							Vous n'avez pas de compte?
-						</span>
 
-						<a class="txt2" href="#">
-							S'inscrire
-						</a>
+				<br> <br>
+
+				<div class="wrap-input100 validate-input">
+
+					<input class="input100" type="text" ng-model="username"
+						id="username" placeholder="Nom d'utilisateur">
+
+
+				</div>
+
+				<div class="wrap-input100">
+
+					<input class="input100" type="password" id="pwd"
+						ng-model="password" placeholder="Mot de Passe">
+				</div>
+
+				<div class="container-login100-form-btn">
+					<div class="wrap-login100-form-btn">
+						<div class="login100-form-bgbtn"></div>
+						<button type="submit" class="login100-form-btn">Se
+							Connecter</button>
 					</div>
-				</form>
-			</div>
+				</div>
+				<br>
+				<div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div>
+
+			</form>
 		</div>
+	</div>
 
 </div>
