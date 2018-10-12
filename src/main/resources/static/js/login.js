@@ -6,30 +6,27 @@ angular
 				function($http, $scope, $state, $rootScope,
 						LoginService) {
 				
-					$scope.mode=0;
+					$rootScope.mode=0;
+					$rootScope.username="";
 					$scope.login = function() {
 						LoginService
 								.loginUser($scope.username, $scope.password)
 								.then(
 										function(res, status, headers) {
 											var token = res.headers()["authorization"];
-//											console.log(token)
 											$scope.password = null;
 											if (token) {
 												$scope.message = '';
 												$http.defaults.headers.common['Authorization'] = token;
 												LoginService.saveToken(token);
-												console.log(LoginService.user);
-//												LoginService.getUser($scope.username)
-//												.then(function(response) {
-//													console.log(response);
-//													$state.go('home');
-//                                                }, function (response) {
-//   
-//                                                 });
-												
-////												console.log(LoginService.username);
-//												
+												$rootScope.username=LoginService.user.username;
+
+												 for (var i = 0; i <LoginService.roles.length; i++) {
+													   if( LoginService.roles[i].authority=="ADMIN"){
+														   $rootScope.mode=1;
+													   }
+													   
+												   }
 												$rootScope
 														.$broadcast('LoginSuccessful');
 												$state.go('chart');

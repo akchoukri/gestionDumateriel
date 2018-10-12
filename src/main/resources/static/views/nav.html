@@ -1,14 +1,14 @@
 
 <meta charset="UTF-8">
-<nav ng-show="user.username" class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
   
 
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <li ng-show="user.username" class="nav-item active">
+      <li class="nav-item active">
         <a class="nav-link" ui-sref="chart">Home </a>
       </li>
-      <li ng-show="user.username && mode==1" class="nav-item dropdown">
+      <li ng-show="mode==1" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" ui-sref="gestionDuMateriel" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Gérer Materiels
         </a>
@@ -18,8 +18,9 @@
             <li><a class="dropdown-item" ui-sref="gestionDuMateriel">Gérer Materiel</a></li>
             </ul>
           </li>
-         <li ng-show="user.username && mode==1" class="nav-item"><a class="nav-link" ui-sref="emprunt">Emprunts</a></li>
-		<li ng-show="user.username && mode==1" class="nav-item"><a class="nav-link" ui-sref="pret">Prets</a></li>
+         <li ng-show="mode==1" class="nav-item"><a class="nav-link" ui-sref="emprunt">Emprunts</a></li>
+		<li ng-show="mode==1" class="nav-item"><a class="nav-link" ui-sref="pret">Prets</a></li>
         </ul>
   </div>
+  <a> <span>Hi,{{username}}</span> <span ng-click="logout()"class="logout">Logout</span></a>
 </nav>

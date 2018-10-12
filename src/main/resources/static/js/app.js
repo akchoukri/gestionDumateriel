@@ -46,15 +46,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 				},
 				'nav@main' : {
 					templateUrl : 'views/nav.html',
-					controller:'NavController'
+					controller: 'NavController'
+					
 				}
 			}
 		
 		})	.state('login', {
-		    parent: 'main',
+		    
 		    url: '/login',
 		    views: {
-		        'content@main': {
+		        'main': {
 		            templateUrl: 'views/login.html',
 		            controller: 'LoginController'
 		        }

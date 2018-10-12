@@ -70,7 +70,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		//remplacer le system d'authentification par reference par le system d'authentification par valeur
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 //           http.formLogin();
-        http.authorizeRequests().antMatchers("/","/index.html","/js/**","/views/**", "/registerUser", "/login", "/favicon.ico","/css/**","/node_modules/**","/mois/**","/nbrEmprun/**","/nvClient","/emp","/nvEmp","/nvMat","/etatMat","/img/**").permitAll();
+        http.authorizeRequests().antMatchers("/","/index.html","/js/**","/fonts/**","/views/**", "/registerUser", "/login", "/favicon.ico","/css/**","/node_modules/**",
+        		"/mois/**","/nbrEmprun/**","/nvClient","/emp","/nvEmp","/nvMat","/etatMat","/img/**").permitAll();
         //gerer les client
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/clients/**").hasAuthority("ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/clients/**").hasAuthority("ADMIN");
